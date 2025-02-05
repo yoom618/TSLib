@@ -1,21 +1,10 @@
 import argparse
 import os
-import torch
-import torch.backends
-from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
-from exp.exp_imputation import Exp_Imputation
-from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
-from exp.exp_anomaly_detection import Exp_Anomaly_Detection
-from exp.exp_classification import Exp_Classification
 from utils.print_args import print_args
 import random
 import numpy as np
 
 if __name__ == '__main__':
-    fix_seed = 2021
-    random.seed(fix_seed)
-    torch.manual_seed(fix_seed)
-    np.random.seed(fix_seed)
 
     parser = argparse.ArgumentParser(description='TimesNet')
 
@@ -141,21 +130,41 @@ if __name__ == '__main__':
     parser.add_argument('--patch_len', type=int, default=16, help='patch length')
 
     args = parser.parse_args()
-    if torch.cuda.is_available() and args.use_gpu:
-        args.device = torch.device('cuda:{}'.format(args.gpu))
-        print('Using GPU')
-    else:
-        if hasattr(torch.backends, "mps"):
-            args.device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
-        else:
-            args.device = torch.device("cpu")
-        print('Using cpu or mps')
+    # declare CUDA_VISIBLE_DEVICES before using torch.cuda
+    if args.use_gpu and args.gpu_type == 'cuda':
+        os.environ["CUDA_VISIBLE_DEVICES"] = str(
+            args.gpu) if not args.use_multi_gpu else args.devices
+    
+    import torch
+    import torch.backends
+    from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
+    from exp.exp_imputation import Exp_Imputation
+    from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
+    from exp.exp_anomaly_detection import Exp_Anomaly_Detection
+    from exp.exp_classification import Exp_Classification
 
-    if args.use_gpu and args.use_multi_gpu:
-        args.devices = args.devices.replace(' ', '')
-        device_ids = args.devices.split(',')
-        args.device_ids = [int(id_) for id_ in device_ids]
-        args.gpu = args.device_ids[0]
+    fix_seed = 2021
+    random.seed(fix_seed)
+    torch.manual_seed(fix_seed)
+    np.random.seed(fix_seed)
+
+    if torch.cuda.is_available() and args.use_gpu and args.gpu_type == 'cuda':
+        if args.use_multi_gpu:  # multi-gpu
+            args.devices = args.devices.replace(' ', '')
+            device_ids = args.devices.split(',')
+            args.device_indices = [int(id_) for id_ in device_ids]  # e.g. '1,2' -> [1, 2]
+            args.device_ids = list(range(len(args.device_indices))) # e.g. [1, 2] -> [0, 1] because of visible devices
+            args.gpu = args.device_indices[0]
+            args.device = torch.device(f'cuda:0')
+        else:  # one gpu
+            args.device = torch.device('cuda')
+        print('Using GPU')
+    elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available() \
+        and args.use_gpu and args.gpu_type == 'mps':
+        args.device = torch.device("mps")
+    else:
+        args.device = torch.device("cpu")
+        print('Using cpu or mps')
 
     print('Args in experiment:')
     print_args(args)
