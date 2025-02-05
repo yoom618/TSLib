@@ -19,3 +19,18 @@ mse:0.5135009288787842, mae:0.47575274109840393, dtw:Not calculated
 long_term_forecast_ETTh1_336_336_MambaSimple_ETTh1_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
 mse:0.5083497166633606, mae:0.48122209310531616, dtw:Not calculated
 
+long_term_forecast_ETTh1_720_720_MambaSimple_ETTh1_ftM_sl720_ll48_pl720_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.5967642664909363, mae:0.5675637722015381, dtw:Not calculated
+
+long_term_forecast_ETTh1_96_96_Mamba_ETTh1_ftM_sl96_ll48_pl96_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.4855247437953949, mae:0.45203909277915955, dtw:Not calculated
+
+long_term_forecast_ETTh1_192_192_Mamba_ETTh1_ftM_sl192_ll48_pl192_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.6119857430458069, mae:0.530387282371521, dtw:Not calculated
+
+long_term_forecast_ETTh1_336_336_Mamba_ETTh1_ftM_sl336_ll48_pl336_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.519395649433136, mae:0.486606627702713, dtw:Not calculated
+
+long_term_forecast_ETTh1_720_720_Mamba_ETTh1_ftM_sl720_ll48_pl720_dm128_nh8_el2_dl1_df16_expand2_dc4_fc1_ebtimeF_dtTrue_Exp_0  
+mse:0.6051969528198242, mae:0.5658085346221924, dtw:Not calculated
+

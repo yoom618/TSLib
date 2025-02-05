@@ -155,7 +155,7 @@ if __name__ == '__main__':
             args.device_indices = [int(id_) for id_ in device_ids]  # e.g. '1,2' -> [1, 2]
             args.device_ids = list(range(len(args.device_indices))) # e.g. [1, 2] -> [0, 1] because of visible devices
             args.gpu = args.device_indices[0]
-            args.device = torch.device(f'cuda:0')
+            args.device = torch.device('cuda:0')
         else:  # one gpu
             args.device = torch.device('cuda')
         print('Using GPU')
