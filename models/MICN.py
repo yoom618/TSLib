@@ -152,6 +152,7 @@ class Model(nn.Module):
         if self.task_name == 'anomaly_detection':
             self.projection = nn.Linear(configs.d_model, configs.c_out, bias=True)
         if self.task_name == 'classification':
+            self.trend_projection = nn.Linear(configs.enc_in, configs.c_out, bias=True)
             self.act = F.gelu
             self.dropout = nn.Dropout(configs.dropout)
             self.projection = nn.Linear(configs.c_out * configs.seq_len, configs.num_class)
@@ -195,6 +196,7 @@ class Model(nn.Module):
         # embedding
         dec_out = self.dec_embedding(seasonal_init_enc, None)
         dec_out = self.conv_trans(dec_out)
+        trend = self.trend_projection(trend)
         dec_out = dec_out + trend
 
         # Output from Non-stationary Transformer
