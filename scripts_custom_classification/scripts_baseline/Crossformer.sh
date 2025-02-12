@@ -1,0 +1,870 @@
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset EthanolConcentration \ 
+  --data UEA \ 
+  --root_path ./dataset/EthanolConcentration \ 
+  --seq_len 1751 \ 
+  --enc_in 3 \ 
+  --num_class 4 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_EthanolConcentration \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset FaceDetection \ 
+  --data UEA \ 
+  --root_path ./dataset/FaceDetection \ 
+  --seq_len 62 \ 
+  --enc_in 144 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_FaceDetection \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Handwriting \ 
+  --data UEA \ 
+  --root_path ./dataset/Handwriting \ 
+  --seq_len 152 \ 
+  --enc_in 3 \ 
+  --num_class 26 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Handwriting \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Heartbeat \ 
+  --data UEA \ 
+  --root_path ./dataset/Heartbeat/ \ 
+  --seq_len 405 \ 
+  --enc_in 61 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Heartbeat \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset JapaneseVowels \ 
+  --data UEA \ 
+  --root_path ./dataset/JapaneseVowels/ \ 
+  --seq_len 29 \ 
+  --enc_in 12 \ 
+  --num_class 9 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_JapaneseVowels \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset PEMS-SF \ 
+  --data UEA \ 
+  --root_path ./dataset/PEMS-SF/ \ 
+  --seq_len 144 \ 
+  --enc_in 963 \ 
+  --num_class 7 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_PEMS-SF \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset SelfRegulationSCP1 \ 
+  --data UEA \ 
+  --root_path ./dataset/SelfRegulationSCP1/ \ 
+  --seq_len 896 \ 
+  --enc_in 6 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_SelfRegulationSCP1 \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset SelfRegulationSCP2 \ 
+  --data UEA \ 
+  --root_path ./dataset/SelfRegulationSCP2/ \ 
+  --seq_len 1152 \ 
+  --enc_in 7 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_SelfRegulationSCP2 \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset SpokenArabicDigits \ 
+  --data UEA \ 
+  --root_path ./dataset/SpokenArabicDigits/ \ 
+  --seq_len 93 \ 
+  --enc_in 13 \ 
+  --num_class 10 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_SpokenArabicDigits \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset UWaveGestureLibrary \ 
+  --data UEA \ 
+  --root_path ./dataset/UWaveGestureLibrary/ \ 
+  --seq_len 315 \ 
+  --enc_in 3 \ 
+  --num_class 8 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_UWaveGestureLibrary \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset ArticularyWordRecognition \ 
+  --data UEA \ 
+  --root_path ./dataset/ArticularyWordRecognition \ 
+  --seq_len 144 \ 
+  --enc_in 9 \ 
+  --num_class 25 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_ArticularyWordRecognition \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset AtrialFibrillation \ 
+  --data UEA \ 
+  --root_path ./dataset/AtrialFibrillation \ 
+  --seq_len 640 \ 
+  --enc_in 2 \ 
+  --num_class 3 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_AtrialFibrillation \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset BasicMotions \ 
+  --data UEA \ 
+  --root_path ./dataset/BasicMotions \ 
+  --seq_len 100 \ 
+  --enc_in 6 \ 
+  --num_class 4 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_BasicMotions \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset CharacterTrajectories \ 
+  --data UEA \ 
+  --root_path ./dataset/CharacterTrajectories \ 
+  --seq_len 182 \ 
+  --enc_in 3 \ 
+  --num_class 20 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_CharacterTrajectories \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Cricket \ 
+  --data UEA \ 
+  --root_path ./dataset/Cricket \ 
+  --seq_len 1197 \ 
+  --enc_in 6 \ 
+  --num_class 12 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Cricket \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset DuckDuckGeese \ 
+  --data UEA \ 
+  --root_path ./dataset/DuckDuckGeese \ 
+  --seq_len 270 \ 
+  --enc_in 1345 \ 
+  --num_class 5 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_DuckDuckGeese \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset EigenWorms \ 
+  --data UEA \ 
+  --root_path ./dataset/EigenWorms \ 
+  --seq_len 17984 \ 
+  --enc_in 6 \ 
+  --num_class 5 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_EigenWorms \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Epilepsy \ 
+  --data UEA \ 
+  --root_path ./dataset/Epilepsy \ 
+  --seq_len 206 \ 
+  --enc_in 3 \ 
+  --num_class 4 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Epilepsy \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset ERing \ 
+  --data UEA \ 
+  --root_path ./dataset/ERing \ 
+  --seq_len 65 \ 
+  --enc_in 4 \ 
+  --num_class 6 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_ERing \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset FingerMovements \ 
+  --data UEA \ 
+  --root_path ./dataset/FingerMovements \ 
+  --seq_len 50 \ 
+  --enc_in 28 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_FingerMovements \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset HandMovementDirection \ 
+  --data UEA \ 
+  --root_path ./dataset/HandMovementDirection \ 
+  --seq_len 400 \ 
+  --enc_in 10 \ 
+  --num_class 4 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_HandMovementDirection \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Libras \ 
+  --data UEA \ 
+  --root_path ./dataset/Libras \ 
+  --seq_len 45 \ 
+  --enc_in 2 \ 
+  --num_class 15 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Libras \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset LSST \ 
+  --data UEA \ 
+  --root_path ./dataset/LSST \ 
+  --seq_len 36 \ 
+  --enc_in 6 \ 
+  --num_class 14 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_LSST \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset InsectWingbeat \ 
+  --data UEA \ 
+  --root_path ./dataset/InsectWingbeat \ 
+  --seq_len 78 \ 
+  --enc_in 200 \ 
+  --num_class 10 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_InsectWingbeat \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset MotorImagery \ 
+  --data UEA \ 
+  --root_path ./dataset/MotorImagery \ 
+  --seq_len 3000 \ 
+  --enc_in 64 \ 
+  --num_class 2 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_MotorImagery \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset NATOPS \ 
+  --data UEA \ 
+  --root_path ./dataset/NATOPS \ 
+  --seq_len 51 \ 
+  --enc_in 24 \ 
+  --num_class 6 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_NATOPS \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset PenDigits \ 
+  --data UEA \ 
+  --root_path ./dataset/PenDigits \ 
+  --seq_len 8 \ 
+  --enc_in 2 \ 
+  --num_class 10 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_PenDigits \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset Phoneme \ 
+  --data UEA \ 
+  --root_path ./dataset/Phoneme \ 
+  --seq_len 217 \ 
+  --enc_in 11 \ 
+  --num_class 39 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_Phoneme \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset RacketSports \ 
+  --data UEA \ 
+  --root_path ./dataset/RacketSports \ 
+  --seq_len 30 \ 
+  --enc_in 6 \ 
+  --num_class 4 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_RacketSports \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+
+python run.py 
+  --use_gpu True \ 
+  --gpu 1 \ 
+  --gpu_type cuda \ 
+  --is_training 1 \ 
+  --batch_size 16 \ 
+  --des Exp \ 
+  --itr 1 \ 
+  --dropout 0.1 \ 
+  --learning_rate 0.001 \ 
+  --train_epochs 200 \ 
+  --patience 20 \ 
+  --task_name classification \ 
+  --dataset StandWalkJump \ 
+  --data UEA \ 
+  --root_path ./dataset/StandWalkJump \ 
+  --seq_len 2500 \ 
+  --enc_in 4 \ 
+  --num_class 3 \ 
+  --label_len 0 \ 
+  --pred_len 0 \ 
+  --c_out 0 \ 
+  --model Crossformer \ 
+  --model_id CLS_StandWalkJump \ 
+  --e_layers 3 \ 
+  --d_model 128 \ 
+  --d_ff 256 \ 
+  --top_k 3 
+

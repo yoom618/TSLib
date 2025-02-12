@@ -181,6 +181,9 @@ class Exp_Classification(Exp_Basic):
             os.makedirs(folder_path)
 
         print('accuracy:{}'.format(accuracy))
+        print(f'model parameter : {sum(p.numel() for p in self.model.parameters())}')
+        print(f'model size : {os.path.getsize(os.path.join('./checkpoints/' + setting, "checkpoint.pth")) / 1024 / 1024:.2f}MB')
+
         file_name='result_classification.txt'
         f = open(os.path.join(folder_path,file_name), 'a')
         f.write(setting + "  \n")

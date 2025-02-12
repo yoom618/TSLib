@@ -164,3 +164,5 @@ results/
 scripts/augmentation/
 run_anylearn.py
 environment.txt
+/scripts_custom_gpu0/
+/scripts_custom_gpu1/
