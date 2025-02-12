@@ -1,6 +1,6 @@
 #export CUDA_VISIBLE_DEVICES=1
 
-model_name=MTSMixer
+model_name=TSMixer
 
 python -u run.py \
   --task_name short_term_forecast \
