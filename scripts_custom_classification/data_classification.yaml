@@ -46,7 +46,7 @@ CLS_Heartbeat:
   pred_len: 0
   c_out: 0
 
-CLS_JapaneseVowels:
+CLS_JapaneseVowels:  # Variable length
   task_name: classification
   dataset: JapaneseVowels
   data: UEA
@@ -94,7 +94,7 @@ CLS_SelfRegulationSCP2:
   pred_len: 0
   c_out: 0
 
-CLS_SpokenArabicDigits:
+CLS_SpokenArabicDigits:  # Variable length
   task_name: classification
   dataset: SpokenArabicDigits
   data: UEA
@@ -157,7 +157,7 @@ CLS_BasicMotions:
   pred_len: 0
   c_out: 0
 
-CLS_CharacterTrajectories:
+CLS_CharacterTrajectories:  # Variable length
   task_name: classification
   dataset: CharacterTrajectories
   data: UEA
@@ -277,7 +277,7 @@ CLS_LSST:
   pred_len: 0
   c_out: 0
 
-CLS_InsectWingbeat:
+CLS_InsectWingbeat:  # Variable length
   task_name: classification
   dataset: InsectWingbeat
   data: UEA

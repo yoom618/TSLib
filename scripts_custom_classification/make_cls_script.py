@@ -9,7 +9,7 @@ def make_combination(config_dict):
 
 
 if __name__ == "__main__":
-    script_dir = "scripts_custom_classification"
+    script_dir = "./scripts_custom_classification"
     data_metainfo = "data_classification.yaml"
     script_path = f"{script_dir}/scripts_all/MambaSL_{{}}.sh"
 

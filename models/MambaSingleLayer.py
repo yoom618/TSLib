@@ -79,20 +79,27 @@ class Model(nn.Module):
             mamba_out = self.mamba(mamba_in)  # (B, L_in, D)
             mamba_out = self.dropout(mamba_out)  # (B, L_in, D). 이 편이 성능이 더 많이 오름
 
-            # # 1) use the last hidden state to make the final prediction
+            ### 1) use the last hidden state to make the final prediction
             # out = mamba_out[:, -1, :]  # (B, D)
             # out = self.out_layer(x_out)  # (B, D) -> (B, C_out)
             
-            # # 2) use the average of the hidden states to make the final prediction
+            ### 2) use the average of the hidden states to make the final prediction
             # out = self.out_layer(mamba_out)  # (B, L_in, D) -> (B, L_in, C_out)
+            # out = out * x_mark_enc.unsqueeze(2)  # Mask out the padded sequence for variable length data (e.g. JapaneseVowels)
             # out = out.mean(1)  # (B, C_out)
             
-            # 3) use the average of the hidden states to make the final prediction
+            ### 3) use the average of the hidden states to make the final prediction
             # softmax 계열이 아닌 sigmoid와 같은 단독 활성화 함수를 사용할 경우, 오버피팅이 발생함. 이는 학습 과정에서 지나치게 많은 timestamp 정보를 0으로 만들어서 학습데이터의 극히 일부만 사용하게 만들기 때문으로 추정.
             logit_out = self.out_layer(mamba_out)  # (B, L_in, D/2) -> (B, L_in, C_out)
             w_out = F.softmax(self.impact_factor(mamba_out).squeeze(2), dim=1)  # (B, L_in, D) -> (B, L_in, 1) -> (B, L_in)
+            # Mask out the padded sequence for variable length data (e.g. JapaneseVowels)
+            logit_out = logit_out * x_mark_enc.unsqueeze(2)  # (B, L_in, C_out)
+            w_out = w_out * x_mark_enc  
+            w_out = w_out / w_out.sum(1, keepdim=True)
+            # calculate the weighted average of the hidden states to make the final prediction
             out = logit_out * w_out.unsqueeze(2)  # (B, L_in, C_out)
             out = out.sum(1)  # (B, C_out)
+            # to reduce the gradient for w_out(impact factor), we use simple trick as follows.
             if self.training:
                 prob = torch.rand(1, device=out.device)
                 out = prob * out + (1 - prob) * logit_out.mean(1)  # (B, C_out)
