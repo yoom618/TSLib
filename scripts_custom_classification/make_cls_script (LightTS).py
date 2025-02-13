@@ -3,7 +3,7 @@
 # 1) time-series-library
 
 
-import math
+import os
 from omegaconf import OmegaConf
 import itertools
 
@@ -14,22 +14,28 @@ def make_combination(config_dict):
 
 if __name__ == "__main__":
     script_dir = "scripts_custom_classification"
+    data_metainfo = "data_classification.yaml"
     script_path = f"{script_dir}/scripts_baseline/{{}}.sh"
     model_id = "{}"
     model = "LightTS"
-    
+
+    dir_setting = {
+        "data_dir" : "/data/yoom618/TSLib/dataset",
+        "checkpoints": "/data/yoom618/TSLib/checkpoints",
+    }
+
+    data_configs = OmegaConf.load(f"{script_dir}/{data_metainfo}")
+
     gpu_setting = {
         "use_gpu" : True,
+        "gpu_type" : "cuda",
         "gpu" : 1,
-        "gpu_type" : "cuda"
     }
     # gpu_setting = {
     #     "use_multi_gpu" : True,
     #     "devices" : "1,2"
     # }
 
-
-    data_configs = OmegaConf.load(f"{script_dir}/data_classification.yaml")
 
     model_configs = {
         "e_layers" : [3],
@@ -48,10 +54,18 @@ if __name__ == "__main__":
         "train_epochs" : 200,  # increased from 100 to 200 for alignment with MambaSL
         "patience" : 20,  # increased from 10 to 20 for alignment with MambaSL
     }
+    
+    os.makedirs(f"{script_dir}/scripts_all", exist_ok=True)
+    os.makedirs(dir_setting["checkpoints"], exist_ok=True)
+    
     scripts = ''
     
     for data_key, data_cfg in data_configs.items():
         model_configs_combination = make_combination(model_configs)
+
+        data_cfg["root_path"] = data_cfg["root_path"].replace("data_dir", dir_setting["data_dir"])
+        data_cfg["checkpoints"] = dir_setting["checkpoints"]
+
         
         for model_cfg in model_configs_combination:
             script_cfg = gpu_setting

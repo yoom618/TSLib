@@ -1,3 +1,4 @@
+import os
 import math
 from omegaconf import OmegaConf
 import itertools
@@ -9,20 +10,26 @@ def make_combination(config_dict):
 
 if __name__ == "__main__":
     script_dir = "scripts_custom_classification"
+    data_metainfo = "data_classification.yaml"
     script_path = f"{script_dir}/scripts_all/MambaSL_{{}}.sh"
+
+    dir_setting = {
+        "data_dir" : "/data/yoom618/TSLib/dataset",
+        "checkpoints": "/data/yoom618/TSLib/checkpoints",
+    }
+
+    data_configs = OmegaConf.load(f"{script_dir}/{data_metainfo}")
 
     gpu_setting = {
         "use_gpu" : True,
-        # "gpu" : 1,
-        "gpu_type" : "cuda"
+        "gpu_type" : "cuda",
+        # "gpu" : 0
     }
     # gpu_setting = {
     #     "use_multi_gpu" : True,
     #     "devices" : "1,2"
     # }
 
-
-    data_configs = OmegaConf.load(f"{script_dir}/data_classification.yaml")
 
     model_id = "TV_{}"
     model = "MambaSingleLayer"
@@ -47,10 +54,15 @@ if __name__ == "__main__":
         "patience" : 20,
     }
 
+    os.makedirs(f"{script_dir}/scripts_all", exist_ok=True)
+    os.makedirs(dir_setting["checkpoints"], exist_ok=True)
+    
     for data_key, data_cfg in data_configs.items():
-        scripts = ''
+        scripts = ""
 
-        model_configs["num_kernels"] = [min(1, data_cfg.seq_len // 20)]
+        # Fix kernel size of embedding layer into 5% of sequence length
+        model_configs["num_kernels"] = [max(1, data_cfg.seq_len // 20)]
+        # Set d_state from log2(num_class) to log2(num_class) + 2
         model_configs["d_ff"] = [math.ceil(math.log2(data_cfg.num_class)) + i for i in range(3)]
         # model_configs["d_ff"] = [math.ceil(math.log2(data_cfg.num_class))]
 
@@ -59,7 +71,10 @@ if __name__ == "__main__":
         else:
             gpu_setting["gpu"] = 1
         del data_cfg["num_class"], data_cfg["dataset"]
-        
+
+        data_cfg["root_path"] = data_cfg["root_path"].replace("data_dir", dir_setting["data_dir"])
+        data_cfg["checkpoints"] = dir_setting["checkpoints"]
+
         model_configs_combination = make_combination(model_configs)
         
         for model_cfg in model_configs_combination:
