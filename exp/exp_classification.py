@@ -146,7 +146,7 @@ class Exp_Classification(Exp_Basic):
         test_data, test_loader = self._get_data(flag='TEST')
         if test:
             print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
+            self.model.load_state_dict(torch.load(os.path.join(self.args.checkpoints, setting, 'checkpoint.pth')))
 
         preds = []
         trues = []
@@ -182,7 +182,7 @@ class Exp_Classification(Exp_Basic):
 
         print('accuracy:{}'.format(accuracy))
         print(f'model parameter : {sum(p.numel() for p in self.model.parameters())}')
-        print(f'model size : {os.path.getsize(os.path.join('./checkpoints/' + setting, "checkpoint.pth")) / 1024 / 1024:.2f}MB')
+        print(f'model size : {os.path.getsize(os.path.join(self.args.checkpoints, setting, "checkpoint.pth")) / 1024 / 1024:.2f}MB')
 
         file_name='result_classification.txt'
         f = open(os.path.join(folder_path,file_name), 'a')
