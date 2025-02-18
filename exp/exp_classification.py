@@ -133,7 +133,7 @@ class Exp_Classification(Exp_Basic):
                 "Epoch: {0}, Steps: {1} | Train Loss: {2:.3f} Vali Loss: {3:.3f} Vali Acc: {4:.3f} Test Loss: {5:.3f} Test Acc: {6:.3f}"
                 .format(epoch + 1, train_steps, train_loss, vali_loss, val_accuracy, test_loss, test_accuracy))
             early_stopping(-val_accuracy, self.model, path)
-            if early_stopping.early_stop:
+            if early_stopping.early_stop or val_accuracy == 1.0:
                 print("Early stopping")
                 break
 
