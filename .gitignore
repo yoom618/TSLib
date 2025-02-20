@@ -160,7 +160,7 @@ data_loader_all.py
 /scripts/exp_scripts/
 
 checkpoints/
-results/
+/results/
 scripts/augmentation/
 run_anylearn.py
 environment.txt

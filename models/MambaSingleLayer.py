@@ -4,15 +4,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from layers.Embed import PositionalEmbedding
+from layers.Embed import PositionalEmbedding, TemporalEmbedding, TimeFeatureEmbedding
 from mamba_ssm import Mamba, Mamba2
 from layers.MambaBlock import Mamba_TimeVariant
 SSM_LAYER_LIST = ["Mamba", "Mamba2", "Mamba_TimeVariant"]
 
 
-class TokenEmbedding(nn.Module):
-    def __init__(self, c_in, d_model, d_kernel=3):
-        super(TokenEmbedding, self).__init__()
+class TokenEmbedding_modified(nn.Module):
+    def __init__(self, c_in, d_model, d_kernel=3):  # original TokenEmbedding use d_kernel=3
+        super().__init__()
         padding = d_kernel - 1
         self.tokenConv = nn.Conv1d(in_channels=c_in, out_channels=d_model,
                                    kernel_size=d_kernel, padding=padding, padding_mode='replicate', bias=False)
@@ -21,9 +21,32 @@ class TokenEmbedding(nn.Module):
                 nn.init.kaiming_normal_(
                     m.weight, mode='fan_in', nonlinearity='leaky_relu')
 
-    def forward(self, x, seqlen):
-        x = self.tokenConv(x.permute(0, 2, 1))[..., :seqlen].transpose(1, 2)
+    def forward(self, x):
+        seq_len = x.size(1)
+        x = self.tokenConv(x.permute(0, 2, 1))[..., :seq_len].transpose(1, 2)
         return x
+
+
+class DataEmbedding(nn.Module):
+    def __init__(self, c_in, d_model, seq_len, embed_type='fixed', freq='h', dropout=0.1, d_kernel=3, temporal_emb=False):
+        super(DataEmbedding, self).__init__()
+        self.value_embedding = TokenEmbedding_modified(c_in=c_in, d_model=d_model, d_kernel=d_kernel)
+        self.position_embedding = PositionalEmbedding(d_model=d_model, max_len=max(5000, seq_len))
+        if temporal_emb:
+            self.temporal_embedding = TemporalEmbedding(d_model=d_model, embed_type=embed_type, freq=freq) \
+                if embed_type != 'timeF' else TimeFeatureEmbedding(d_model=d_model, embed_type=embed_type, freq=freq)
+        else:
+            self.temporal_embedding = None
+        self.dropout = nn.Dropout(p=dropout)
+
+    def forward(self, x, x_mark):
+        if self.temporal_embedding is None:
+            x = self.value_embedding(x) + self.position_embedding(x)
+        else:
+            x = self.value_embedding(x) + self.temporal_embedding(x_mark) + self.position_embedding(x)
+        return self.dropout(x)
+
+
 
 
 class Model(nn.Module):
@@ -34,24 +57,28 @@ class Model(nn.Module):
         self.seq_len = configs.seq_len
         self.pred_len = configs.pred_len
 
-        # self.embedding = DataEmbedding(configs.enc_in, configs.d_model, 
-        #                                configs.embed, configs.freq, configs.dropout)
-        self.embedding = TokenEmbedding(configs.enc_in, configs.d_model, configs.num_kernels)
-        self.embedding_pos = PositionalEmbedding(configs.d_model, max_len=configs.seq_len)
-        self.dropout = nn.Dropout(configs.dropout)
-        
+        if self.task_name in ['classification', 'anomaly_detection']:
+            self.embedding = DataEmbedding(configs.enc_in, configs.d_model, configs.seq_len,
+                                           configs.embed, configs.freq, 
+                                           configs.dropout, configs.num_kernels, False)
+        elif self.task_name in ['short_term_forecast', 'long_term_forecast']:
+            self.embedding = DataEmbedding(configs.enc_in, configs.d_model, configs.seq_len,
+                                           configs.embed, configs.freq, 
+                                           configs.dropout, configs.num_kernels, True)
+            
         self.mamba = nn.Sequential(
             Mamba_TimeVariant(
                 d_model = configs.d_model,
                 d_state = configs.d_ff,
                 d_conv = configs.d_conv,
                 expand = configs.expand,
-                timevariant_dt= bool(configs.tv_dt),
-                timevariant_B= bool(configs.tv_B),
-                timevariant_C= bool(configs.tv_C),
+                timevariant_dt= bool(configs.tv_dt),    # only available in Mamba_TimeVariant
+                timevariant_B= bool(configs.tv_B),      # only available in Mamba_TimeVariant
+                timevariant_C= bool(configs.tv_C),      # only available in Mamba_TimeVariant
                 device = configs.device,
             ),
-            nn.LayerNorm(configs.d_model)
+            nn.LayerNorm(configs.d_model),
+            nn.Dropout(configs.dropout)
         )
         
         if self.task_name in ['classification']:  # one class per one sequence
@@ -74,10 +101,8 @@ class Model(nn.Module):
 
 
         elif self.task_name in ['classification']:
-            # mamba_in = self.embedding(x_enc)  # (B, L_in, D)
-            mamba_in = self.embedding(x_enc, self.seq_len) + self.embedding_pos(x_enc)  # (B, L_in, D)
+            mamba_in = self.embedding(x_enc, None)  # (B, L_in, D)
             mamba_out = self.mamba(mamba_in)  # (B, L_in, D)
-            mamba_out = self.dropout(mamba_out)  # (B, L_in, D). 이 편이 성능이 더 많이 오름
 
             ### 1) use the last hidden state to make the final prediction
             # out = mamba_out[:, -1, :]  # (B, D)
