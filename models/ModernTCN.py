@@ -7,18 +7,15 @@ from layers.ModernTCN_Layer import series_decomp, Flatten_Head
 
 
 class LayerNorm(nn.Module):
-
     def __init__(self, channels, eps=1e-6, data_format="channels_last"):
         super(LayerNorm, self).__init__()
         self.norm = nn.Layernorm(channels)
 
     def forward(self, x):
-
         B, M, D, N = x.shape
         x = x.permute(0, 1, 3, 2)
         x = x.reshape(B * M, N, D)
-        x = self.norm(
-            x)
+        x = self.norm(x)
         x = x.reshape(B, M, N, D)
         x = x.permute(0, 1, 3, 2)
         return x
@@ -84,6 +81,7 @@ class ReparamLargeKernelConv(nn.Module):
             out = self.lkb_origin(inputs)
             if hasattr(self, 'small_conv'):
                 out += self.small_conv(inputs)
+        
         return out
 
     def PaddingTwoEdge1d(self,x,pad_length_left,pad_length_right,pad_values=0):
@@ -210,12 +208,12 @@ class ModernTCN(nn.Module):
         self.class_drop = class_drop
         self.class_num = class_num
 
-
         # RevIN
         self.revin = revin
-        if self.revin: self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
+        if self.revin:
+            self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
 
-        # stem layer & down sampling layers
+        # stem layer & down sampling layers(if needed)
         self.downsample_layers = nn.ModuleList()
         stem = nn.Sequential(
             nn.Conv1d(1, dims[0], kernel_size=patch_size, stride=patch_stride),
@@ -236,21 +234,51 @@ class ModernTCN(nn.Module):
         self.patch_stride = patch_stride
         self.downsample_ratio = downsample_ratio
 
+        if task_name in ['long_term_forecast', 'imputation']:
+            if freq == 'h':
+                time_feature_num = 4
+            elif freq == 't':
+                time_feature_num = 5
+            else:
+                raise NotImplementedError("time_feature_num should be 4 or 5")
+
+            self.te_patch = nn.Sequential(
+                nn.Conv1d(time_feature_num, time_feature_num, kernel_size=patch_size, stride=patch_stride,groups=time_feature_num),
+                nn.Conv1d(time_feature_num, dims[0], kernel_size=1, stride=1, groups=1),
+                nn.BatchNorm1d(dims[0]))
+
+            # Multi scale fusing (if needed)
+            self.use_multi_scale = use_multi_scale
+            self.up_sample_ratio = downsample_ratio
+
+            self.lat_layer = nn.ModuleList()
+            self.smooth_layer = nn.ModuleList()
+            self.up_sample_conv = nn.ModuleList()
+            for i in range(self.num_stage):
+                align_dim = dims[-1]
+                lat = nn.Conv1d(dims[i], align_dim, kernel_size=1,
+                                stride=1)
+                self.lat_layer.append(lat)
+                smooth = nn.Conv1d(align_dim, align_dim, kernel_size=3, stride=1, padding=1)
+                self.smooth_layer.append(smooth)
+
+                up_conv = nn.Sequential(
+                    nn.ConvTranspose1d(align_dim, align_dim, kernel_size=self.up_sample_ratio, stride=self.up_sample_ratio),
+                    nn.BatchNorm1d(align_dim))
+                self.up_sample_conv.append(up_conv)
+
         # backbone
-        self.num_stage = len(num_blocks)
         self.stages = nn.ModuleList()
         for stage_idx in range(self.num_stage):
             layer = Stage(ffn_ratio, num_blocks[stage_idx], large_size[stage_idx], small_size[stage_idx], dmodel=dims[stage_idx],
                           dw_model=dw_dims[stage_idx], nvars=nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout)
             self.stages.append(layer)
 
-
         # head
         patch_num = seq_len // patch_stride
         self.n_vars = c_in
         self.individual = individual
         d_model = dims[self.num_stage-1]
-
 
         if use_multi_scale:
             self.head_nf = d_model * patch_num
@@ -261,30 +289,35 @@ class ModernTCN(nn.Module):
                 self.head_nf = d_model * patch_num // pow(downsample_ratio,(self.num_stage - 1))
             else:
                 self.head_nf = d_model * (patch_num // pow(downsample_ratio, (self.num_stage - 1))+1)
-
-
             self.head = Flatten_Head(self.individual, self.n_vars, self.head_nf, target_window,
                                      head_dropout=head_dropout)
 
         if self.task_name == 'classification':
             self.act_class = F.gelu
             self.class_dropout = nn.Dropout(self.class_drop)
-
             self.head_class = nn.Linear(self.n_vars[0]*self.head_nf,self.class_num)
+        
+        if self.task_name == 'anomaly_detection':
+            self.head_dection1 = nn.Linear(d_model, self.patch_size)
+        
+        if self.task_name == 'imputation':
+            self.head_imputation2 = Flatten_Head(self.individual, self.n_vars, self.head_nf, seq_len, head_dropout=head_dropout)
+        
+        
+
+    def up_sample(self, x, upsample_ratio):
+        _, _, _, N = x.shape
+        return F.upsample(x, size=N, scale_factor=upsample_ratio, mode='bilinear')
 
 
     def forward_feature(self, x, te=None):
-
         B,M,L=x.shape
-
         x = x.unsqueeze(-2)
-
         for i in range(self.num_stage):
             B, M, D, N = x.shape
             x = x.reshape(B * M, D, N)
             if i==0:
                 if self.patch_size != self.patch_stride:
-                    # stem layer padding
                     pad_len = self.patch_size - self.patch_stride
                     pad = x[:,:,-1:].repeat(1,1,pad_len)
                     x = torch.cat([x,pad],dim=-1)
@@ -298,8 +331,8 @@ class ModernTCN(nn.Module):
             x = self.stages[i](x)
         return x
 
-    def classification(self,x):
 
+    def classification(self, x):
         x =  self.forward_feature(x,te=None)
         x = self.act_class(x)
         x = self.class_dropout(x)
@@ -308,14 +341,84 @@ class ModernTCN(nn.Module):
         return x
 
 
-    def forward(self, x, te=None):
-
-        if self.task_name == 'classification':
-            x = self.classification(x)
-
+    def forecast(self, x, te=None):
+        # instance norm
+        if self.revin:
+            x = x.permute(0, 2, 1)
+            x = self.revin_layer(x, 'norm')
+            x = x.permute(0, 2, 1)
+        x = self.forward_feature(x, te)
+        x = self.head(x)
+        # de-instance norm
+        if self.revin:
+            x = x.permute(0, 2, 1)
+            x = self.revin_layer(x, 'denorm')
+            x = x.permute(0, 2, 1)
         return x
 
 
+    def detection(self,x):
+        if self.revin:
+            x = x.permute(0, 2, 1)
+            x = self.revin_layer(x, 'norm')
+            x = x.permute(0, 2, 1)
+
+        x = self.forward_feature(x, te=None)
+        x = x.permute(0, 1, 3, 2)
+        x = self.head_dection1(x)
+        B,M,_,_=x.shape
+        x = x.reshape(B,M,-1)
+        x = x[:,:,:self.seq_len]
+        x = x.permute(0,2,1)
+
+        if self.revin:
+            x = self.revin_layer(x, 'denorm')
+        return x
+
+    
+    def imputation(self, x, mask):
+        if self.revin:
+            x_enc = x.permute(0, 2, 1)  
+            means = torch.sum(x_enc, dim=1) / torch.sum(mask == 1, dim=1)
+            means = means.unsqueeze(1).detach()
+            x_enc = x_enc - means
+            x_enc = x_enc.masked_fill(mask == 0, 0)
+            stdev = torch.sqrt(torch.sum(x_enc * x_enc, dim=1) /
+                               torch.sum(mask == 1, dim=1) + 1e-5)
+            stdev = stdev.unsqueeze(1).detach()
+            x_enc /= stdev
+            x = x_enc.permute(0, 2, 1)  
+
+        x = self.forward_feature(x, te=None)  
+        x = self.head_imputation2(x)
+        x = x.permute(0, 2, 1)  
+
+        if self.revin:
+            dec_out = x
+            dec_out = dec_out * \
+                      (stdev[:, 0, :].unsqueeze(1).repeat(1, self.seq_len, 1))
+            dec_out = dec_out + \
+                      (means[:, 0, :].unsqueeze(1).repeat(1, self.seq_len, 1))
+            x=dec_out
+
+        return x
+
+    
+    def forward(self, x, te=None, mask=None):
+        if self.task_name == 'classification':
+            x = self.classification(x)
+
+        elif self.task_name in ['long_term_forecast', 'short_term_forecast']:
+            x = self.forecast(x, te)
+
+        elif self.task_name == 'anomaly_detection':
+            x = self.detection(x)
+        
+        if self.task_name == 'imputation':
+            x = self.imputation(x, mask)
+        
+        return x
+    
 
     def structural_reparam(self):
         for m in self.modules():
@@ -360,23 +463,63 @@ class Model(nn.Module):
         self.class_dropout = configs.class_dropout
         self.class_num = configs.num_class
 
-
         # decomp
         self.decomposition = configs.decomposition
-
-
-        self.model = ModernTCN(task_name=self.task_name,patch_size=self.patch_size, patch_stride=self.patch_stride, stem_ratio=self.stem_ratio,
-                           downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks,
-                           large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
-                           nvars=self.nvars, small_kernel_merged=self.small_kernel_merged,
-                           backbone_dropout=self.drop_backbone, head_dropout=self.drop_head,
-                           use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
-                           subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in,
-                           individual=self.individual, target_window=self.target_window,
-                            class_drop = self.class_dropout, class_num = self.class_num)
+        if self.decomposition and self.task_name in ['long_term_forecast', 'short_term_forecast']:
+            self.decomp_module = series_decomp(self.kernel_size)
+            self.model_res = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
+                                       downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
+                                       large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
+                                       nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, 
+                                       backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, 
+                                       use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
+                                       subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, 
+                                       individual=self.individual, target_window=self.target_window)
+            self.model_trend = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
+                                         downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
+                                         large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
+                                         nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, 
+                                         backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, 
+                                         use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
+                                         subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, 
+                                         individual=self.individual, target_window=self.target_window)
+        else:
+            self.model = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
+                                   downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
+                                   large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
+                                   nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, 
+                                   backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, 
+                                   use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
+                                   subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, 
+                                   individual=self.individual, target_window=self.target_window)
 
     def forward(self, x, x_mark_enc, x_dec, x_mark_dec, mask=None):
-        x = x.permute(0, 2, 1)
-        te = None
-        x = self.model(x, te)
+
+        if self.task_name in ['long_term_forecast', 'short_term_forecast']:
+            if self.decomposition:
+                res_init, trend_init = self.decomp_module(x)
+                res_init, trend_init = res_init.permute(0, 2, 1), trend_init.permute(0, 2, 1)
+                if x_mark_enc is not None:
+                    x_mark_enc = x_mark_enc.permute(0, 2, 1)
+                res = self.model_res(res_init, te=x_mark_enc)
+                trend = self.model_trend(trend_init, te=x_mark_enc)
+                x = res + trend
+                x = x.permute(0, 2, 1)
+            else:
+                x = x.permute(0, 2, 1)
+                if x_mark_enc is not None:
+                    x_mark_enc = x_mark_enc.permute(0, 2, 1)
+                x = self.model(x, te=x_mark_enc)
+                x = x.permute(0, 2, 1)
+        
+        elif self.task_name in ['classification', 'anomaly_detection']:
+            x = x.permute(0, 2, 1)
+            x_mark_enc = None
+            x = self.model(x, te=x_mark_enc)
+
+        elif self.task_name == 'imputation':
+            x = x.permute(0, 2, 1)
+            x_mark_enc = None
+            x = self.model(x, te=x_mark_enc, mask=mask)
+        
         return x
