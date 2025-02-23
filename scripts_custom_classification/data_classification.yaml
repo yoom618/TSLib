@@ -6,6 +6,8 @@ CLS_EthanolConcentration:
   seq_len: 1751
   enc_in: 3
   num_class: 4
+  p_min: 0.2490
+  p_max: 0.2529
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -18,6 +20,8 @@ CLS_FaceDetection:
   seq_len: 62
   enc_in: 144
   num_class: 2
+  p_min: 0.5
+  p_max: 0.5
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -30,6 +34,8 @@ CLS_Handwriting:
   seq_len: 152
   enc_in: 3
   num_class: 26
+  p_min: 0.0133
+  p_max: 0.0733
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -42,6 +48,8 @@ CLS_Heartbeat:
   seq_len: 405
   enc_in: 61
   num_class: 2
+  p_min: 0.2794
+  p_max: 0.7206
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -54,6 +62,8 @@ CLS_JapaneseVowels:  # Variable length
   seq_len: 29
   enc_in: 12
   num_class: 9
+  p_min: 0.1111
+  p_max: 0.1111
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -66,6 +76,8 @@ CLS_PEMS-SF:
   seq_len: 144
   enc_in: 963
   num_class: 7
+  p_min: 0.1199
+  p_max: 0.1648
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -78,6 +90,8 @@ CLS_SelfRegulationSCP1:
   seq_len: 896
   enc_in: 6
   num_class: 2
+  p_min: 0.4963
+  p_max: 0.5037
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -90,6 +104,8 @@ CLS_SelfRegulationSCP2:
   seq_len: 1152
   enc_in: 7
   num_class: 2
+  p_min: 0.5
+  p_max: 0.5
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -102,6 +118,8 @@ CLS_SpokenArabicDigits:  # Variable length
   seq_len: 93
   enc_in: 13
   num_class: 10
+  p_min: 0.0999
+  p_max: 0.1000
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -114,6 +132,8 @@ CLS_UWaveGestureLibrary:
   seq_len: 315
   enc_in: 3
   num_class: 8
+  p_min: 0.1250
+  p_max: 0.1250
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -129,6 +149,8 @@ CLS_ArticularyWordRecognition:
   seq_len: 144
   enc_in: 9
   num_class: 25
+  p_min: 0.04
+  p_max: 0.04
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -141,6 +163,8 @@ CLS_AtrialFibrillation:
   seq_len: 640
   enc_in: 2
   num_class: 3
+  p_min: 0.3333
+  p_max: 0.3333
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -153,6 +177,8 @@ CLS_BasicMotions:
   seq_len: 100
   enc_in: 6
   num_class: 4
+  p_min: 0.25
+  p_max: 0.25
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -165,6 +191,8 @@ CLS_CharacterTrajectories:  # Variable length
   seq_len: 182
   enc_in: 3
   num_class: 20
+  p_min: 0.0415
+  p_max: 0.0654
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -177,6 +205,8 @@ CLS_Cricket:
   seq_len: 1197
   enc_in: 6
   num_class: 12
+  p_min: 0.0833
+  p_max: 0.0833
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -189,6 +219,8 @@ CLS_DuckDuckGeese:
   seq_len: 270
   enc_in: 1345
   num_class: 5
+  p_min: 0.2
+  p_max: 0.2
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -201,6 +233,8 @@ CLS_EigenWorms:
   seq_len: 17984
   enc_in: 6
   num_class: 5
+  p_min: 0.0938
+  p_max: 0.4297
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -213,6 +247,8 @@ CLS_Epilepsy:
   seq_len: 206
   enc_in: 3
   num_class: 4
+  p_min: 0.2190
+  p_max: 0.2701
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -225,6 +261,8 @@ CLS_ERing:
   seq_len: 65
   enc_in: 4
   num_class: 6
+  p_min: 0.1667
+  p_max: 0.1667
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -237,6 +275,8 @@ CLS_FingerMovements:
   seq_len: 50
   enc_in: 28
   num_class: 2
+  p_min: 0.4968
+  p_max: 0.5032
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -249,30 +289,8 @@ CLS_HandMovementDirection:
   seq_len: 400
   enc_in: 10
   num_class: 4
-  label_len: 0
-  pred_len: 0
-  c_out: 0
-
-CLS_Libras:
-  task_name: classification
-  dataset: Libras
-  data: UEA
-  root_path: data_dir/Libras
-  seq_len: 45
-  enc_in: 2
-  num_class: 15
-  label_len: 0
-  pred_len: 0
-  c_out: 0
-
-CLS_LSST:
-  task_name: classification
-  dataset: LSST
-  data: UEA
-  root_path: data_dir/LSST
-  seq_len: 36
-  enc_in: 6
-  num_class: 14
+  p_min: 0.25
+  p_max: 0.25
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -285,6 +303,36 @@ CLS_InsectWingbeat:  # Variable length
   seq_len: 78
   enc_in: 200
   num_class: 10
+  p_min: 0.1
+  p_max: 0.1
+  label_len: 0
+  pred_len: 0
+  c_out: 0
+
+CLS_Libras:
+  task_name: classification
+  dataset: Libras
+  data: UEA
+  root_path: data_dir/Libras
+  seq_len: 45
+  enc_in: 2
+  num_class: 15
+  p_min: 0.0667
+  p_max: 0.0667
+  label_len: 0
+  pred_len: 0
+  c_out: 0
+
+CLS_LSST:
+  task_name: classification
+  dataset: LSST
+  data: UEA
+  root_path: data_dir/LSST
+  seq_len: 36
+  enc_in: 6
+  num_class: 14
+  p_min: 0.0028
+  p_max: 0.3160
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -297,6 +345,8 @@ CLS_MotorImagery:
   seq_len: 3000
   enc_in: 64
   num_class: 2
+  p_min: 0.5
+  p_max: 0.5
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -309,6 +359,8 @@ CLS_NATOPS:
   seq_len: 51
   enc_in: 24
   num_class: 6
+  p_min: 0.1667
+  p_max: 0.1667
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -321,6 +373,8 @@ CLS_PenDigits:
   seq_len: 8
   enc_in: 2
   num_class: 10
+  p_min: 0.0959
+  p_max: 0.1041
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -333,6 +387,8 @@ CLS_PhonemeSpectra:
   seq_len: 217
   enc_in: 11
   num_class: 39
+  p_min: 0.0256
+  p_max: 0.0256
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -345,6 +401,8 @@ CLS_RacketSports:
   seq_len: 30
   enc_in: 6
   num_class: 4
+  p_min: 0.2252
+  p_max: 0.2848
   label_len: 0
   pred_len: 0
   c_out: 0
@@ -357,6 +415,8 @@ CLS_StandWalkJump:
   seq_len: 2500
   enc_in: 4
   num_class: 3
+  p_min: 0.3333
+  p_max: 0.3333
   label_len: 0
   pred_len: 0
   c_out: 0
