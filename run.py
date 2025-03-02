@@ -1,6 +1,7 @@
 import argparse
 import os
 from utils.print_args import print_args
+from utils.str2bool import str2bool
 import random
 import numpy as np
 
@@ -41,11 +42,19 @@ if __name__ == '__main__':
     parser.add_argument('--anomaly_ratio', type=float, default=0.25, help='prior anomaly ratio (%%)')
 
     # model define
+    # Mamba
     parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
     parser.add_argument('--d_conv', type=int, default=4, help='conv kernel size for Mamba')
     parser.add_argument('--tv_dt', type=int, default=0, help='whether to use time variant dt for Mamba')
     parser.add_argument('--tv_B', type=int, default=0, help='whether to use time variant B for Mamba')
     parser.add_argument('--tv_C', type=int, default=0, help='whether to use time variant C for Mamba')
+    
+    # DLinear
+    parser.add_argument('--individual', type=str2bool, default=False, help='DLinear: a linear layer for each variate(channel) individually')
+
+    # LightTS
+    parser.add_argument('--chunk_size', type=int, default=24, help='subsequence size for LightTS')
+
     parser.add_argument('--top_k', type=int, default=5, help='for TimesBlock')
     parser.add_argument('--num_kernels', type=int, default=6, help='for Inception')
     parser.add_argument('--conv_kernel', nargs='+', type=int, default=[24], help='conv kernel size for MICN')

@@ -41,13 +41,14 @@ class Model(nn.Module):
     Paper link: https://arxiv.org/abs/2207.01186
     """
 
-    def __init__(self, configs, chunk_size=24):
+    def __init__(self, configs):
         """
         chunk_size: int, reshape T into [num_chunks, chunk_size]
         """
         super(Model, self).__init__()
         self.task_name = configs.task_name
         self.seq_len = configs.seq_len
+        chunk_size = configs.chunk_size
         if self.task_name == 'classification' or self.task_name == 'anomaly_detection' or self.task_name == 'imputation':
             self.pred_len = configs.seq_len
         else:
