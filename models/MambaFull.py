@@ -17,7 +17,7 @@ class Model(nn.Module):
         
         
         self.embedding = DataEmbedding(configs.enc_in, configs.d_model, 
-                                       configs.embed, configs.freq, configs.dropout)
+                                       configs.embed, configs.freq, configs.dropout, seq_len=configs.seq_len)
 
         self.mamba = MixerModel(
             d_model = configs.d_model,

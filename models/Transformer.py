@@ -20,7 +20,7 @@ class Model(nn.Module):
         self.pred_len = configs.pred_len
         # Embedding
         self.enc_embedding = DataEmbedding(configs.enc_in, configs.d_model, configs.embed, configs.freq,
-                                           configs.dropout)
+                                           configs.dropout, seq_len=configs.seq_len)
         # Encoder
         self.encoder = Encoder(
             [
@@ -39,7 +39,7 @@ class Model(nn.Module):
         # Decoder
         if self.task_name == 'long_term_forecast' or self.task_name == 'short_term_forecast':
             self.dec_embedding = DataEmbedding(configs.dec_in, configs.d_model, configs.embed, configs.freq,
-                                               configs.dropout)
+                                               configs.dropout, seq_len=configs.seq_len)
             self.decoder = Decoder(
                 [
                     DecoderLayer(

@@ -107,11 +107,11 @@ class TimeFeatureEmbedding(nn.Module):
 
 
 class DataEmbedding(nn.Module):
-    def __init__(self, c_in, d_model, embed_type='fixed', freq='h', dropout=0.1):
+    def __init__(self, c_in, d_model, embed_type='fixed', freq='h', dropout=0.1, seq_len=5000):
         super(DataEmbedding, self).__init__()
 
         self.value_embedding = TokenEmbedding(c_in=c_in, d_model=d_model)
-        self.position_embedding = PositionalEmbedding(d_model=d_model, max_len=max(5000, c_in))
+        self.position_embedding = PositionalEmbedding(d_model=d_model, max_len=max(5000, seq_len))
         self.temporal_embedding = TemporalEmbedding(d_model=d_model, embed_type=embed_type,
                                                     freq=freq) if embed_type != 'timeF' else TimeFeatureEmbedding(
             d_model=d_model, embed_type=embed_type, freq=freq)
@@ -148,7 +148,6 @@ class DataEmbedding_wo_pos(nn.Module):
         super(DataEmbedding_wo_pos, self).__init__()
 
         self.value_embedding = TokenEmbedding(c_in=c_in, d_model=d_model)
-        self.position_embedding = PositionalEmbedding(d_model=d_model)
         self.temporal_embedding = TemporalEmbedding(d_model=d_model, embed_type=embed_type,
                                                     freq=freq) if embed_type != 'timeF' else TimeFeatureEmbedding(
             d_model=d_model, embed_type=embed_type, freq=freq)
@@ -163,7 +162,7 @@ class DataEmbedding_wo_pos(nn.Module):
 
 
 class PatchEmbedding(nn.Module):
-    def __init__(self, d_model, patch_len, stride, padding, dropout):
+    def __init__(self, d_model, patch_len, stride, padding, dropout, seq_len=5000):
         super(PatchEmbedding, self).__init__()
         # Patching
         self.patch_len = patch_len
@@ -174,7 +173,7 @@ class PatchEmbedding(nn.Module):
         self.value_embedding = nn.Linear(patch_len, d_model, bias=False)
 
         # Positional embedding
-        self.position_embedding = PositionalEmbedding(d_model)
+        self.position_embedding = PositionalEmbedding(d_model, max_len=max(5000, seq_len))
 
         # Residual dropout
         self.dropout = nn.Dropout(dropout)

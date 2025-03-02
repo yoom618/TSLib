@@ -134,7 +134,7 @@ class Model(nn.Module):
 
         # embedding
         self.dec_embedding = DataEmbedding(configs.enc_in, configs.d_model, configs.embed, configs.freq,
-                                           configs.dropout)
+                                           configs.dropout, seq_len=configs.seq_len)
 
         self.conv_trans = SeasonalPrediction(embedding_size=configs.d_model, n_heads=configs.n_heads,
                                              dropout=configs.dropout,

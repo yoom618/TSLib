@@ -20,9 +20,9 @@ class Model(nn.Module):
 
         # Embedding
         self.enc_embedding = DataEmbedding(configs.enc_in, configs.d_model, configs.embed, configs.freq,
-                                           configs.dropout)
+                                           configs.dropout, seq_len=configs.seq_len)
         self.dec_embedding = DataEmbedding(configs.dec_in, configs.d_model, configs.embed, configs.freq,
-                                           configs.dropout)
+                                           configs.dropout, seq_len=configs.seq_len)
 
         # Encoder
         self.encoder = Encoder(

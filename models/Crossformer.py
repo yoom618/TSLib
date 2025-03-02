@@ -32,7 +32,7 @@ class Model(nn.Module):
         self.head_nf = configs.d_model * self.out_seg_num
 
         # Embedding
-        self.enc_value_embedding = PatchEmbedding(configs.d_model, self.seg_len, self.seg_len, self.pad_in_len - configs.seq_len, 0)
+        self.enc_value_embedding = PatchEmbedding(configs.d_model, self.seg_len, self.seg_len, self.pad_in_len - configs.seq_len, 0, seq_len=configs.seq_len)
         self.enc_pos_embedding = nn.Parameter(
             torch.randn(1, configs.enc_in, self.in_seg_num, configs.d_model))
         self.pre_norm = nn.LayerNorm(configs.d_model)

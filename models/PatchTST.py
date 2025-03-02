@@ -46,7 +46,7 @@ class Model(nn.Module):
 
         # patching and embedding
         self.patch_embedding = PatchEmbedding(
-            configs.d_model, patch_len, stride, padding, configs.dropout)
+            configs.d_model, patch_len, stride, padding, configs.dropout, seq_len=configs.seq_len)
 
         # Encoder
         self.encoder = Encoder(
