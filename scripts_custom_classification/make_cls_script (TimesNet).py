@@ -15,9 +15,9 @@ def make_combination(config_dict):
 if __name__ == "__main__":
     script_dir = "./scripts_custom_classification"
     data_metainfo = "data_classification.yaml"
-    script_path = f"{script_dir}/scripts_baseline/{{}}.sh"
+    script_path = f"{script_dir}/scripts_baseline/{{}}_{{}}.sh"
     model_id = "{}"
-    model = "PatchTST"
+    model = "TimesNet"
 
     dir_setting = {
         "data_dir" : "/data/yoom618/TSLib/dataset",
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     gpu_setting = {
         "use_gpu" : True,
         "gpu_type" : "cuda",
-        "gpu" : 1,
+        "gpu" : 0,
     }
     # gpu_setting = {
     #     "use_multi_gpu" : True,
@@ -38,10 +38,10 @@ if __name__ == "__main__":
 
 
     model_configs = {
-        "e_layers" : [2],
-        "d_model" : [16],
-        "d_ff" : [32],
-        "top_k" : [3],
+        "e_layers" : [1,2,3,4],   # default: 2
+        "d_model" : [4,8,16,32],   # default: 16
+        "d_ff" : [8,16,32,64],  # default: 32
+        "top_k" : [1,2,3,4],  # default: 3
     }
 
     training_configs = {
@@ -51,37 +51,48 @@ if __name__ == "__main__":
         "itr" : 1,
         "dropout" : 0.1,
         "learning_rate" : 0.001,
-        "train_epochs" : 60,  # increased from 30 to 60 for alignment with MambaSL
-        "patience" : 20,  # increased from 10 to 20 for alignment with MambaSL
+        "train_epochs" : 30,
+        "patience" : 10
     }
     
-    os.makedirs(f"{script_dir}/scripts_all", exist_ok=True)
+    os.makedirs(f"{script_dir}/scripts_baseline", exist_ok=True)
     os.makedirs(dir_setting["checkpoints"], exist_ok=True)
     
-    scripts = ''
-    
     for data_key, data_cfg in data_configs.items():
-        model_configs_combination = make_combination(model_configs)
+        scripts = ""
 
+        replace_dict = {}
+        if data_cfg["dataset"] == "EigenWorms":
+            replace_dict["batch_size"] = 8  # GPU Memory Usage: 6712MiB
+            replace_dict["gpu"] = 2
+        if data_cfg["dataset"] == "SelfRegulationSCP2":
+            replace_dict["gpu"] = 2  # GPU Memory Usage: 1726MiB
+        if data_cfg["dataset"] == "SpokenArabicDigits":
+            replace_dict["gpu"] = 2  # GPU Memory Usage: 418MiB
+        
+        del data_cfg["num_class"], data_cfg["p_min"], data_cfg["p_max"], data_cfg["dataset"]
+        
         data_cfg["root_path"] = data_cfg["root_path"].replace("data_dir", dir_setting["data_dir"])
         data_cfg["checkpoints"] = dir_setting["checkpoints"]
-
+        
+        model_configs_combination = reversed(make_combination(model_configs))
         
         for model_cfg in model_configs_combination:
-            script_cfg = gpu_setting
-            script_cfg.update(training_configs)
+            script_cfg = gpu_setting.copy()
             script_cfg.update(data_cfg)
             script_cfg["model"] = model
             script_cfg["model_id"] = model_id.format(data_key)
             script_cfg.update(model_cfg)
+            script_cfg.update(training_configs)
+            script_cfg.update(replace_dict)
 
-            script = f"python run.py \n"
+            script = f"python run.py \\\n"
             for key, value in script_cfg.items():
-                script += f"  --{key} {value} \\ \n"
+                script += f"  --{key} {value} \\\n"
             script = script[:-3]
             script += "\n\n"
             scripts += script
             print(script)
 
-    with open(script_path.format(model), "w") as f:
-        f.write(scripts)
+        with open(script_path.format(model, data_key), "w") as f:
+            f.write(scripts)
