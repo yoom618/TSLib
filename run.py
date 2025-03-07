@@ -55,6 +55,16 @@ if __name__ == '__main__':
     # LightTS
     parser.add_argument('--chunk_size', type=int, default=24, help='subsequence size for LightTS')
 
+    # MTSMixer
+    parser.add_argument('--fac_T', type=str2bool, default=False, help='whether to apply factorized temporal interaction')
+    parser.add_argument('--fac_C', type=str2bool, default=False, help='whether to apply factorized channel interaction')
+    parser.add_argument('--use_revin', type=str2bool, default=False, help='whether to apply RevIN')
+    # +) use_norm, down_sampling_window, individual
+    
+    # PatchTST
+    parser.add_argument('--patch_size', type=int, default=16, help='the patch size')
+    parser.add_argument('--patch_stride', type=int, default=8, help='the patch stride')
+
     parser.add_argument('--top_k', type=int, default=5, help='for TimesBlock')
     parser.add_argument('--num_kernels', type=int, default=6, help='for Inception')
     parser.add_argument('--conv_kernel', nargs='+', type=int, default=[24], help='conv kernel size for MICN')
