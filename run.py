@@ -65,6 +65,20 @@ if __name__ == '__main__':
     parser.add_argument('--patch_size', type=int, default=16, help='the patch size')
     parser.add_argument('--patch_stride', type=int, default=8, help='the patch stride')
 
+    # ModernTCN
+    parser.add_argument('--stem_ratio', type=int, default=6, help='stem ratio')
+    parser.add_argument('--downsample_ratio', type=int, default=2, help='downsample_ratio')
+    parser.add_argument('--ffn_ratio', type=int, default=2, help='ffn_ratio')
+    parser.add_argument('--num_blocks', nargs='+',type=int, default=[1,1,1,1], help='num_blocks in each stage')
+    parser.add_argument('--large_size', nargs='+',type=int, default=[31,29,27,13], help='big kernel size')
+    parser.add_argument('--small_size', nargs='+',type=int, default=[5,5,5,5], help='small kernel size for structral reparam')
+    parser.add_argument('--dims', nargs='+',type=int, default=[256,256,256,256], help='dmodels in each stage')
+    parser.add_argument('--dw_dims', nargs='+',type=int, default=[256,256,256,256], help='dw dims in dw conv in each stage')
+    parser.add_argument('--small_kernel_merged', type=str2bool, default=False, help='small_kernel has already merged or not')
+    parser.add_argument('--call_structural_reparam', type=bool, default=False, help='structural_reparam after training')
+    parser.add_argument('--use_multi_scale', type=str2bool, default=True, help='use_multi_scale fusion')
+    # +) patch_size, patch_stride
+    
     parser.add_argument('--top_k', type=int, default=5, help='for TimesBlock')
     parser.add_argument('--num_kernels', type=int, default=6, help='for Inception')
     parser.add_argument('--conv_kernel', nargs='+', type=int, default=[24], help='conv kernel size for MICN')

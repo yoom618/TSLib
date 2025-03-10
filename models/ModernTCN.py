@@ -20,6 +20,7 @@ class LayerNorm(nn.Module):
         x = x.permute(0, 1, 3, 2)
         return x
 
+
 def get_conv1d(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias):
     return nn.Conv1d(in_channels=in_channels, out_channels=out_channels, kernel_size=kernel_size, stride=stride,
                      padding=padding, dilation=dilation, groups=groups, bias=bias)
@@ -27,6 +28,7 @@ def get_conv1d(in_channels, out_channels, kernel_size, stride, padding, dilation
 
 def get_bn(channels):
     return nn.BatchNorm1d(channels)
+
 
 def conv_bn(in_channels, out_channels, kernel_size, stride, padding, groups, dilation=1,bias=False):
     if padding is None:
@@ -37,8 +39,8 @@ def conv_bn(in_channels, out_channels, kernel_size, stride, padding, groups, dil
     result.add_module('bn', get_bn(out_channels))
     return result
 
-def fuse_bn(conv, bn):
 
+def fuse_bn(conv, bn):
     kernel = conv.weight
     running_mean = bn.running_mean
     running_var = bn.running_var
@@ -48,6 +50,7 @@ def fuse_bn(conv, bn):
     std = (running_var + eps).sqrt()
     t = (gamma / std).reshape(-1, 1, 1)
     return kernel * t, beta - running_mean * gamma / std
+
 
 class ReparamLargeKernelConv(nn.Module):
 
@@ -72,20 +75,16 @@ class ReparamLargeKernelConv(nn.Module):
                                             kernel_size=small_kernel,
                                             stride=stride, padding=small_kernel // 2, groups=groups, dilation=1,bias=False)
 
-
     def forward(self, inputs):
-
         if hasattr(self, 'lkb_reparam'):
             out = self.lkb_reparam(inputs)
         else:
             out = self.lkb_origin(inputs)
             if hasattr(self, 'small_conv'):
                 out += self.small_conv(inputs)
-        
         return out
 
     def PaddingTwoEdge1d(self,x,pad_length_left,pad_length_right,pad_values=0):
-
         D_out,D_in,ks=x.shape
         if pad_values ==0:
             pad_left = torch.zeros(D_out,D_in,pad_length_left)
@@ -119,8 +118,9 @@ class ReparamLargeKernelConv(nn.Module):
         if hasattr(self, 'small_conv'):
             self.__delattr__('small_conv')
 
+
 class Block(nn.Module):
-    def __init__(self, large_size, small_size, dmodel, dff, nvars, small_kernel_merged=False, drop=0.1):
+    def __init__(self, large_size, small_size, dmodel, dff, nvars, small_kernel_merged=False, drop=0.1, is_shortterm=False):
 
         super(Block, self).__init__()
         self.dw = ReparamLargeKernelConv(in_channels=nvars * dmodel, out_channels=nvars * dmodel,
@@ -137,18 +137,21 @@ class Block(nn.Module):
         self.ffn1drop1 = nn.Dropout(drop)
         self.ffn1drop2 = nn.Dropout(drop)
 
-        #convffn2
-        self.ffn2pw1 = nn.Conv1d(in_channels=nvars * dmodel, out_channels=nvars * dff, kernel_size=1, stride=1,
-                                 padding=0, dilation=1, groups=dmodel)
-        self.ffn2act = nn.GELU()
-        self.ffn2pw2 = nn.Conv1d(in_channels=nvars * dff, out_channels=nvars * dmodel, kernel_size=1, stride=1,
-                                 padding=0, dilation=1, groups=dmodel)
-        self.ffn2drop1 = nn.Dropout(drop)
-        self.ffn2drop2 = nn.Dropout(drop)
+        #convffn2 (not in short-term forecast)
+        self.is_shortterm = is_shortterm
+        if not is_shortterm:
+            self.ffn2pw1 = nn.Conv1d(in_channels=nvars * dmodel, out_channels=nvars * dff, kernel_size=1, stride=1,
+                                     padding=0, dilation=1, groups=dmodel)
+            self.ffn2act = nn.GELU()
+            self.ffn2pw2 = nn.Conv1d(in_channels=nvars * dff, out_channels=nvars * dmodel, kernel_size=1, stride=1,
+                                     padding=0, dilation=1, groups=dmodel)
+            self.ffn2drop1 = nn.Dropout(drop)
+            self.ffn2drop2 = nn.Dropout(drop)
 
         self.ffn_ratio = dff//dmodel
-    def forward(self,x):
+    
 
+    def forward(self,x):
         input = x
         B, M, D, N = x.shape
         x = x.reshape(B,M*D,N)
@@ -164,13 +167,14 @@ class Block(nn.Module):
         x = self.ffn1drop2(self.ffn1pw2(x))
         x = x.reshape(B, M, D, N)
 
-        x = x.permute(0, 2, 1, 3)
-        x = x.reshape(B, D * M, N)
-        x = self.ffn2drop1(self.ffn2pw1(x))
-        x = self.ffn2act(x)
-        x = self.ffn2drop2(self.ffn2pw2(x))
-        x = x.reshape(B, D, M, N)
-        x = x.permute(0, 2, 1, 3)
+        if not self.is_shortterm:
+            x = x.permute(0, 2, 1, 3)
+            x = x.reshape(B, D * M, N)
+            x = self.ffn2drop1(self.ffn2pw1(x))
+            x = self.ffn2act(x)
+            x = self.ffn2drop2(self.ffn2pw2(x))
+            x = x.reshape(B, D, M, N)
+            x = x.permute(0, 2, 1, 3)
 
         x = input + x
         return x
@@ -178,19 +182,18 @@ class Block(nn.Module):
 
 class Stage(nn.Module):
     def __init__(self, ffn_ratio, num_blocks, large_size, small_size, dmodel, dw_model, nvars,
-                 small_kernel_merged=False, drop=0.1):
-
+                 small_kernel_merged=False, drop=0.1, is_shortterm=False):
         super(Stage, self).__init__()
         d_ffn = dmodel * ffn_ratio
         blks = []
         for i in range(num_blocks):
-            blk = Block(large_size=large_size, small_size=small_size, dmodel=dmodel, dff=d_ffn, nvars=nvars, small_kernel_merged=small_kernel_merged, drop=drop)
+            blk = Block(large_size=large_size, small_size=small_size, dmodel=dmodel, dff=d_ffn, nvars=nvars, small_kernel_merged=small_kernel_merged, drop=drop, is_shortterm=is_shortterm)
             blks.append(blk)
 
         self.blocks = nn.ModuleList(blks)
 
-    def forward(self, x):
 
+    def forward(self, x):
         for blk in self.blocks:
             x = blk(x)
 
@@ -201,24 +204,28 @@ class ModernTCN(nn.Module):
     def __init__(self,task_name,patch_size,patch_stride, stem_ratio, downsample_ratio, ffn_ratio, num_blocks, large_size, small_size, dims, dw_dims,
                  nvars, small_kernel_merged=False, backbone_dropout=0.1, head_dropout=0.1, use_multi_scale=True, revin=True, affine=True,
                  subtract_last=False, freq=None, seq_len=512, c_in=7, individual=False, target_window=96, class_drop=0.,class_num = 10):
-
         super(ModernTCN, self).__init__()
 
         self.task_name = task_name
         self.class_drop = class_drop
         self.class_num = class_num
 
+        self.seq_len = seq_len
+
         # RevIN
         self.revin = revin
         if self.revin:
             self.revin_layer = RevIN(c_in, affine=affine, subtract_last=subtract_last)
 
-        # stem layer & down sampling layers(if needed)
+        # stem layer & down sampling layers
         self.downsample_layers = nn.ModuleList()
-        stem = nn.Sequential(
-            nn.Conv1d(1, dims[0], kernel_size=patch_size, stride=patch_stride),
-            nn.BatchNorm1d(dims[0])
-        )
+        if self.task_name in ['imputation', 'anomaly_detection']:
+            stem = nn.Linear(patch_size, dims[0])
+        else:
+            stem = nn.Sequential(
+                nn.Conv1d(1, dims[0], kernel_size=patch_size, stride=patch_stride),
+                nn.BatchNorm1d(dims[0])
+            )
         self.downsample_layers.append(stem)
 
         self.num_stage = len(num_blocks)
@@ -271,7 +278,8 @@ class ModernTCN(nn.Module):
         self.stages = nn.ModuleList()
         for stage_idx in range(self.num_stage):
             layer = Stage(ffn_ratio, num_blocks[stage_idx], large_size[stage_idx], small_size[stage_idx], dmodel=dims[stage_idx],
-                          dw_model=dw_dims[stage_idx], nvars=nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout)
+                          dw_model=dw_dims[stage_idx], nvars=nvars, small_kernel_merged=small_kernel_merged, drop=backbone_dropout,
+                          is_shortterm=(task_name == 'short_term_forecast'))
             self.stages.append(layer)
 
         # head
@@ -318,9 +326,14 @@ class ModernTCN(nn.Module):
             x = x.reshape(B * M, D, N)
             if i==0:
                 if self.patch_size != self.patch_stride:
+                    # stem layer padding
                     pad_len = self.patch_size - self.patch_stride
                     pad = x[:,:,-1:].repeat(1,1,pad_len)
                     x = torch.cat([x,pad],dim=-1)
+                if self.task_name in ['imputation', 'anomaly_detection']:
+                    x = x.reshape(B,M,1,-1).squeeze(-2)
+                    x = x.unfold(dimension=-1, size=self.patch_size, step=self.patch_stride)
+                
             else:
                 if N % self.downsample_ratio != 0:
                     pad_len = self.downsample_ratio - (N % self.downsample_ratio)
@@ -465,7 +478,17 @@ class Model(nn.Module):
 
         # decomp
         self.decomposition = configs.decomposition
-        if self.decomposition and self.task_name in ['long_term_forecast', 'short_term_forecast']:
+        if self.task_name in ['classification']:
+            self.model = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
+                                   downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
+                                   large_size=self.large_size, small_size=self.small_size, dims=self.dims, dw_dims=self.dw_dims,
+                                   nvars=self.nvars, small_kernel_merged=self.small_kernel_merged, 
+                                   backbone_dropout=self.drop_backbone, head_dropout=self.drop_head, 
+                                   use_multi_scale=self.use_multi_scale, revin=self.revin, affine=self.affine,
+                                   subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, 
+                                   individual=self.individual, target_window=self.target_window,
+                                   class_drop = self.class_dropout, class_num = self.class_num)
+        elif self.decomposition and self.task_name in ['long_term_forecast', 'short_term_forecast']:
             self.decomp_module = series_decomp(self.kernel_size)
             self.model_res = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
                                        downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
@@ -493,11 +516,11 @@ class Model(nn.Module):
                                    subtract_last=self.subtract_last, freq=self.freq, seq_len=self.seq_len, c_in=self.c_in, 
                                    individual=self.individual, target_window=self.target_window)
 
-    def forward(self, x, x_mark_enc, x_dec, x_mark_dec, mask=None):
+    def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None):
 
         if self.task_name in ['long_term_forecast', 'short_term_forecast']:
             if self.decomposition:
-                res_init, trend_init = self.decomp_module(x)
+                res_init, trend_init = self.decomp_module(x_enc)
                 res_init, trend_init = res_init.permute(0, 2, 1), trend_init.permute(0, 2, 1)
                 if x_mark_enc is not None:
                     x_mark_enc = x_mark_enc.permute(0, 2, 1)
@@ -506,19 +529,19 @@ class Model(nn.Module):
                 x = res + trend
                 x = x.permute(0, 2, 1)
             else:
-                x = x.permute(0, 2, 1)
+                x = x_enc.permute(0, 2, 1)
                 if x_mark_enc is not None:
                     x_mark_enc = x_mark_enc.permute(0, 2, 1)
                 x = self.model(x, te=x_mark_enc)
                 x = x.permute(0, 2, 1)
         
         elif self.task_name in ['classification', 'anomaly_detection']:
-            x = x.permute(0, 2, 1)
+            x = x_enc.permute(0, 2, 1)
             x_mark_enc = None
             x = self.model(x, te=x_mark_enc)
 
         elif self.task_name == 'imputation':
-            x = x.permute(0, 2, 1)
+            x = x_enc.permute(0, 2, 1)
             x_mark_enc = None
             x = self.model(x, te=x_mark_enc, mask=mask)
         
