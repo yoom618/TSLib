@@ -18,7 +18,7 @@ if __name__ == "__main__":
     data_metainfo = "data_classification.yaml"
     script_path = f"{script_dir}/scripts_baseline/{{}}_{{}}.sh"
     model_id = "{}"
-    model = "FEDformer"
+    model = "MTSMixer"
 
     dir_setting = {
         "data_dir" : "/data/yoom618/TSLib/dataset",
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     gpu_setting = {
         "use_gpu" : True,
         "gpu_type" : "cuda",
-        "gpu" : 0,
+        "gpu" : 2,
     }
     # gpu_setting = {
     #     "use_multi_gpu" : True,
@@ -39,15 +39,21 @@ if __name__ == "__main__":
 
 
     model_configs = {
-        # "moving_avg" : [25],  # default: 25
-        "moving_avg_ratio" : [0.5, 1, 2, 3, 5, 10, 20, 30, 40, 50],  
-        # instead of moving_avg, moving_avg_ratio will be used for variable kernel size since sequence length is different
-        # e.g. 1 means 1% of sequence length
-        
-        "e_layers" : [2],  # default: 3(X) -> 2
-        "n_heads" : [8],   # default: 8
-        "d_model" : [32,64,128,256,512],   # default: 128(X) -> 512
-        "d_ff" : [128,256,512,1024,2048],  # default: 256(X) -> 2048
+        "d_model" : [128, 256, 512, 1024],  # default: 256, 512, 1024
+        "use_norm" : [1],  # default: 1(True)
+        "e_layers" : [2], # default: 2
+
+        # d_ff is for FactorizedChannelMixing & d_ff should be smaller than enc_in
+        # where enc_in is between 2 ~ 1345 in UEA datasets
+        # 0 means fac_C is False, else fac_C is True
+        "d_ff" : [0, 2, 4, 8, 16, 32, 64, 128],  # default: 16, 64. available only when fac_C is True
+
+        # down_sampling_window is for FactorizedTemporalMixing & should be smaller than seq_len
+        # since it was set from [1, 2, 3, 4, 6, 8, 12] in the original paper's forecast task (seq_len = 36 or 96),
+        # we set it to the similar range considering the seq_len of UEA datasets (seq_len = 8 ~ 17984).
+        # ** it doesn't have to be the divisors of seq_len since we modified the model a bit **
+        # 0 means fac_T is False, else fac_T is True
+        "down_sampling_window_ratio": [0, 1, 2, 3, 5, 7.5, 10, 12.5,],  # default: 2, 3, 6, 8. available only when fac_T is True
     }
 
     training_configs = {
@@ -57,7 +63,7 @@ if __name__ == "__main__":
         "itr" : 1,
         "dropout" : 0.1,
         "learning_rate" : 0.001,
-        "train_epochs" : 100,
+        "train_epochs" : 100,  # defaults are less than 10 in forecast task, which is similar to other transformer-based models. thus set to 100 for fair comparison
         "patience" : 10,
     }
     
@@ -69,9 +75,10 @@ if __name__ == "__main__":
         scripts = ""
 
         replace_dict = {}
-        if data_cfg["dataset"] == "EigenWorms":
-            replace_dict["batch_size"] = 4  # GPU Memory Use : 8568MiB
-            replace_dict["gpu"] = 3
+        # if data_cfg["dataset"] == "EigenWorms":  # GPU Memory Usage: 4852MiB
+        #     replace_dict["batch_size"] = 16
+        if data_cfg["dataset"] == "DuckDuckGeese":
+            replace_dict["batch_size"] = 8  # GPU Memory Usage: 6420MiB
         
         del data_cfg["num_class"], data_cfg["p_min"], data_cfg["p_max"], data_cfg["dataset"]
         
@@ -79,11 +86,22 @@ if __name__ == "__main__":
         data_cfg["checkpoints"] = dir_setting["checkpoints"]
         
         model_cfg_tmp = model_configs.copy()
-        model_cfg_tmp["moving_avg"] = sorted(set([math.ceil(data_cfg["seq_len"] * (ratio/100)) for ratio in model_configs["moving_avg_ratio"]]))
-        model_cfg_tmp.pop("moving_avg_ratio")
+        model_cfg_tmp["d_ff"] = list(filter(lambda x: x < data_cfg["enc_in"], model_configs["d_ff"]))
+        model_cfg_tmp["down_sampling_window"] = sorted(set([math.ceil(data_cfg["seq_len"] * (ratio/100)) for ratio in model_configs["down_sampling_window_ratio"]]))
+        model_cfg_tmp.pop("down_sampling_window_ratio")
         model_configs_combination = reversed(make_combination(model_cfg_tmp))
         
         for model_cfg in model_configs_combination:
+            if model_cfg["d_ff"] == 0:
+                model_cfg["fac_C"] = False
+            else:    
+                model_cfg["fac_C"] = True
+            
+            if model_cfg["down_sampling_window"] == 0:
+                model_cfg["fac_T"] = False
+            else:
+                model_cfg["fac_T"] = True
+
             script_cfg = gpu_setting.copy()
             script_cfg.update(data_cfg)
             script_cfg["model"] = model
