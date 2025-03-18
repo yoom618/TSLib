@@ -65,6 +65,10 @@ if __name__ == '__main__':
     parser.add_argument('--patch_size', type=int, default=16, help='the patch size')
     parser.add_argument('--patch_stride', type=int, default=8, help='the patch stride')
 
+    # GPT4TS (One-fits-all)
+    parser.add_argument('--huggingface_cache_dir', type=str, default='./huggingface', help='huggingface cache directory for GPT2')
+    # +) d_model, e_layer, d_ff, patch_size, patch_stride
+
     # ModernTCN
     parser.add_argument('--stem_ratio', type=int, default=6, help='stem ratio')
     parser.add_argument('--downsample_ratio', type=int, default=2, help='downsample_ratio')
