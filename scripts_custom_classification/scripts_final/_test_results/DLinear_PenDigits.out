@@ -28,7 +28,7 @@ Args in experiment:
   Lradj:              type1               Use Amp:            0                   
 
 [1mGPU[0m
-  Use GPU:            1                   GPU:                2                   
+  Use GPU:            1                   GPU:                0                   
   Use Multi GPU:      0                   Devices:            0,1,2,3             
 
 [1mDe-stationary Projector Params[0m
@@ -73,7 +73,7 @@ Args in experiment:
   Lradj:              type1               Use Amp:            0                   
 
 [1mGPU[0m
-  Use GPU:            1                   GPU:                2                   
+  Use GPU:            1                   GPU:                0                   
   Use Multi GPU:      0                   Devices:            0,1,2,3             
 
 [1mDe-stationary Projector Params[0m

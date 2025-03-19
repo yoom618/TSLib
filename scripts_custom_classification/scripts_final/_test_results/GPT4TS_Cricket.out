@@ -1,0 +1,495 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el3_dm768_df768_ps67_str67_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 23229708
+model size : 103.28MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           3                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el3_dm768_df768_ps63_str16_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 23755020
+model size : 105.28MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           4                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el4_dm768_df768_ps63_str16_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 30842892
+model size : 132.33MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           5                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el5_dm768_df768_ps57_str57_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 37310220
+model size : 157.00MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           5                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el5_dm768_df768_ps67_str67_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 37405452
+model size : 157.36MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           5                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el5_dm768_df768_ps60_str30_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 37534476
+model size : 157.86MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           5                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el5_dm768_df768_ps63_str16_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 37930764
+model size : 159.37MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           5                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el5_dm768_df768_ps200_str100_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 39168780
+model size : 164.09MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           6                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el6_dm768_df768_ps67_str67_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 44493324
+model size : 184.41MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           6                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el6_dm768_df768_ps71_str36_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 44709900
+model size : 185.23MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Cricket         Model:              GPT4TS              
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Cricket
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/GPT4TS
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            768                 
+  n heads:            8                   e layers:           6                   
+  d layers:           1                   d FF:               768                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+108
+72
+>>>>>>>testing : classification_CLS_Cricket_GPT4TS_UEA_ftM_sl1197_ll0_pl0_el6_dm768_df768_ps63_str16_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+72
+loading model
+test shape: torch.Size([72, 12]) torch.Size([72, 1])
+accuracy:0.9722222222222222
+model parameter : 45018636
+model size : 186.41MB

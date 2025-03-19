@@ -1,8 +1,11 @@
 # the best performing model for all UEA30 dataset
 # if there is more than one model, we choose the one with the lowest model size or computation cost
-data_dir="/data/yoom618/TSLib/dataset"
-checkpoint_dir="/data/yoom618/TSLib/checkpoints_best/DLinear"
+model_name="DLinear"
+tslib_dir="/data/yoom618/TSLib"
 gpu_id=0
+
+data_dir="${tslib_dir}/dataset"
+checkpoint_dir="${tslib_dir}/checkpoints_best/${model_name}"
 
 # ArticularyWordRecognition
 python run.py \
@@ -12,13 +15,8 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path "${data_dir}/ArticularyWordRecognition" \
-  --seq_len 144 \
-  --enc_in 9 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints "${checkpoint_dir}" \
-  --model DLinear \
+  --checkpoints ${checkpoint_dir} \
+  --model ${model_name} \
   --model_id CLS_ArticularyWordRecognition \
   --moving_avg 8 \
   --is_training 0 \
@@ -43,8 +41,8 @@ python run.py \
   --label_len 0 \
   --pred_len 0 \
   --c_out 0 \
-  --checkpoints {checkpoint_dir} \
-  --model DLinear \
+  --checkpoints ${checkpoint_dir} \
+  --model ${model_name} \
   --model_id CLS_AtrialFibrillation \
   --moving_avg 96 \
   --is_training 0 \
@@ -70,7 +68,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_BasicMotions \
   --moving_avg 50 \
   --is_training 0 \
@@ -96,7 +94,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_CharacterTrajectories \
   --moving_avg 91 \
   --is_training 0 \
@@ -122,7 +120,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_Cricket \
   --moving_avg 240 \
   --is_training 0 \
@@ -148,7 +146,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_DuckDuckGeese \
   --moving_avg 122 \
   --is_training 0 \
@@ -176,7 +174,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_Epilepsy \
   --moving_avg 42 \
   --is_training 0 \
@@ -202,7 +200,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_ERing \
   --moving_avg 33 \
   --is_training 0 \
@@ -228,7 +226,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_EthanolConcentration \
   --moving_avg 263 \
   --is_training 0 \
@@ -254,7 +252,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_FaceDetection \
   --moving_avg 7 \
   --is_training 0 \
@@ -280,7 +278,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_FingerMovements \
   --moving_avg 23 \
   --is_training 0 \
@@ -306,7 +304,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_HandMovementDirection \
   --moving_avg 160 \
   --is_training 0 \
@@ -332,7 +330,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_Handwriting \
   --moving_avg 38 \
   --is_training 0 \
@@ -358,7 +356,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_Heartbeat \
   --moving_avg 3 \
   --is_training 0 \
@@ -384,7 +382,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_InsectWingbeat \
   --moving_avg 28 \
   --is_training 0 \
@@ -410,7 +408,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_JapaneseVowels \
   --moving_avg 15 \
   --is_training 0 \
@@ -436,7 +434,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_Libras \
   --moving_avg 21 \
   --is_training 0 \
@@ -462,7 +460,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_LSST \
   --moving_avg 11 \
   --is_training 0 \
@@ -488,7 +486,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_MotorImagery \
   --moving_avg 1350 \
   --is_training 0 \
@@ -514,7 +512,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_NATOPS \
   --moving_avg 13 \
   --is_training 0 \
@@ -540,7 +538,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_PEMS-SF \
   --moving_avg 8 \
   --is_training 0 \
@@ -560,7 +558,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path "${data_dir}/PenDigits" \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_PenDigits \
   --seq_len 8 \
   --enc_in 2 \
@@ -592,7 +590,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_PhonemeSpectra \
   --moving_avg 55 \
   --is_training 0 \
@@ -618,7 +616,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_RacketSports \
   --moving_avg 1 \
   --is_training 0 \
@@ -644,7 +642,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_SelfRegulationSCP1 \
   --moving_avg 448 \
   --is_training 0 \
@@ -670,7 +668,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_SelfRegulationSCP2 \
   --moving_avg 519 \
   --is_training 0 \
@@ -696,7 +694,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_SpokenArabicDigits \
   --moving_avg 24 \
   --is_training 0 \
@@ -722,7 +720,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_StandWalkJump \
   --moving_avg 50 \
   --is_training 0 \
@@ -748,7 +746,7 @@ python run.py \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
+  --model ${model_name} \
   --model_id CLS_UWaveGestureLibrary \
   --moving_avg 95 \
   --is_training 0 \

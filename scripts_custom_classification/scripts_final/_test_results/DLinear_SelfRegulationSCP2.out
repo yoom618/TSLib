@@ -1,7 +1,7 @@
 Using GPU
 Args in experiment:
 [1mBasic Config[0m
-  Task Name:          classification      Is Training:        1                   
+  Task Name:          classification      Is Training:        0                   
   Model ID:           CLS_SelfRegulationSCP2Model:              DLinear             
 
 [1mData Loader[0m
@@ -28,7 +28,7 @@ Args in experiment:
   Lradj:              type1               Use Amp:            0                   
 
 [1mGPU[0m
-  Use GPU:            1                   GPU:                2                   
+  Use GPU:            1                   GPU:                0                   
   Use Multi GPU:      0                   Devices:            0,1,2,3             
 
 [1mDe-stationary Projector Params[0m
@@ -38,6 +38,7 @@ Args in experiment:
 180
 >>>>>>>testing : classification_CLS_SelfRegulationSCP2_DLinear_UEA_ftM_sl1152_ll0_pl0_ma519_iFalse_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 180
+loading model
 test shape: torch.Size([180, 2]) torch.Size([180, 1])
 accuracy:0.5722222222222222
 model parameter : 2672642

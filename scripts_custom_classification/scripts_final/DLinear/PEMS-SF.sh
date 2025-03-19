@@ -1,6 +1,10 @@
-data_dir="/data/yoom618/TSLib/dataset"
-checkpoint_dir="/data/yoom618/TSLib/checkpoints_best/DLinear"
+model_name="DLinear"
+dataset_name="PEMS-SF"
+tslib_dir="/data/yoom618/TSLib"
 gpu_id=0
+
+data_dir="${tslib_dir}/dataset"
+checkpoint_dir="${tslib_dir}/checkpoints_best/${model_name}"
 
 # below all have the same performance
 
@@ -10,15 +14,15 @@ python run.py \
   --gpu ${gpu_id} \
   --task_name classification \
   --data UEA \
-  --root_path "${data_dir}/PEMS-SF" \
+  --root_path "${data_dir}/${dataset_name}" \
   --seq_len 144 \
   --enc_in 963 \
   --label_len 0 \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
-  --model_id CLS_PEMS-SF \
+  --model ${model_name} \
+  --model_id "CLS_${dataset_name}" \
   --moving_avg 8 \
   --is_training 0 \
   --batch_size 16 \
@@ -35,15 +39,15 @@ python run.py \
   --gpu ${gpu_id} \
   --task_name classification \
   --data UEA \
-  --root_path "${data_dir}/PEMS-SF" \
+  --root_path "${data_dir}/${dataset_name}" \
   --seq_len 144 \
   --enc_in 963 \
   --label_len 0 \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
-  --model_id CLS_PEMS-SF \
+  --model ${model_name} \
+  --model_id "CLS_${dataset_name}" \
   --moving_avg 3 \
   --is_training 0 \
   --batch_size 16 \

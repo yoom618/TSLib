@@ -1,6 +1,10 @@
-data_dir="/data/yoom618/TSLib/dataset"
-checkpoint_dir="/data/yoom618/TSLib/checkpoints_best/DLinear"
+model_name="DLinear"
+dataset_name="LSST"
+tslib_dir="/data/yoom618/TSLib"
 gpu_id=0
+
+data_dir="${tslib_dir}/dataset"
+checkpoint_dir="${tslib_dir}/checkpoints_best/${model_name}"
 
 python run.py \
   --use_gpu True \
@@ -8,15 +12,15 @@ python run.py \
   --gpu ${gpu_id} \
   --task_name classification \
   --data UEA \
-  --root_path "${data_dir}/LSST" \
+  --root_path "${data_dir}/${dataset_name}" \
   --seq_len 36 \
   --enc_in 6 \
   --label_len 0 \
   --pred_len 0 \
   --c_out 0 \
   --checkpoints ${checkpoint_dir} \
-  --model DLinear \
-  --model_id CLS_LSST \
+  --model ${model_name} \
+  --model_id "CLS_${dataset_name}" \
   --moving_avg 11 \
   --is_training 0 \
   --batch_size 16 \
