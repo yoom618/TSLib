@@ -11,7 +11,9 @@ def make_combination(config_dict):
 if __name__ == "__main__":
     script_dir = "./scripts_custom_classification"
     data_metainfo = "data_classification.yaml"
-    script_path = f"{script_dir}/scripts_all/MambaSL_{{}}-2.sh"
+    script_path = f"{script_dir}/scripts_mamba/MambaSL_{{}}-dff.sh"
+    model_id = "{}"
+    model = "MambaSingleLayer"
 
     dir_setting = {
         "data_dir" : "/data/yoom618/TSLib/dataset",
@@ -31,8 +33,6 @@ if __name__ == "__main__":
     # }
 
 
-    model_id = "TV_{}"
-    model = "MambaSingleLayer"
     model_configs = {
         "d_model" : [64, 128, 256, 512, 1024],
         "expand" : [1, 2],
@@ -54,16 +54,29 @@ if __name__ == "__main__":
         "patience" : 20,
     }
 
-    os.makedirs(f"{script_dir}/scripts_all", exist_ok=True)
+    os.makedirs(f"{script_dir}/scripts_mamba", exist_ok=True)
     os.makedirs(dir_setting["checkpoints"], exist_ok=True)
     
     for data_key, data_cfg in data_configs.items():
         scripts = ""
 
-        # Fix kernel size to 5% of sequence length in Embedding step
+        ## Fix kernel size to 5% of sequence length in Embedding step
         model_configs["num_kernels"] = [max(1, math.ceil(data_cfg.seq_len / 20))]
-        # Set d_state from log2(1/p_min) - 1  to  log2(1/p_min) + 1
-        model_configs["d_ff"] = [max(2, math.ceil(math.log2(1/data_cfg.p_min))) + i for i in range(-1, 2)]
+
+        # # Fix kernel size of data embedding to 3
+        # model_configs["num_kernels"] = [3]
+        # model_configs["d_conv"] = [max(1, math.ceil(data_cfg.seq_len / 20))]
+
+
+        # # Set d_state(=d_ff) from log2(1/p_min) - 1  to  log2(1/p_min) + 1
+        # model_configs["d_ff"] = [max(2, math.ceil(math.log2(1/data_cfg.p_min))) + i for i in range(-1, 2)]
+        
+        # # Set d_state(=d_ff) from log2(num_class) - 1  to  log2(num_class) + 1
+        # model_configs["d_ff"] = [max(2, math.ceil(math.log2(data_cfg.num_class))) + i for i in range(-1, 2)]
+        
+        # Set d_state(=d_ff) from log2(num_class)  to  log2(num_class) * 3
+        model_configs["d_ff"] = [math.ceil(math.log2(data_cfg.num_class)) * i for i in range(1,4)]
+        
 
         replace_dict = {}
         if data_cfg["dataset"][0].lower() < "f":
@@ -73,7 +86,7 @@ if __name__ == "__main__":
         else:
             replace_dict["gpu"] = 2
         if data_cfg["dataset"] == "EigenWorms":
-            replace_dict["batch_size"] = 4
+            replace_dict["batch_size"] = 4  # GPU Memory Usage: 9318MiB
             replace_dict["gpu"] = 3
         
         del data_cfg["num_class"], data_cfg["p_min"], data_cfg["p_max"], data_cfg["dataset"]
@@ -84,7 +97,7 @@ if __name__ == "__main__":
         model_configs_combination = reversed(make_combination(model_configs))
         
         for model_cfg in model_configs_combination:
-            script_cfg = gpu_setting
+            script_cfg = gpu_setting.copy()
             script_cfg.update(data_cfg)
             script_cfg["model"] = model
             script_cfg["model_id"] = model_id.format(data_key)
@@ -92,9 +105,10 @@ if __name__ == "__main__":
             script_cfg.update(training_configs)
             script_cfg.update(replace_dict)
 
-            script = f"python run.py "
+            script = f"python run.py \\\n"
             for key, value in script_cfg.items():
-                script += f"--{key} {value} "
+                script += f"  --{key} {value} \\\n"
+            script = script[:-3]
             script += "\n\n"
             scripts += script
             print(script)

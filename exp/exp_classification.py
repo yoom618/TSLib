@@ -22,6 +22,7 @@ class Exp_Classification(Exp_Basic):
         train_data, train_loader = self._get_data(flag='TRAIN')
         test_data, test_loader = self._get_data(flag='TEST')
         self.args.seq_len = max(train_data.max_seq_len, test_data.max_seq_len)
+        self.args.label_len = 0
         self.args.pred_len = 0
         self.args.enc_in = train_data.feature_df.shape[1]
         self.args.num_class = len(train_data.class_names)

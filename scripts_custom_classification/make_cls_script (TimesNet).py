@@ -1,6 +1,6 @@
-# Crossformer script generation
+# TimesNet script generation
 # hyperparameters setting are referenced from below:
-# 1) time-series-library
+# 1) time-series-library (author of the paper also.)
 
 
 import os

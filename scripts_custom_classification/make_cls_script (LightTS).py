@@ -1,6 +1,6 @@
-# Crossformer script generation
+# LightTS script generation
 # hyperparameters setting are referenced from below:
-# 1) time-series-library
+# 1) time-series-library (extend from original LightTS paper since it was not for classification)
 
 
 import os

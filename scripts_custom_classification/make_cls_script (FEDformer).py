@@ -1,6 +1,7 @@
-# Crossformer script generation
+# FEDformer script generation
 # hyperparameters setting are referenced from below:
 # 1) time-series-library
+# 2) FEDformer source code (only for forecasting task)
 
 
 import os
@@ -44,10 +45,10 @@ if __name__ == "__main__":
         # instead of moving_avg, moving_avg_ratio will be used for variable kernel size since sequence length is different
         # e.g. 1 means 1% of sequence length
         
-        "e_layers" : [2],  # default: 3(X) -> 2
+        "e_layers" : [2],  # default: 2(original), 3(tslib)
         "n_heads" : [8],   # default: 8
-        "d_model" : [32,64,128,256,512],   # default: 128(X) -> 512
-        "d_ff" : [128,256,512,1024,2048],  # default: 256(X) -> 2048
+        "d_model" : [32,64,128,256,512],   # default: 512(original), 128(tslib)
+        "d_ff" : [128,256,512,1024,2048],  # default: 2048(original), 256(tslib)
     }
 
     training_configs = {

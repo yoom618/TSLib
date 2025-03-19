@@ -1,4 +1,4 @@
-# PatchTST script generation
+# GPT4TS script generation
 # hyperparameters setting are referenced from below:
 # 1) Original One-fits-all paper
 

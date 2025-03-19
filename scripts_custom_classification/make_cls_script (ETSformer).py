@@ -1,7 +1,7 @@
-# Crossformer script generation
+# ETSformer script generation
 # hyperparameters setting are referenced from below:
 # 1) time-series-library
-
+# 2) ETSformer source code (only for forecasting task)
 
 import os
 from omegaconf import OmegaConf
@@ -38,10 +38,10 @@ if __name__ == "__main__":
 
 
     model_configs = {
-        "e_layers" : [1,2],   # default: 3(X) -> 2
+        "e_layers" : [1,2],   # default: 2(original), 3(tslib)
         "n_heads" : [8],   # default: 8
-        "d_model" : [32,64,128,256,512],   # default: 128(X) -> 512
-        "d_ff" : [64,128,256,512,1024,2048],  # default: 256(X) -> 2048
+        "d_model" : [32,64,128,256,512],   # default: 512(original), 3128(tslib)
+        "d_ff" : [64,128,256,512,1024,2048],  # default: 2048(original), 256(tslib)
         "top_k" : [1,2,3,4],  # default: 3
     }
 

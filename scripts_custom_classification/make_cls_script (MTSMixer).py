@@ -1,6 +1,7 @@
-# Crossformer script generation
+# MTS-Mixer script generation
 # hyperparameters setting are referenced from below:
-# 1) time-series-library
+# 1) Original MTS-Mixer source code (only for forecasting task)
+#    (https://github.com/plumprc/MTS-Mixers/blob/main/script.md)
 
 
 import os
