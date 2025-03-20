@@ -80,8 +80,12 @@ if __name__ == '__main__':
     parser.add_argument('--dw_dims', nargs='+',type=int, default=[256,256,256,256], help='dw dims in dw conv in each stage')
     parser.add_argument('--small_kernel_merged', type=str2bool, default=False, help='small_kernel has already merged or not')
     parser.add_argument('--call_structural_reparam', type=bool, default=False, help='structural_reparam after training')
-    parser.add_argument('--use_multi_scale', type=str2bool, default=True, help='use_multi_scale fusion')
-    # +) patch_size, patch_stride
+    parser.add_argument('--use_multi_scale', type=str2bool, default=False, help='use_multi_scale fusion')
+    parser.add_argument('--affine', type=int, default=0, help='RevIN-affine; True 1 False 0')
+    parser.add_argument('--subtract_last', type=int, default=0, help='0: subtract mean; 1: subtract last')
+    parser.add_argument('--decomp_moderntcn', type=int, default=0, help='decomposition; True 1 False 0')
+    parser.add_argument('--decomp_kernel_size', type=int, default=25, help='decomposition-kernel')
+    # +) patch_size, patch_stride, use_revin
     
     parser.add_argument('--top_k', type=int, default=5, help='for TimesBlock')
     parser.add_argument('--num_kernels', type=int, default=6, help='for Inception')

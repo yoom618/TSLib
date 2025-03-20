@@ -456,9 +456,9 @@ class Model(nn.Module):
         self.nvars = configs.enc_in
         self.small_kernel_merged = configs.small_kernel_merged
         self.drop_backbone = configs.dropout
-        self.drop_head = configs.head_dropout
-        self.use_multi_scale = configs.use_multi_scale
-        self.revin = configs.revin
+        self.drop_head = configs.dropout  # Original Paper : self.drop_head = configs.head_dropout
+        self.use_multi_scale = False  # Original Paper : self.use_multi_scale = configs.use_multi_scale. But, it is not used in all five tasks and gets error when it is set to True.
+        self.revin = configs.use_revin
         self.affine = configs.affine
         self.subtract_last = configs.subtract_last
 
@@ -468,16 +468,16 @@ class Model(nn.Module):
         self.individual = configs.individual
         self.target_window = configs.pred_len
 
-        self.kernel_size = configs.kernel_size
         self.patch_size = configs.patch_size
         self.patch_stride = configs.patch_stride
 
         #classification
-        self.class_dropout = configs.class_dropout
+        self.class_dropout = configs.dropout  # Original Paper : self.class_dropout = configs.class_dropout
         self.class_num = configs.num_class
 
         # decomp
-        self.decomposition = configs.decomposition
+        self.decomposition = configs.decomp_moderntcn
+        self.kernel_size = configs.decomp_kernel_size
         if self.task_name in ['classification']:
             self.model = ModernTCN(task_name=self.task_name,patch_size=self.patch_size,patch_stride=self.patch_stride,stem_ratio=self.stem_ratio, 
                                    downsample_ratio=self.downsample_ratio, ffn_ratio=self.ffn_ratio, num_blocks=self.num_blocks, 
