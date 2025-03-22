@@ -30,7 +30,7 @@ if __name__ == "__main__":
     gpu_setting = {
         "use_gpu" : True,
         "gpu_type" : "cuda",
-        "gpu" : 0,
+        "gpu" : 2,
     }
     # gpu_setting = {
     #     "use_multi_gpu" : True,
@@ -75,7 +75,7 @@ if __name__ == "__main__":
         
         model_cfg_tmp = dict()
         model_cfg_tmp["d_model"] = model_configs["d_model"]
-        model_cfg_tmp["chunk_size"] = sorted([math.ceil(data_cfg["seq_len"] / num_chunks) for num_chunks in model_configs["num_chunks"]])
+        model_cfg_tmp["chunk_size"] = sorted(list(set([math.ceil(data_cfg["seq_len"] / num_chunks) for num_chunks in model_configs["num_chunks"]])))
         model_configs_combination = reversed(make_combination(model_cfg_tmp))
         
         for model_cfg in model_configs_combination:
