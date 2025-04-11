@@ -615,6 +615,7 @@ class SWATSegLoader(Dataset):
 
 class UEAloader(Dataset):
     """
+    ** the code is revised to save the preprocessed data into pkl files to reduce the time of loading data in typescript format **
     Dataset class for datasets included in:
         Time Series Classification Archive (www.timeseriesclassification.com)
     Argument:
