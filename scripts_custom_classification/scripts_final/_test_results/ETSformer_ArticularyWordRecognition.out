@@ -1,0 +1,1035 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              4                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            32                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm32_nh8_el1_dl1_df256_tk4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 135533
+model size : 1.14MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            32                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm32_nh8_el1_dl1_df256_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 135533
+model size : 1.14MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            32                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               128                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm32_nh8_el2_dl2_df128_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 138465
+model size : 1.16MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              1                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            32                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm32_nh8_el2_dl2_df256_tk1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 154849
+model size : 1.22MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               128                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df128_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 258701
+model size : 2.22MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              1                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               64                  
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df64_tk1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 268609
+model size : 2.26MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              4                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df512_tk4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 307853
+model size : 2.41MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df512_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 307853
+model size : 2.41MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df512_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 307853
+model size : 2.41MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df256_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 317761
+model size : 2.45MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              1                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df256_tk1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 317761
+model size : 2.45MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              4                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               256                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df256_tk4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 317761
+model size : 2.45MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              4                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               1024                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df1024_tk4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 373389
+model size : 2.66MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               1024                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df1024_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 373389
+model size : 2.66MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               1024                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df1024_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 373389
+model size : 2.66MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df512_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 383297
+model size : 2.70MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              1                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df512_tk1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 383297
+model size : 2.70MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              4                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df512_tk4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 383297
+model size : 2.70MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               512                 
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df512_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 383297
+model size : 2.70MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           1                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el1_dl1_df2048_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 504461
+model size : 3.16MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              1                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            64                  
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               1024                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm64_nh8_el2_dl2_df1024_tk1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 514369
+model size : 3.20MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              2                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            128                 
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               64                  
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm128_nh8_el2_dl2_df64_tk2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 569857
+model size : 4.63MB
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_ArticularyWordRecognitionModel:              ETSformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/ArticularyWordRecognition
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ETSformer
+
+[1mModel Parameters[0m
+  Top k:              3                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            128                 
+  n heads:            8                   e layers:           2                   
+  d layers:           2                   d FF:               1024                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+275
+300
+>>>>>>>testing : classification_CLS_ArticularyWordRecognition_ETSformer_UEA_ftM_sl144_ll0_pl0_dm128_nh8_el2_dl2_df1024_tk3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+300
+loading model
+test shape: torch.Size([300, 25]) torch.Size([300, 1])
+accuracy:0.9866666666666667
+model parameter : 1061377
+model size : 6.51MB
