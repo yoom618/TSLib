@@ -5,7 +5,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -13,7 +13,7 @@ python run.py \
   --checkpoints /data/yoom618/TSLib/checkpoints \
   --model DLinear \
   --model_id CLS_InsectWingbeat \
-  --moving_avg 39 \
+  --moving_avg 11 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -30,7 +30,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -38,7 +38,7 @@ python run.py \
   --checkpoints /data/yoom618/TSLib/checkpoints \
   --model DLinear \
   --model_id CLS_InsectWingbeat \
-  --moving_avg 36 \
+  --moving_avg 10 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -55,7 +55,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -63,7 +63,7 @@ python run.py \
   --checkpoints /data/yoom618/TSLib/checkpoints \
   --model DLinear \
   --model_id CLS_InsectWingbeat \
-  --moving_avg 32 \
+  --moving_avg 9 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -80,132 +80,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --model DLinear \
-  --model_id CLS_InsectWingbeat \
-  --moving_avg 28 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 100 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --model DLinear \
-  --model_id CLS_InsectWingbeat \
-  --moving_avg 24 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 100 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --model DLinear \
-  --model_id CLS_InsectWingbeat \
-  --moving_avg 20 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 100 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --model DLinear \
-  --model_id CLS_InsectWingbeat \
-  --moving_avg 16 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 100 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --model DLinear \
-  --model_id CLS_InsectWingbeat \
-  --moving_avg 12 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 100 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -230,7 +105,82 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --model DLinear \
+  --model_id CLS_InsectWingbeat \
+  --moving_avg 7 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 100 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --model DLinear \
+  --model_id CLS_InsectWingbeat \
+  --moving_avg 6 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 100 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --model DLinear \
+  --model_id CLS_InsectWingbeat \
+  --moving_avg 5 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 100 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -255,7 +205,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -280,7 +230,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -305,7 +255,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \

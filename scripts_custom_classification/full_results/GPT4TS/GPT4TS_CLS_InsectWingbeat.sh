@@ -5,7 +5,157 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 6 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 2 \
+  --patch_stride 1 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 6 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 2 \
+  --patch_stride 2 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 6 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 3 \
+  --patch_stride 1 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 6 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 3 \
+  --patch_stride 2 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 6 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 3 \
+  --patch_stride 3 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -35,7 +185,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -65,7 +215,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -95,7 +245,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -125,7 +275,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -155,7 +305,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -185,7 +335,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -194,10 +344,40 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
+  --e_layers 5 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
+  --patch_size 2 \
+  --patch_stride 1 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 5 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 2 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -215,7 +395,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -224,11 +404,11 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
+  --e_layers 5 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 3 \
+  --patch_size 3 \
+  --patch_stride 1 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -245,7 +425,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -254,40 +434,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
+  --e_layers 5 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
+  --patch_size 3 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -305,7 +455,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -314,160 +464,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
+  --e_layers 5 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
+  --patch_size 3 \
   --patch_stride 3 \
   --is_training 1 \
   --batch_size 16 \
@@ -485,427 +485,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 9 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 10 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 12 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 13 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 6 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 16 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -935,7 +515,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -965,7 +545,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -995,7 +575,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1025,7 +605,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1055,7 +635,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1085,7 +665,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1094,10 +674,40 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
+  --e_layers 4 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
+  --patch_size 2 \
+  --patch_stride 1 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 4 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 2 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -1115,7 +725,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1124,11 +734,11 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
+  --e_layers 4 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 3 \
+  --patch_size 3 \
+  --patch_stride 1 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -1145,7 +755,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1154,40 +764,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
+  --e_layers 4 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
+  --patch_size 3 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -1205,7 +785,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1214,160 +794,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
+  --e_layers 4 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
+  --patch_size 3 \
   --patch_stride 3 \
   --is_training 1 \
   --batch_size 16 \
@@ -1385,427 +815,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 9 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 10 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 12 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 13 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 5 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 16 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1835,7 +845,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1865,7 +875,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1895,7 +905,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1925,7 +935,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1955,7 +965,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1985,7 +995,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1994,10 +1004,40 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
+  --patch_size 2 \
+  --patch_stride 1 \
+  --is_training 1 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
+
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu 0 \
+  --task_name classification \
+  --data UEA \
+  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
+  --seq_len 22 \
+  --enc_in 200 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints /data/yoom618/TSLib/checkpoints \
+  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
+  --model GPT4TS \
+  --model_id CLS_InsectWingbeat \
+  --e_layers 3 \
+  --d_model 768 \
+  --d_ff 768 \
+  --patch_size 2 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -2015,7 +1055,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2024,11 +1064,11 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 3 \
+  --patch_size 3 \
+  --patch_stride 1 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \
@@ -2045,7 +1085,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2054,40 +1094,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
+  --patch_size 3 \
   --patch_stride 2 \
   --is_training 1 \
   --batch_size 16 \
@@ -2105,7 +1115,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2114,160 +1124,10 @@ python run.py \
   --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
   --model GPT4TS \
   --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
+  --patch_size 3 \
   --patch_stride 3 \
   --is_training 1 \
   --batch_size 16 \
@@ -2285,427 +1145,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 9 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 10 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 12 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 13 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 4 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 16 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2735,7 +1175,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2765,7 +1205,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2795,7 +1235,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2825,7 +1265,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2855,7 +1295,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2869,726 +1309,6 @@ python run.py \
   --d_ff 768 \
   --patch_size 5 \
   --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 6 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 7 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 2 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 8 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 9 \
-  --patch_stride 9 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 5 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 10 \
-  --patch_stride 10 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 3 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 6 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 12 \
-  --patch_stride 12 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 7 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 13 \
-  --patch_stride 13 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 4 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 8 \
-  --is_training 1 \
-  --batch_size 16 \
-  --des Exp \
-  --itr 1 \
-  --dropout 0.1 \
-  --learning_rate 0.001 \
-  --train_epochs 50 \
-  --patience 10
-
-python run.py \
-  --use_gpu True \
-  --gpu_type cuda \
-  --gpu 0 \
-  --task_name classification \
-  --data UEA \
-  --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
-  --enc_in 200 \
-  --label_len 0 \
-  --pred_len 0 \
-  --c_out 0 \
-  --checkpoints /data/yoom618/TSLib/checkpoints \
-  --huggingface_cache_dir /data/yoom618/TSLib/huggingface/ \
-  --model GPT4TS \
-  --model_id CLS_InsectWingbeat \
-  --e_layers 3 \
-  --d_model 768 \
-  --d_ff 768 \
-  --patch_size 16 \
-  --patch_stride 16 \
   --is_training 1 \
   --batch_size 16 \
   --des Exp \

@@ -689,7 +689,7 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            768                 
-  n heads:            8                   e layers:           4                   
+  n heads:            8                   e layers:           6                   
   d layers:           1                   d FF:               768                 
   Moving Avg:         25                  Factor:             1                   
   Distil:             1                   Dropout:            0.1                 
@@ -711,13 +711,13 @@ Args in experiment:
 
 25000
 25000
->>>>>>>testing : classification_CLS_InsectWingbeat_GPT4TS_UEA_ftM_sl22_ll0_pl0_el4_dm768_df768_ps4_str1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_InsectWingbeat_GPT4TS_UEA_ftM_sl22_ll0_pl0_el6_dm768_df768_ps2_str1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 25000
 loading model
 test shape: torch.Size([25000, 10]) torch.Size([25000, 1])
-accuracy:0.60608
-model parameter : 31225354
-model size : 133.79MB
+accuracy:0.61396
+model parameter : 44497930
+model size : 184.42MB
 Using GPU
 Args in experiment:
 [1mBasic Config[0m

@@ -384,7 +384,7 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id CLS_InsectWingbeat \
-  --moving_avg 28 \
+  --moving_avg 7 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \

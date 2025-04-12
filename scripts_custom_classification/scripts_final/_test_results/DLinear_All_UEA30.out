@@ -646,7 +646,7 @@ Args in experiment:
   C Out:              0                   d model:            512                 
   n heads:            8                   e layers:           2                   
   d layers:           1                   d FF:               2048                
-  Moving Avg:         28                  Factor:             1                   
+  Moving Avg:         7                   Factor:             1                   
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -666,11 +666,11 @@ Args in experiment:
 
 25000
 25000
->>>>>>>testing : classification_CLS_InsectWingbeat_DLinear_UEA_ftM_sl22_ll0_pl0_ma28_iFalse_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_InsectWingbeat_DLinear_UEA_ftM_sl22_ll0_pl0_ma7_iFalse_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 25000
 loading model
 test shape: torch.Size([25000, 10]) torch.Size([25000, 1])
-accuracy:0.1908
+accuracy:0.18996
 model parameter : 45022
 model size : 0.17MB
 Using GPU

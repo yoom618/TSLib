@@ -18,10 +18,10 @@ python run.py \
   --huggingface_cache_dir ${huggingface_cache_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 6 \
   --d_model 768 \
   --d_ff 768 \
-  --patch_size 4 \
+  --patch_size 2 \
   --patch_stride 1 \
   --is_training 0 \
   --batch_size 16 \

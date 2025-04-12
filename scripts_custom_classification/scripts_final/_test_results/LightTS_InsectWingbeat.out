@@ -36,10 +36,10 @@ Args in experiment:
 
 25000
 25000
->>>>>>>testing : classification_CLS_InsectWingbeat_LightTS_UEA_ftM_sl22_ll0_pl0_dm128_cs9_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_InsectWingbeat_LightTS_UEA_ftM_sl22_ll0_pl0_dm128_cs6_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 25000
 loading model
 test shape: torch.Size([25000, 10]) torch.Size([25000, 1])
-accuracy:0.71796
-model parameter : 92176
+accuracy:0.71676
+model parameter : 91936
 model size : 0.36MB

@@ -424,7 +424,7 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 3 \
+  --e_layers 2 \
   --d_model 64 \
   --d_ff 128 \
   --patch_size 2 \

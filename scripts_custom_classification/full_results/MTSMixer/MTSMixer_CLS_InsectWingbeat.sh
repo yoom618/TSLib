@@ -5,7 +5,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -35,7 +35,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -65,7 +65,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -95,7 +95,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -125,7 +125,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -155,7 +155,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -185,7 +185,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -215,7 +215,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -245,7 +245,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -275,7 +275,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -305,7 +305,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -335,7 +335,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -365,7 +365,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -395,7 +395,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -425,7 +425,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -455,7 +455,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -485,7 +485,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -515,7 +515,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -545,7 +545,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -575,7 +575,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -605,7 +605,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -635,7 +635,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -665,7 +665,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -695,7 +695,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -725,7 +725,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -755,7 +755,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -785,7 +785,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -815,7 +815,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -845,7 +845,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -875,7 +875,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -905,7 +905,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -935,7 +935,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -965,7 +965,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -995,7 +995,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1025,7 +1025,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1055,7 +1055,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1085,7 +1085,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1115,7 +1115,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1145,7 +1145,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1175,7 +1175,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1205,7 +1205,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1235,7 +1235,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1265,7 +1265,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1295,7 +1295,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1325,7 +1325,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1355,7 +1355,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1385,7 +1385,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1415,7 +1415,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1445,7 +1445,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1475,7 +1475,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1505,7 +1505,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1535,7 +1535,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1565,7 +1565,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1595,7 +1595,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1625,7 +1625,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1655,7 +1655,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1685,7 +1685,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1715,7 +1715,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1745,7 +1745,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1775,7 +1775,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1805,7 +1805,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1835,7 +1835,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1865,7 +1865,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1895,7 +1895,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1925,7 +1925,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1955,7 +1955,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -1985,7 +1985,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2015,7 +2015,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2045,7 +2045,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2075,7 +2075,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2105,7 +2105,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2135,7 +2135,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2165,7 +2165,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2195,7 +2195,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2225,7 +2225,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2255,7 +2255,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2285,7 +2285,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2315,7 +2315,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2345,7 +2345,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2375,7 +2375,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2405,7 +2405,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2435,7 +2435,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2465,7 +2465,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2495,7 +2495,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2525,7 +2525,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2555,7 +2555,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2585,7 +2585,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2615,7 +2615,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2645,7 +2645,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2675,7 +2675,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2705,7 +2705,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2735,7 +2735,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2765,7 +2765,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2795,7 +2795,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2825,7 +2825,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2855,7 +2855,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2885,7 +2885,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2915,7 +2915,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2945,7 +2945,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -2975,7 +2975,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3005,7 +3005,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3035,7 +3035,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3065,7 +3065,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3095,7 +3095,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3125,7 +3125,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3155,7 +3155,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3185,7 +3185,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3215,7 +3215,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3245,7 +3245,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3275,7 +3275,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3305,7 +3305,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3335,7 +3335,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3365,7 +3365,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3395,7 +3395,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3425,7 +3425,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3455,7 +3455,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3485,7 +3485,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3515,7 +3515,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3545,7 +3545,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3575,7 +3575,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3605,7 +3605,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3635,7 +3635,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3665,7 +3665,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3695,7 +3695,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3725,7 +3725,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3755,7 +3755,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3785,7 +3785,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3815,7 +3815,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3845,7 +3845,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3875,7 +3875,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3905,7 +3905,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3935,7 +3935,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3965,7 +3965,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -3995,7 +3995,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4025,7 +4025,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4055,7 +4055,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4085,7 +4085,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4115,7 +4115,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4145,7 +4145,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4175,7 +4175,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4205,7 +4205,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4235,7 +4235,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4265,7 +4265,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4295,7 +4295,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4325,7 +4325,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4355,7 +4355,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4385,7 +4385,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4415,7 +4415,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4445,7 +4445,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4475,7 +4475,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4505,7 +4505,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4535,7 +4535,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4565,7 +4565,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4595,7 +4595,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4625,7 +4625,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4655,7 +4655,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4685,7 +4685,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4715,7 +4715,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4745,7 +4745,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4775,7 +4775,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4805,7 +4805,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4835,7 +4835,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4865,7 +4865,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4895,7 +4895,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4925,7 +4925,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4955,7 +4955,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -4985,7 +4985,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5015,7 +5015,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5045,7 +5045,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5075,7 +5075,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5105,7 +5105,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5135,7 +5135,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5165,7 +5165,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5195,7 +5195,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5225,7 +5225,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5255,7 +5255,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5285,7 +5285,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5315,7 +5315,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5345,7 +5345,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5375,7 +5375,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5405,7 +5405,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5435,7 +5435,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5465,7 +5465,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5495,7 +5495,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5525,7 +5525,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5555,7 +5555,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5585,7 +5585,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5615,7 +5615,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5645,7 +5645,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5675,7 +5675,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5705,7 +5705,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5735,7 +5735,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5765,7 +5765,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5795,7 +5795,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5825,7 +5825,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5855,7 +5855,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5885,7 +5885,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5915,7 +5915,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5945,7 +5945,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -5975,7 +5975,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6005,7 +6005,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6035,7 +6035,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6065,7 +6065,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6095,7 +6095,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6125,7 +6125,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6155,7 +6155,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6185,7 +6185,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6215,7 +6215,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6245,7 +6245,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6275,7 +6275,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6305,7 +6305,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6335,7 +6335,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6365,7 +6365,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6395,7 +6395,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6425,7 +6425,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6455,7 +6455,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6485,7 +6485,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6515,7 +6515,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6545,7 +6545,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6575,7 +6575,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6605,7 +6605,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6635,7 +6635,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6665,7 +6665,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6695,7 +6695,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6725,7 +6725,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6755,7 +6755,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6785,7 +6785,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6815,7 +6815,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6845,7 +6845,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6875,7 +6875,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6905,7 +6905,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6935,7 +6935,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6965,7 +6965,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -6995,7 +6995,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7025,7 +7025,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7055,7 +7055,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7085,7 +7085,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7115,7 +7115,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7145,7 +7145,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7175,7 +7175,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7205,7 +7205,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7235,7 +7235,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7265,7 +7265,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7295,7 +7295,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7325,7 +7325,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7355,7 +7355,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7385,7 +7385,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7415,7 +7415,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7445,7 +7445,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7475,7 +7475,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7505,7 +7505,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7535,7 +7535,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7565,7 +7565,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7595,7 +7595,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7625,7 +7625,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \
@@ -7655,7 +7655,7 @@ python run.py \
   --task_name classification \
   --data UEA \
   --root_path /data/yoom618/TSLib/dataset/InsectWingbeat \
-  --seq_len 78 \
+  --seq_len 22 \
   --enc_in 200 \
   --label_len 0 \
   --pred_len 0 \

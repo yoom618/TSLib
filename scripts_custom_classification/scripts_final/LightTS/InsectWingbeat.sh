@@ -17,7 +17,7 @@ python run.py \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
   --d_model 128 \
-  --chunk_size 9 \
+  --chunk_size 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
