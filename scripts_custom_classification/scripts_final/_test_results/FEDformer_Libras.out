@@ -1,0 +1,52 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_Libras          Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/Libras
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/FEDformer
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               1024                
+  Moving Avg:         23                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+180
+180
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ fourier enhanced cross attention used!
+modes_q=11, index_q=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+modes_kv=22, index_kv=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+>>>>>>>testing : classification_CLS_Libras_FEDformer_UEA_ftM_sl45_ll0_pl0_dm512_nh8_el2_dl1_df1024_ma23_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+180
+loading model
+test shape: torch.Size([180, 15]) torch.Size([180, 1])
+accuracy:0.9333333333333333
+model parameter : 10597391
+model size : 59.98MB

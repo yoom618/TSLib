@@ -1,0 +1,52 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_HandMovementDirectionModel:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/HandMovementDirection
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/FEDformer
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            128                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         200                 Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+160
+74
+fourier enhanced block used!
+modes=32, index=[0, 8, 13, 18, 23, 24, 35, 42, 51, 52, 58, 72, 74, 76, 88, 97, 104, 108, 122, 126, 132, 133, 139, 148, 153, 162, 172, 178, 181, 183, 196, 199]
+fourier enhanced block used!
+modes=32, index=[5, 9, 12, 16, 21, 22, 23, 25, 28, 30, 40, 41, 42, 56, 58, 60, 63, 64, 65, 66, 67, 68, 71, 74, 76, 79, 80, 81, 84, 85, 88, 95]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[0, 2, 3, 4, 13, 21, 27, 33, 34, 35, 37, 40, 44, 45, 46, 52, 56, 61, 62, 64, 68, 69, 74, 75, 76, 80, 82, 86, 88, 92, 93, 97]
+modes_kv=32, index_kv=[1, 20, 26, 28, 31, 32, 43, 45, 46, 52, 57, 60, 62, 70, 81, 91, 93, 111, 114, 126, 130, 134, 143, 145, 152, 164, 167, 169, 170, 171, 173, 177]
+>>>>>>>testing : classification_CLS_HandMovementDirection_FEDformer_UEA_ftM_sl400_ll0_pl0_dm128_nh8_el2_dl1_df2048_ma200_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+74
+loading model
+test shape: torch.Size([74, 4]) torch.Size([74, 1])
+accuracy:0.7162162162162162
+model parameter : 2443140
+model size : 14.23MB

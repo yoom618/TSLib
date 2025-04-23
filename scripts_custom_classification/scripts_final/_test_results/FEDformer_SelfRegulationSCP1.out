@@ -1,0 +1,52 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_SelfRegulationSCP1Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/SelfRegulationSCP1
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/FEDformer
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            32                  
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         448                 Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+268
+293
+fourier enhanced block used!
+modes=32, index=[13, 34, 46, 64, 66, 111, 115, 118, 124, 134, 138, 139, 142, 182, 211, 215, 216, 252, 274, 277, 290, 301, 302, 312, 320, 335, 337, 347, 354, 375, 434, 439]
+fourier enhanced block used!
+modes=32, index=[3, 6, 9, 18, 20, 28, 34, 40, 44, 45, 47, 54, 59, 79, 81, 84, 92, 101, 103, 107, 125, 137, 161, 163, 180, 194, 205, 214, 217, 218, 219, 221]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[19, 20, 35, 38, 59, 61, 62, 65, 67, 70, 71, 72, 74, 85, 86, 102, 110, 111, 121, 122, 140, 146, 148, 149, 167, 191, 193, 197, 202, 206, 207, 209]
+modes_kv=32, index_kv=[15, 27, 31, 32, 49, 59, 62, 89, 95, 105, 111, 114, 135, 144, 148, 189, 206, 215, 232, 242, 254, 269, 277, 297, 343, 349, 368, 370, 420, 437, 445, 446]
+>>>>>>>testing : classification_CLS_SelfRegulationSCP1_FEDformer_UEA_ftM_sl896_ll0_pl0_dm32_nh8_el2_dl1_df2048_ma448_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+293
+loading model
+test shape: torch.Size([293, 2]) torch.Size([293, 1])
+accuracy:0.7508532423208191
+model parameter : 493666
+model size : 3.13MB

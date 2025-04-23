@@ -1,0 +1,52 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_MotorImagery    Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/MotorImagery
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/FEDformer
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            256                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         900                 Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+278
+100
+fourier enhanced block used!
+modes=32, index=[124, 181, 193, 250, 256, 271, 280, 319, 332, 333, 375, 380, 422, 506, 522, 529, 623, 741, 920, 951, 1033, 1050, 1053, 1076, 1117, 1148, 1180, 1228, 1278, 1330, 1341, 1451]
+fourier enhanced block used!
+modes=32, index=[22, 49, 56, 119, 124, 129, 197, 205, 209, 233, 249, 264, 360, 362, 386, 398, 405, 416, 432, 440, 442, 445, 451, 472, 507, 513, 594, 617, 619, 650, 653, 714]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[3, 18, 19, 47, 63, 109, 111, 122, 130, 153, 158, 219, 235, 243, 313, 347, 375, 392, 395, 412, 445, 523, 529, 536, 541, 586, 592, 613, 621, 627, 632, 715]
+modes_kv=32, index_kv=[0, 82, 98, 100, 124, 161, 169, 287, 302, 324, 330, 438, 484, 588, 660, 700, 704, 737, 744, 745, 817, 829, 875, 885, 931, 945, 1009, 1240, 1269, 1272, 1274, 1339]
+>>>>>>>testing : classification_CLS_MotorImagery_FEDformer_UEA_ftM_sl3000_ll0_pl0_dm256_nh8_el2_dl1_df2048_ma900_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+100
+loading model
+test shape: torch.Size([100, 2]) torch.Size([100, 1])
+accuracy:0.65
+model parameter : 7364866
+model size : 37.88MB

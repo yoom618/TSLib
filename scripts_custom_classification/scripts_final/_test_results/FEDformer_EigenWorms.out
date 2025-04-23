@@ -1,0 +1,52 @@
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_EigenWorms      Model:              FEDformer           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/EigenWorms
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/FEDformer
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              0                   d model:            256                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         90                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       100                 Batch Size:         4                   
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+128
+131
+fourier enhanced block used!
+modes=32, index=[98, 385, 778, 955, 1290, 1679, 2130, 2789, 2889, 3796, 4047, 4051, 4214, 4241, 4447, 4629, 4869, 4971, 5215, 5256, 5353, 5778, 6055, 6671, 7347, 7858, 7970, 8074, 8092, 8179, 8201, 8234]
+fourier enhanced block used!
+modes=32, index=[15, 65, 198, 383, 640, 683, 761, 1112, 1127, 1222, 1466, 1553, 1573, 1587, 1591, 1862, 2011, 2432, 2701, 3127, 3185, 3194, 3304, 3319, 3554, 3835, 3958, 4223, 4228, 4308, 4345, 4389]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[242, 575, 614, 876, 955, 1095, 1205, 1254, 1417, 1423, 1731, 1737, 1780, 1959, 1972, 2144, 2197, 2266, 2279, 2342, 2350, 2422, 2443, 2542, 2593, 2794, 3591, 3804, 3812, 3879, 4051, 4359]
+modes_kv=32, index_kv=[101, 388, 673, 851, 1162, 1484, 1598, 1834, 1915, 2009, 2232, 2497, 2499, 2868, 3151, 3710, 3823, 4358, 4993, 5111, 5683, 5878, 6065, 6611, 6777, 7103, 7360, 7451, 7563, 7815, 8310, 8809]
+>>>>>>>testing : classification_CLS_EigenWorms_FEDformer_UEA_ftM_sl17984_ll0_pl0_dm256_nh8_el2_dl1_df256_ma90_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+131
+loading model
+test shape: torch.Size([131, 5]) torch.Size([131, 1])
+accuracy:0.6335877862595419
+model parameter : 26051333
+model size : 134.53MB
