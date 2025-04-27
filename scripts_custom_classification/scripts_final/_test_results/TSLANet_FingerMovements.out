@@ -1,0 +1,19 @@
+========== FingerMovements_dim64_depth3_mask0.4_patch10_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_09_53_00 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/FingerMovements_dim64_depth3_mask0.4_patch10_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_09_53_00/FingerMovements_dim64_depth3_mask0.4_patch10_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_09_53_00
+Train : 253, Val : 63, Test : 100
+Dataset loaded ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Seed set to 42
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/7 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/7 [00:00<?, ?it/s]Testing DataLoader 0:  14%|█▍        | 1/7 [00:02<00:13,  0.45it/s]Testing DataLoader 0:  29%|██▊       | 2/7 [00:02<00:05,  0.88it/s]Testing DataLoader 0:  43%|████▎     | 3/7 [00:02<00:03,  1.30it/s]Testing DataLoader 0:  57%|█████▋    | 4/7 [00:02<00:01,  1.72it/s]Testing DataLoader 0:  71%|███████▏  | 5/7 [00:02<00:00,  2.12it/s]Testing DataLoader 0:  86%|████████▌ | 6/7 [00:02<00:00,  2.51it/s]Testing DataLoader 0: 100%|██████████| 7/7 [00:02<00:00,  2.76it/s]Testing DataLoader 0: 100%|██████████| 7/7 [00:02<00:00,  2.74it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc            0.5899999737739563
+         test_f1            0.5645402669906616
+        test_loss           0.6897669434547424
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

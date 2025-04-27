@@ -1,0 +1,76 @@
+========== SelfRegulationSCP2_dim128_depth1_mask0.4_patch116_mlp3.0___ASB_True__AF_True__ICB_True__preTr_True_21_01_05 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/SelfRegulationSCP2_dim128_depth1_mask0.4_patch116_mlp3.0___ASB_True__AF_True__ICB_True__preTr_True_21_01_05/SelfRegulationSCP2_dim128_depth1_mask0.4_patch116_mlp3.0___ASB_True__AF_True__ICB_True__preTr_True_21_01_05
+Train : 160, Val : 40, Test : 180
+Dataset loaded ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Seed set to 42
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   8%|▊         | 1/12 [00:01<00:13,  0.84it/s]Testing DataLoader 0:  17%|█▋        | 2/12 [00:01<00:06,  1.66it/s]Testing DataLoader 0:  25%|██▌       | 3/12 [00:01<00:03,  2.47it/s]Testing DataLoader 0:  33%|███▎      | 4/12 [00:01<00:02,  3.25it/s]Testing DataLoader 0:  42%|████▏     | 5/12 [00:01<00:01,  4.02it/s]Testing DataLoader 0:  50%|█████     | 6/12 [00:01<00:01,  4.76it/s]Testing DataLoader 0:  58%|█████▊    | 7/12 [00:01<00:00,  5.49it/s]Testing DataLoader 0:  67%|██████▋   | 8/12 [00:01<00:00,  6.21it/s]Testing DataLoader 0:  75%|███████▌  | 9/12 [00:01<00:00,  6.91it/s]Testing DataLoader 0:  83%|████████▎ | 10/12 [00:01<00:00,  7.59it/s]Testing DataLoader 0:  92%|█████████▏| 11/12 [00:01<00:00,  8.23it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  8.81it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  8.73it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc            0.5722222328186035
+         test_f1            0.5113362669944763
+        test_loss           0.6914463639259338
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+========== SelfRegulationSCP2_dim128_depth1_mask0.4_patch288_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_21_09_53 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/SelfRegulationSCP2_dim128_depth1_mask0.4_patch288_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_21_09_53/SelfRegulationSCP2_dim128_depth1_mask0.4_patch288_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_21_09_53
+Train : 160, Val : 40, Test : 180
+Dataset loaded ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Seed set to 42
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   8%|▊         | 1/12 [00:01<00:12,  0.86it/s]Testing DataLoader 0:  17%|█▋        | 2/12 [00:01<00:05,  1.69it/s]Testing DataLoader 0:  25%|██▌       | 3/12 [00:01<00:03,  2.48it/s]Testing DataLoader 0:  33%|███▎      | 4/12 [00:01<00:02,  3.23it/s]Testing DataLoader 0:  42%|████▏     | 5/12 [00:01<00:01,  3.97it/s]Testing DataLoader 0:  50%|█████     | 6/12 [00:01<00:01,  4.67it/s]Testing DataLoader 0:  58%|█████▊    | 7/12 [00:01<00:00,  5.31it/s]Testing DataLoader 0:  67%|██████▋   | 8/12 [00:01<00:00,  5.95it/s]Testing DataLoader 0:  75%|███████▌  | 9/12 [00:01<00:00,  6.59it/s]Testing DataLoader 0:  83%|████████▎ | 10/12 [00:01<00:00,  7.16it/s]Testing DataLoader 0:  92%|█████████▏| 11/12 [00:01<00:00,  7.75it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  7.45it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  7.30it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc            0.5722222328186035
+         test_f1            0.5089603662490845
+        test_loss           0.6929274201393127
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+========== SelfRegulationSCP2_dim256_depth3_mask0.4_patch87_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_22_06 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/SelfRegulationSCP2_dim256_depth3_mask0.4_patch87_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_22_06/SelfRegulationSCP2_dim256_depth3_mask0.4_patch87_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_22_06
+Train : 160, Val : 40, Test : 180
+Dataset loaded ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Seed set to 42
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   8%|▊         | 1/12 [00:01<00:12,  0.86it/s]Testing DataLoader 0:  17%|█▋        | 2/12 [00:01<00:05,  1.67it/s]Testing DataLoader 0:  25%|██▌       | 3/12 [00:01<00:03,  2.45it/s]Testing DataLoader 0:  33%|███▎      | 4/12 [00:01<00:02,  3.19it/s]Testing DataLoader 0:  42%|████▏     | 5/12 [00:01<00:01,  3.90it/s]Testing DataLoader 0:  50%|█████     | 6/12 [00:01<00:01,  4.59it/s]Testing DataLoader 0:  58%|█████▊    | 7/12 [00:01<00:00,  5.24it/s]Testing DataLoader 0:  67%|██████▋   | 8/12 [00:01<00:00,  5.88it/s]Testing DataLoader 0:  75%|███████▌  | 9/12 [00:01<00:00,  6.48it/s]Testing DataLoader 0:  83%|████████▎ | 10/12 [00:01<00:00,  7.06it/s]Testing DataLoader 0:  92%|█████████▏| 11/12 [00:01<00:00,  7.62it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  7.51it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  7.41it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc            0.5722222328186035
+         test_f1            0.5306004285812378
+        test_loss            0.687213659286499
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+========== SelfRegulationSCP2_dim256_depth3_mask0.4_patch231_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_27_52 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/SelfRegulationSCP2_dim256_depth3_mask0.4_patch231_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_27_52/SelfRegulationSCP2_dim256_depth3_mask0.4_patch231_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_17_27_52
+Train : 160, Val : 40, Test : 180
+Dataset loaded ...
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+Seed set to 42
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/12 [00:00<?, ?it/s]Testing DataLoader 0:   8%|▊         | 1/12 [00:01<00:15,  0.69it/s]Testing DataLoader 0:  17%|█▋        | 2/12 [00:01<00:07,  1.36it/s]Testing DataLoader 0:  25%|██▌       | 3/12 [00:01<00:04,  2.01it/s]Testing DataLoader 0:  33%|███▎      | 4/12 [00:01<00:03,  2.63it/s]Testing DataLoader 0:  42%|████▏     | 5/12 [00:01<00:02,  3.23it/s]Testing DataLoader 0:  50%|█████     | 6/12 [00:01<00:01,  3.81it/s]Testing DataLoader 0:  58%|█████▊    | 7/12 [00:01<00:01,  4.36it/s]Testing DataLoader 0:  67%|██████▋   | 8/12 [00:01<00:00,  4.90it/s]Testing DataLoader 0:  75%|███████▌  | 9/12 [00:01<00:00,  5.43it/s]Testing DataLoader 0:  83%|████████▎ | 10/12 [00:01<00:00,  5.95it/s]Testing DataLoader 0:  92%|█████████▏| 11/12 [00:01<00:00,  6.45it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  6.56it/s]Testing DataLoader 0: 100%|██████████| 12/12 [00:01<00:00,  6.49it/s]
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       Test metric             DataLoader 0
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+        test_acc            0.5722222328186035
+         test_f1            0.5174431800842285
+        test_loss           0.6835574507713318
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

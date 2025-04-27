@@ -128,29 +128,27 @@ def get_datasets(DATASET_PATH, args):
         labels_test_df = pd.DataFrame(labels_test.codes,
                                 dtype=np.int8)  # int8-32 gives an error when using nn.CrossEntropyLoss
 
-        ### 1) stratified split - 8:2 for each class as much as possible
-        ###    Using 20% of the training set as validation set was mentioned in the original paper
-        ###    but it shows comparatively lower performance than in the original paper's results
-        ###    Thus we use the test set as validation set instead, which is the same experimental setup as in the TSLib code
-        # train_indices, val_indices = [], []
-        # for class_idx in range(len(class_names)):
-        #     class_indices = np.where(labels_trainval_df.values == class_idx)[0]
-        #     np.random.shuffle(class_indices)
-        #     split_index = int(len(class_indices) * 0.8)
-        #     train_indices.extend(class_indices[:split_index])
-        #     val_indices.extend(class_indices[split_index:])
-        # while len(val_indices) > int(0.25 * len(train_indices)):
-        #     tmp_idx = val_indices.pop(np.random.randint(0, len(val_indices) - 1))
-        #     train_indices.append(tmp_idx)
-        # train_dataset = Load_Dataset_Custom(df_trainval, labels_trainval_df, seq_len, labels_trainval_df.index[train_indices])
-        # val_dataset = Load_Dataset_Custom(df_trainval, labels_trainval_df, seq_len, labels_trainval_df.index[val_indices])
-        # test_dataset = Load_Dataset_Custom(df_test, labels_test_df, seq_len)
-        
-        # 2) val = test
-        train_dataset = Load_Dataset_UEA30(df_trainval, labels_trainval_df, seq_len)
-        val_dataset = Load_Dataset_UEA30(df_test, labels_test_df, seq_len)
+        # 1) stratified split - 8:2 for each class as much as possible
+        train_indices, val_indices = [], []
+        for class_idx in range(len(class_names)):
+            class_indices = np.where(labels_trainval_df.values == class_idx)[0]
+            np.random.shuffle(class_indices)
+            split_index = int(len(class_indices) * 0.8)
+            train_indices.extend(class_indices[:split_index])
+            val_indices.extend(class_indices[split_index:])
+        while len(val_indices) > int(0.25 * len(train_indices)):
+            tmp_idx = val_indices.pop(np.random.randint(0, len(val_indices) - 1))
+            train_indices.append(tmp_idx)
+        train_dataset = Load_Dataset_UEA30(df_trainval, labels_trainval_df, seq_len, labels_trainval_df.index[train_indices])
+        val_dataset = Load_Dataset_UEA30(df_trainval, labels_trainval_df, seq_len, labels_trainval_df.index[val_indices])
         test_dataset = Load_Dataset_UEA30(df_test, labels_test_df, seq_len)
         num_channels = train_dataset.num_channels
+        
+        # # 2) val = test
+        # train_dataset = Load_Dataset_UEA30(df_trainval, labels_trainval_df, seq_len)
+        # val_dataset = Load_Dataset_UEA30(df_test, labels_test_df, seq_len)
+        # test_dataset = Load_Dataset_UEA30(df_test, labels_test_df, seq_len)
+        # num_channels = train_dataset.num_channels
         print(f'Train : {len(train_dataset)}, Val : {len(val_dataset)}, Test : {len(test_dataset)}')
 
     # in case the dataset is too small ...

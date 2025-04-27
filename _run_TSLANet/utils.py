@@ -29,7 +29,11 @@ def get_clf_report(model, dataloader, save_dir, class_names):
 
             preds = torch.argmax(logits, dim=1)
             predictions.extend(preds.cpu().numpy())
-            targets.extend(labels.cpu().numpy())
+            try:
+                targets.extend(labels.cpu().numpy())
+            except:
+                print(labels)
+                targets.extend(labels.unsqueeze(0).cpu().numpy())
 
     clf_report = classification_report(targets, predictions, target_names=class_names,
                                        digits=4, output_dict=True)
