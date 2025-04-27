@@ -159,6 +159,30 @@ python run.py \
   --patience 10
 
 # EigenWorms
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu ${gpu_id} \
+  --task_name classification \
+  --data UEA \
+  --root_path "${data_dir}/EigenWorms" \
+  --seq_len 17984 \
+  --enc_in 6 \
+  --label_len 0 \
+  --pred_len 0 \
+  --c_out 0 \
+  --checkpoints ${checkpoint_dir} \
+  --model ${model_name} \
+  --model_id "CLS_EigenWorms" \
+  --moving_avg 180 \
+  --is_training 0 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 100 \
+  --patience 10
 
 # Epilepsy
 python run.py \

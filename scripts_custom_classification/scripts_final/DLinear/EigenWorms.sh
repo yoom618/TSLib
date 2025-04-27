@@ -6,8 +6,6 @@ gpu_id=0
 data_dir="${tslib_dir}/dataset"
 checkpoint_dir="${tslib_dir}/checkpoints_best/${model_name}"
 
-# below all have the same performance
-
 python run.py \
   --use_gpu True \
   --gpu_type cuda \
@@ -23,4 +21,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  ...
+  --moving_avg 180 \
+  --is_training 0 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 100 \
+  --patience 10
