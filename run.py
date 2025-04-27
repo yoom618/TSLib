@@ -73,14 +73,7 @@ if __name__ == '__main__':
     parser.add_argument('--seg_len', type=int, default=96,
                         help='the length of segmen-wise iteration of SegRNN')
 
-    ### Add some args for each model
-    # Mamba
-    parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
-    parser.add_argument('--d_conv', type=int, default=4, help='conv kernel size for Mamba')
-    parser.add_argument('--tv_dt', type=int, default=0, help='whether to use time variant dt for Mamba')
-    parser.add_argument('--tv_B', type=int, default=0, help='whether to use time variant B for Mamba')
-    parser.add_argument('--tv_C', type=int, default=0, help='whether to use time variant C for Mamba')
-    
+    ### Add some args for each model    
     # DLinear
     parser.add_argument('--individual', type=str2bool, default=False, help='DLinear: a linear layer for each variate(channel) individually')
 
@@ -238,11 +231,62 @@ if __name__ == '__main__':
         for ii in range(args.itr):
             # setting record of experiments
             exp = Exp(args)  # set experiments
-            if args.model == 'MambaSingleLayer':
+            if args.model == 'DLinear':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
-                        + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}' \
-                        + f'_tvdt{int(args.tv_dt)}_tvB{int(args.tv_B)}_tvC{int(args.tv_C)}_{args.des}_{ii}'
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_ma{args.moving_avg}_i{args.individual}_{args.des}_{ii}'
+            elif args.model == 'LightTS':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_dm{args.d_model}_cs{args.chunk_size}_{args.des}_{ii}'
+            elif args.model == 'MTSMixer':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}' \
+                        + f'_fT{int(args.fac_T)}_w{args.down_sampling_window}_fC{int(args.fac_C)}_df{args.d_ff}' \
+                        + f'_rev{int(args.use_revin)}_n{args.use_norm}_i{int(args.individual)}_{args.des}_{ii}'
+            elif args.model == 'TimesNet':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}_nk{args.num_kernels}_tk{args.top_k}' \
+                        + f'_{args.des}_{ii}'
+            elif args.model == 'ETSformer':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}' \
+                        + f'_tk{args.top_k}_{args.des}_{ii}'
+            elif args.model == 'FEDformer':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}' \
+                        + f'_ma{args.moving_avg}_{args.des}_{ii}'
+            elif args.model == 'Crossformer':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                        + f'_fac{args.factor}_{args.des}_{ii}'
+            elif args.model == 'PatchTST':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                        + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
+            elif args.model == 'GPT4TS':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}' \
+                        + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
+            elif args.model == 'ModernTCN':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
+                        + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
+                        + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
+                        + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
+            elif args.model == 'TimeMixerPP':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                        + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}_' \
+                        + f'cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                        + f'_{args.des}_{ii}'
             else:
                 setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
                     args.task_name,
@@ -277,10 +321,62 @@ if __name__ == '__main__':
     else:
         exp = Exp(args)  # set experiments
         ii = 0
-        if args.model == 'MambaSingleLayer':
+        if args.model == 'DLinear':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
-                    + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}_tvdt{args.tv_dt}_tvB{args.tv_B}_tvC{args.tv_C}_{args.des}_{ii}'
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_ma{args.moving_avg}_i{args.individual}_{args.des}_{ii}'
+        elif args.model == 'LightTS':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_dm{args.d_model}_cs{args.chunk_size}_{args.des}_{ii}'
+        elif args.model == 'MTSMixer':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}' \
+                    + f'_fT{int(args.fac_T)}_w{args.down_sampling_window}_fC{int(args.fac_C)}_df{args.d_ff}' \
+                    + f'_rev{int(args.use_revin)}_n{args.use_norm}_i{int(args.individual)}_{args.des}_{ii}'
+        elif args.model == 'TimesNet':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}_nk{args.num_kernels}_tk{args.top_k}' \
+                    + f'_{args.des}_{ii}'
+        elif args.model == 'ETSformer':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}' \
+                    + f'_tk{args.top_k}_{args.des}_{ii}'
+        elif args.model == 'FEDformer':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_dm{args.d_model}_nh{args.n_heads}_el{args.e_layers}_dl{args.d_layers}_df{args.d_ff}' \
+                    + f'_ma{args.moving_avg}_{args.des}_{ii}'
+        elif args.model == 'Crossformer':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                    + f'_fac{args.factor}_{args.des}_{ii}'
+        elif args.model == 'PatchTST':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                    + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
+        elif args.model == 'GPT4TS':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}' \
+                    + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
+        elif args.model == 'ModernTCN':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
+                    + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
+                    + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
+                    + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
+        elif args.model == 'TimeMixerPP':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
+                    + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}_' \
+                    + f'cmix{args.channel_mixing}_cind{args.channel_independence}_out{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                    + f'_{args.des}_{ii}'
         else:
             setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
                 args.task_name,
