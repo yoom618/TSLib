@@ -1,9 +1,13 @@
 import os
 import torch
-from models import Autoformer, Transformer, TimesNet, Nonstationary_Transformer, DLinear, FEDformer, \
-    Informer, LightTS, Reformer, ETSformer, Pyraformer, PatchTST, MICN, Crossformer, FiLM, iTransformer, \
-    Koopa, TiDE, FreTS, TimeMixer, TSMixer, SegRNN, MambaSimple, TemporalFusionTransformer, SCINet, PAttn, TimeXer, \
-    WPMixer, MambaFull, MambaSingleLayer, MTSMixer, GPT4TS, ModernTCN, TimeMixerPP
+from models import TimesNet, DLinear, FEDformer, \
+    LightTS, ETSformer, PatchTST, Crossformer, \
+    MambaSimple, \
+    MTSMixer, GPT4TS, ModernTCN, TimeMixerPP
+# ### UNUSED 
+# from models import Autoformer, Transformer, Nonstationary_Transformer, \
+#     Informer, Reformer, Pyraformer, MICN, FiLM, iTransformer, \
+#     Koopa, TiDE, FreTS, TimeMixer, TSMixer, SegRNN, TemporalFusionTransformer, SCINet, PAttn, TimeXer, WPMixer, 
 
 
 class Exp_Basic(object):
@@ -11,35 +15,33 @@ class Exp_Basic(object):
         self.args = args
         self.model_dict = {
             'TimesNet': TimesNet,
-            'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Nonstationary_Transformer': Nonstationary_Transformer,
+            # 'Autoformer': Autoformer,
+            # 'Transformer': Transformer,
+            # 'Nonstationary_Transformer': Nonstationary_Transformer,
             'DLinear': DLinear,
             'FEDformer': FEDformer,
-            'Informer': Informer,
+            # 'Informer': Informer,
             'LightTS': LightTS,
-            'Reformer': Reformer,
+            # 'Reformer': Reformer,
             'ETSformer': ETSformer,
             'PatchTST': PatchTST,
-            'Pyraformer': Pyraformer,
-            'MICN': MICN,
+            # 'Pyraformer': Pyraformer,
+            # 'MICN': MICN,
             'Crossformer': Crossformer,
-            'FiLM': FiLM,
-            'iTransformer': iTransformer,
-            'Koopa': Koopa,
-            'TiDE': TiDE,
-            'FreTS': FreTS,
+            # 'FiLM': FiLM,
+            # 'iTransformer': iTransformer,
+            # 'Koopa': Koopa,
+            # 'TiDE': TiDE,
+            # 'FreTS': FreTS,
             'MambaSimple': MambaSimple,
-            'TimeMixer': TimeMixer,
-            'TSMixer': TSMixer,
-            'SegRNN': SegRNN,
-            'TemporalFusionTransformer': TemporalFusionTransformer,
-            "SCINet": SCINet,
-            'PAttn': PAttn,
-            'TimeXer': TimeXer,
-            'WPMixer': WPMixer,
-            'MambaFull': MambaFull,
-            'MambaSingleLayer': MambaSingleLayer,
+            # 'TimeMixer': TimeMixer,
+            # 'TSMixer': TSMixer,
+            # 'SegRNN': SegRNN,
+            # 'TemporalFusionTransformer': TemporalFusionTransformer,
+            # "SCINet": SCINet,
+            # 'PAttn': PAttn,
+            # 'TimeXer': TimeXer,
+            # 'WPMixer': WPMixer,
             'MTSMixer': MTSMixer,
             'GPT4TS': GPT4TS,
             'ModernTCN': ModernTCN,
