@@ -1,55 +1,45 @@
-usage: run.py [-h] --task_name TASK_NAME --is_training IS_TRAINING --model_id
-              MODEL_ID --model MODEL --data DATA [--root_path ROOT_PATH]
-              [--data_path DATA_PATH] [--features FEATURES] [--target TARGET]
-              [--freq FREQ] [--checkpoints CHECKPOINTS] [--seq_len SEQ_LEN]
-              [--label_len LABEL_LEN] [--pred_len PRED_LEN]
-              [--seasonal_patterns SEASONAL_PATTERNS] [--inverse]
-              [--mask_rate MASK_RATE] [--anomaly_ratio ANOMALY_RATIO]
-              [--top_k TOP_K] [--num_kernels NUM_KERNELS]
-              [--conv_kernel CONV_KERNEL [CONV_KERNEL ...]] [--enc_in ENC_IN]
-              [--dec_in DEC_IN] [--c_out C_OUT] [--d_model D_MODEL]
-              [--n_heads N_HEADS] [--e_layers E_LAYERS] [--d_layers D_LAYERS]
-              [--d_ff D_FF] [--moving_avg MOVING_AVG] [--factor FACTOR]
-              [--distil] [--dropout DROPOUT] [--embed EMBED]
-              [--activation ACTIVATION]
-              [--channel_independence CHANNEL_INDEPENDENCE]
-              [--decomp_method DECOMP_METHOD] [--use_norm USE_NORM]
-              [--down_sampling_layers DOWN_SAMPLING_LAYERS]
-              [--down_sampling_window DOWN_SAMPLING_WINDOW]
-              [--down_sampling_method DOWN_SAMPLING_METHOD]
-              [--seg_len SEG_LEN] [--expand EXPAND] [--d_conv D_CONV]
-              [--tv_dt TV_DT] [--tv_B TV_B] [--tv_C TV_C] [--use_D USE_D]
-              [--mamba_ablation_type MAMBA_ABLATION_TYPE]
-              [--individual INDIVIDUAL] [--chunk_size CHUNK_SIZE]
-              [--fac_T FAC_T] [--fac_C FAC_C] [--use_revin USE_REVIN]
-              [--patch_size PATCH_SIZE] [--patch_stride PATCH_STRIDE]
-              [--huggingface_cache_dir HUGGINGFACE_CACHE_DIR]
-              [--stem_ratio STEM_RATIO] [--downsample_ratio DOWNSAMPLE_RATIO]
-              [--ffn_ratio FFN_RATIO]
-              [--num_blocks NUM_BLOCKS [NUM_BLOCKS ...]]
-              [--large_size LARGE_SIZE [LARGE_SIZE ...]]
-              [--small_size SMALL_SIZE [SMALL_SIZE ...]]
-              [--dims DIMS [DIMS ...]] [--dw_dims DW_DIMS [DW_DIMS ...]]
-              [--small_kernel_merged SMALL_KERNEL_MERGED]
-              [--call_structural_reparam CALL_STRUCTURAL_REPARAM]
-              [--use_multi_scale USE_MULTI_SCALE] [--affine AFFINE]
-              [--subtract_last SUBTRACT_LAST]
-              [--decomp_moderntcn DECOMP_MODERNTCN]
-              [--decomp_kernel_size DECOMP_KERNEL_SIZE]
-              [--channel_mixing CHANNEL_MIXING]
-              [--output_attention OUTPUT_ATTENTION]
-              [--num_workers NUM_WORKERS] [--itr ITR]
-              [--train_epochs TRAIN_EPOCHS] [--batch_size BATCH_SIZE]
-              [--patience PATIENCE] [--learning_rate LEARNING_RATE]
-              [--weight_decay WEIGHT_DECAY] [--des DES] [--loss LOSS]
-              [--lradj LRADJ] [--use_amp] [--use_gpu USE_GPU] [--gpu GPU]
-              [--gpu_type GPU_TYPE] [--use_multi_gpu] [--devices DEVICES]
-              [--p_hidden_dims P_HIDDEN_DIMS [P_HIDDEN_DIMS ...]]
-              [--p_hidden_layers P_HIDDEN_LAYERS] [--use_dtw USE_DTW]
-              [--augmentation_ratio AUGMENTATION_RATIO] [--seed SEED]
-              [--jitter] [--scaling] [--permutation] [--randompermutation]
-              [--magwarp] [--timewarp] [--windowslice] [--windowwarp]
-              [--rotation] [--spawner] [--dtwwarp] [--shapedtwwarp] [--wdba]
-              [--discdtw] [--discsdtw] [--extra_tag EXTRA_TAG]
-              [--patch_len PATCH_LEN]
-run.py: error: the following arguments are required: --is_training
+Using GPU
+Args in experiment:
+[1mBasic Config[0m
+  Task Name:          classification      Is Training:        0                   
+  Model ID:           CLS_InsectWingbeat  Model:              ModernTCN           
+
+[1mData Loader[0m
+  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/InsectWingbeat
+  Data Path:          ETTh1.csv           Features:           M                   
+  Target:             OT                  Freq:               h                   
+  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/ModernTCN
+
+[1mModel Parameters[0m
+  Top k:              5                   Num Kernels:        6                   
+  Enc In:             7                   Dec In:             7                   
+  C Out:              7                   d model:            512                 
+  n heads:            8                   e layers:           2                   
+  d layers:           1                   d FF:               2048                
+  Moving Avg:         25                  Factor:             1                   
+  Distil:             1                   Dropout:            0.1                 
+  Embed:              timeF               Activation:         gelu                
+
+[1mRun Parameters[0m
+  Num Workers:        10                  Itr:                1                   
+  Train Epochs:       50                  Batch Size:         16                  
+  Patience:           10                  Learning Rate:      0.001               
+  Des:                Exp                 Loss:               MSE                 
+  Lradj:              type1               Use Amp:            0                   
+
+[1mGPU[0m
+  Use GPU:            1                   GPU:                0                   
+  Use Multi GPU:      0                   Devices:            0,1,2,3             
+
+[1mDe-stationary Projector Params[0m
+  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
+
+25000
+25000
+>>>>>>>testing : classification_CLS_InsectWingbeat_ModernTCN_UEA_ftM_sl22_ll0_pl0_dim128-256_nb1-1_lk9-9_sk5-5_ffr4_ps2_str1_multiFalse_mergedFalse_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+25000
+loading model
+test shape: torch.Size([25000, 10]) torch.Size([25000, 1])
+accuracy:0.75588
+model parameter : 261801866
+model size : 999.90MB

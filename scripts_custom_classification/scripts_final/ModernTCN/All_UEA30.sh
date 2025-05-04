@@ -429,6 +429,31 @@ python run.py \
 
 # InsectWingbeat
 dataset_name="InsectWingbeat"
+python run.py \
+  --use_gpu True \
+  --gpu_type cuda \
+  --gpu ${gpu_id} \
+  --task_name classification \
+  --data UEA \
+  --root_path "${data_dir}/${dataset_name}" \
+  --checkpoints ${checkpoint_dir} \
+  --model ${model_name} \
+  --model_id "CLS_${dataset_name}" \
+  --ffn_ratio 4 \
+  --patch_size 2 \
+  --patch_stride 1 \
+  --num_blocks 1 1 \
+  --large_size 9 9 \
+  --small_size 5 5 \
+  --dims 128 256 \
+  --is_training 0 \
+  --batch_size 16 \
+  --des Exp \
+  --itr 1 \
+  --dropout 0.1 \
+  --learning_rate 0.001 \
+  --train_epochs 50 \
+  --patience 10
 
 # JapaneseVowels
 dataset_name="JapaneseVowels"
