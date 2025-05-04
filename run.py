@@ -284,8 +284,8 @@ if __name__ == '__main__':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
                         + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
-                        + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}_' \
-                        + f'cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                        + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}' \
+                        + f'_cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
                         + f'_{args.des}_{ii}'
             else:
                 setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
@@ -374,8 +374,8 @@ if __name__ == '__main__':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
                     + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
-                    + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}_' \
-                    + f'cmix{args.channel_mixing}_cind{args.channel_independence}_out{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                    + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}' \
+                    + f'_cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
                     + f'_{args.des}_{ii}'
         else:
             setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
