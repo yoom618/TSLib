@@ -27,7 +27,15 @@ class Model(nn.Module):
             expand = configs.expand,
         )
 
-        self.out_layer = nn.Linear(configs.d_model, configs.c_out, bias=False)
+        if self.task_name == 'classification': # add classification task code. refer to other models given in tslib
+            self.act = F.gelu
+            self.dropout = nn.Dropout(configs.dropout)
+            self.projection = nn.Linear(
+                configs.d_model * configs.seq_len, configs.num_class, bias=False)          
+        elif self.task_name in ['short_term_forecast', 'long_term_forecast']:
+            self.out_layer = nn.Linear(configs.d_model, configs.c_out, bias=False)
+        else:
+            raise ValueError(f"Task {self.task_name} not supported")
 
     def forecast(self, x_enc, x_mark_enc):
         mean_enc = x_enc.mean(1, keepdim=True).detach()
