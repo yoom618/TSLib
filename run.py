@@ -73,7 +73,11 @@ if __name__ == '__main__':
     parser.add_argument('--seg_len', type=int, default=96,
                         help='the length of segmen-wise iteration of SegRNN')
 
-    ### Add some args for each model    
+    ### Add some args for each model
+    # Mamba
+    parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
+    parser.add_argument('--d_conv', type=int, default=4, help='conv kernel size for Mamba')
+    
     # DLinear
     parser.add_argument('--individual', type=str2bool, default=False, help='DLinear: a linear layer for each variate(channel) individually')
 
@@ -117,6 +121,16 @@ if __name__ == '__main__':
                         help='0: channel mixing 1: whether to use channel_mixing')
     parser.add_argument('--output_attention', type=str2bool, default=False, help='whether to output attention in ecoder')
 
+    # InterpretGN
+    parser.add_argument('--dnn_type', type=str, default='FCN', choices=['FCN', 'Transformer', 'TimesNet', 'PatchTST', 'ResNet'])
+    parser.add_argument('--num_shapelet', type=int, default=10, help='number of shapelet')
+    parser.add_argument("--lambda_reg", type=float, default=0.1)
+    parser.add_argument("--lambda_div", type=float, default=0.1)
+    parser.add_argument("--epsilon", type=float, default=1.)
+    parser.add_argument("--distance_func", type=str, default='euclidean', choices=['euclidean', 'cosine', 'pearson'])
+    parser.add_argument("--memory_efficient", type=str2bool, default=False)
+    parser.add_argument("--sbm_cls", type=str, default='linear', choices=['linear', 'bilinear', 'attention'])
+    parser.add_argument("--gating_value", type=float, default=None)
 
     # optimization
     parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
@@ -231,7 +245,11 @@ if __name__ == '__main__':
         for ii in range(args.itr):
             # setting record of experiments
             exp = Exp(args)  # set experiments
-            if args.model == 'DLinear':
+            if args.model == 'Mamba':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_dm{args.d_model}_ds{args.d_ff}_expand{args.expand}_dc{args.d_conv}_{args.des}_{ii}'
+            elif args.model == 'DLinear':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_ma{args.moving_avg}_i{args.individual}_{args.des}_{ii}'
             elif args.model == 'LightTS':
@@ -276,8 +294,8 @@ if __name__ == '__main__':
                         + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
             elif args.model == 'ModernTCN':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{"-".join([str(i) for i in args.dims])}' \
-                        + f'_nb{"-".join([str(i) for i in args.num_blocks])}_lk{"-".join([str(i) for i in args.large_size])}_sk{"-".join([str(i) for i in args.small_size])}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
+                        + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
                         + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
                         + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
             elif args.model == 'TimeMixerPP':
@@ -286,6 +304,12 @@ if __name__ == '__main__':
                         + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
                         + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}' \
                         + f'_cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                        + f'_{args.des}_{ii}'
+            elif args.model == 'InterpretGN':
+                setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                        + f'_dnn{args.dnn_type}_ns{args.num_shapelet}_div{args.lambda_div}_reg{args.lambda_reg}' \
+                        + f'_eps{args.epsilon}_dfunc{args.distance_func}_mem{args.memory_efficient}_cls{args.sbm_cls}_gate{args.gating_value}' \
                         + f'_{args.des}_{ii}'
             else:
                 setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(
@@ -321,7 +345,11 @@ if __name__ == '__main__':
     else:
         exp = Exp(args)  # set experiments
         ii = 0
-        if args.model == 'DLinear':
+        if args.model == 'Mamba':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_dm{args.d_model}_ds{args.d_ff}_expand{args.expand}_dc{args.d_conv}_{args.des}_{ii}'
+        elif args.model == 'DLinear':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_ma{args.moving_avg}_i{args.individual}_{args.des}_{ii}'
         elif args.model == 'LightTS':
@@ -366,8 +394,8 @@ if __name__ == '__main__':
                     + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
         elif args.model == 'ModernTCN':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{"-".join([str(i) for i in args.dims])}' \
-                    + f'_nb{"-".join([str(i) for i in args.num_blocks])}_lk{"-".join([str(i) for i in args.large_size])}_sk{"-".join([str(i) for i in args.small_size])}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
+                    + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
                     + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
                     + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
         elif args.model == 'TimeMixerPP':
@@ -376,6 +404,12 @@ if __name__ == '__main__':
                     + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
                     + f'_{args.down_sampling_method}{args.down_sampling_layers}-{args.down_sampling_window}' \
                     + f'_cm{args.channel_mixing}_ci{args.channel_independence}_oa{args.output_attention}_nk{args.num_kernels}_tk{args.top_k}' \
+                    + f'_{args.des}_{ii}'
+        elif args.model == 'InterpretGN':
+            setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
+                    + f'_dnn{args.dnn_type}_ns{args.num_shapelet}_div{args.lambda_div}_reg{args.lambda_reg}' \
+                    + f'_eps{args.epsilon}_dfunc{args.distance_func}_mem{args.memory_efficient}_cls{args.sbm_cls}_gate{args.gating_value}' \
                     + f'_{args.des}_{ii}'
         else:
             setting = '{}_{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_expand{}_dc{}_fc{}_eb{}_dt{}_{}_{}'.format(

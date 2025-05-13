@@ -60,6 +60,8 @@ class Exp_Classification(Exp_Basic):
 
                 pred = outputs.detach().cpu()
                 loss = criterion(pred, label.long().squeeze(-1).cpu())
+                if self.args.model in ['InterpretGN']:
+                    loss += self.model.loss().mean().cpu()  # add sbm loss
                 total_loss.append(loss)
 
                 preds.append(outputs.detach())
@@ -111,6 +113,8 @@ class Exp_Classification(Exp_Basic):
 
                 outputs = self.model(batch_x, padding_mask, None, None)
                 loss = criterion(outputs, label.long().squeeze(-1))
+                if self.args.model in ['InterpretGN']:
+                    loss += self.model.loss().mean().cpu()  # add sbm loss
                 train_loss.append(loss.item())
 
                 if (i + 1) % 100 == 0:
