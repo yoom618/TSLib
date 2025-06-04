@@ -128,11 +128,15 @@ class Exp_Classification(Exp_Basic):
                 loss.backward()
                 nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=4.0)
                 model_optim.step()
-
+            
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
             vali_loss, val_accuracy = self.vali(vali_data, vali_loader, criterion)
             test_loss, test_accuracy = self.vali(test_data, test_loader, criterion)
+
+            if (self.args.model == 'MambaSingleLayer') and ('gating' in self.args.mamba_ablation_type):
+                print(f"gating_value: {np.mean(self.model.gating_values, axis=0)}")
+                self.model.gating_values.clear()
 
             print(
                 "Epoch: {0}, Steps: {1} | Train Loss: {2:.3f} Vali Loss: {3:.3f} Vali Acc: {4:.3f} Test Loss: {5:.3f} Test Acc: {6:.3f}"
@@ -174,6 +178,9 @@ class Exp_Classification(Exp_Basic):
         preds = torch.cat(preds, 0)
         trues = torch.cat(trues, 0)
         print('test shape:', preds.shape, trues.shape)
+        if (self.args.model == 'MambaSingleLayer') and ('gating' in self.args.mamba_ablation_type):
+            print(f"gating_value: {np.mean(self.model.gating_values, axis=0)}")
+            self.model.gating_values.clear()
 
         probs = torch.nn.functional.softmax(preds)  # (total_samples, num_classes) est. prob. for each class and sample
         predictions = torch.argmax(probs, dim=1).cpu().numpy()  # (total_samples,) int class index for each sample

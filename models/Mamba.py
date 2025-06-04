@@ -50,9 +50,26 @@ class Model(nn.Module):
         x_out = x_out * std_enc + mean_enc
         return x_out
 
+    def classification(self, x_enc, x_mark_enc):
+        x = self.embedding(x_enc, None)
+        x = self.mamba(x)
+
+        # Output from Mamba (refer to other model codes)
+        output = self.act(x)
+        output = self.dropout(output)
+        output = output * x_mark_enc.unsqueeze(-1)
+        output = output.reshape(output.shape[0], -1)
+        output = self.projection(output)
+        return output
+
+        return x_out
+
     def forward(self, x_enc, x_mark_enc, x_dec, x_mark_dec, mask=None):
         if self.task_name in ['short_term_forecast', 'long_term_forecast']:
             x_out = self.forecast(x_enc, x_mark_enc)
             return x_out[:, -self.pred_len:, :]
+        elif self.task_name == 'classification':
+            x_out = self.classification(x_enc, x_mark_enc)
+            return x_out
 
         # other tasks not implemented
