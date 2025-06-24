@@ -34,7 +34,6 @@ class Exp_Basic(object):
             # 'TiDE': TiDE,
             # 'FreTS': FreTS,
             'MambaSimple': MambaSimple,
-            'Mamba': Mamba,
             # 'TimeMixer': TimeMixer,
             # 'TSMixer': TSMixer,
             # 'SegRNN': SegRNN,
