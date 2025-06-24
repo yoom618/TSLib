@@ -2,7 +2,7 @@ import os
 import torch
 from models import TimesNet, DLinear, FEDformer, \
     LightTS, ETSformer, PatchTST, Crossformer, \
-    MambaSimple, Mamba, \
+    MambaSimple, \
     MTSMixer, GPT4TS, ModernTCN, TimeMixerPP, InterpretGN
 # ### UNUSED 
 # from models import Autoformer, Transformer, Nonstationary_Transformer, \
