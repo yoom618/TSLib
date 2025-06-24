@@ -93,6 +93,9 @@ if __name__ == '__main__':
     # PatchTST
     parser.add_argument('--patch_size', type=int, default=16, help='the patch size')
     parser.add_argument('--patch_stride', type=int, default=8, help='the patch stride')
+    
+    # Crossformer
+    parser.add_argument('--seg_len_cf', type=int, default=12, help='the length of segment for Crossformer')
 
     # GPT4TS (One-fits-all)
     parser.add_argument('--huggingface_cache_dir', type=str, default='./huggingface', help='huggingface cache directory for GPT2')
@@ -281,7 +284,7 @@ if __name__ == '__main__':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
                         + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
-                        + f'_fac{args.factor}_{args.des}_{ii}'
+                        + f'_fac{args.factor}_seg{args.seg_len_cf}_{args.des}_{ii}'
             elif args.model == 'PatchTST':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
@@ -381,7 +384,7 @@ if __name__ == '__main__':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
                     + f'_el{args.e_layers}_dm{args.d_model}_nh{args.n_heads}_df{args.d_ff}' \
-                    + f'_fac{args.factor}_{args.des}_{ii}'
+                    + f'_fac{args.factor}_seg{args.seg_len_cf}_{args.des}_{ii}'
         elif args.model == 'PatchTST':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
