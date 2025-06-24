@@ -296,9 +296,13 @@ if __name__ == '__main__':
                         + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}' \
                         + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
             elif args.model == 'ModernTCN':
+                dim_str = '-'.join([str(i) for i in args.dims])
+                num_blocks_str = '-'.join([str(i) for i in args.num_blocks])
+                large_size_str = '-'.join([str(i) for i in args.large_size])
+                small_size_str = '-'.join([str(i) for i in args.small_size])
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
-                        + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{dim_str}' \
+                        + f'_nb{num_blocks_str}_lk{large_size_str}_sk{small_size_str}' \
                         + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
                         + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
             elif args.model == 'TimeMixerPP':
@@ -396,9 +400,13 @@ if __name__ == '__main__':
                     + f'_el{args.e_layers}_dm{args.d_model}_df{args.d_ff}' \
                     + f'_ps{args.patch_size}_str{args.patch_stride}_{args.des}_{ii}'
         elif args.model == 'ModernTCN':
+            dim_str = '-'.join([str(i) for i in args.dims])
+            num_blocks_str = '-'.join([str(i) for i in args.num_blocks])
+            large_size_str = '-'.join([str(i) for i in args.large_size])
+            small_size_str = '-'.join([str(i) for i in args.small_size])
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
-                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{'-'.join([str(i) for i in args.dims])}' \
-                    + f'_nb{'-'.join([str(i) for i in args.num_blocks])}_lk{'-'.join([str(i) for i in args.large_size])}_sk{'-'.join([str(i) for i in args.small_size])}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dim{dim_str}' \
+                    + f'_nb{num_blocks_str}_lk{large_size_str}_sk{small_size_str}' \
                     + f'_ffr{args.ffn_ratio}_ps{args.patch_size}_str{args.patch_stride}_multi{args.use_multi_scale}' \
                     + f'_merged{args.small_kernel_merged}_{args.des}_{ii}'
         elif args.model == 'TimeMixerPP':
