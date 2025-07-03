@@ -13,10 +13,10 @@ Args in experiment:
 [1mModel Parameters[0m
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            128                 
-  n heads:            8                   e layers:           1                   
+  C Out:              7                   d model:            256                 
+  n heads:            4                   e layers:           3                   
   d layers:           1                   d FF:               64                  
-  Moving Avg:         25                  Factor:             1                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,58 +36,13 @@ Args in experiment:
 
 50
 50
->>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el1_dm128_nh8_df64_fac1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el3_dm256_nh4_df64_fac10_seg24_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 50
 loading model
 test shape: torch.Size([50, 5]) torch.Size([50, 1])
-accuracy:0.7
-model parameter : 24662045
-model size : 96.59MB
-Using GPU
-Args in experiment:
-[1mBasic Config[0m
-  Task Name:          classification      Is Training:        0                   
-  Model ID:           CLS_DuckDuckGeese   Model:              Crossformer         
-
-[1mData Loader[0m
-  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/DuckDuckGeese
-  Data Path:          ETTh1.csv           Features:           M                   
-  Target:             OT                  Freq:               h                   
-  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/Crossformer
-
-[1mModel Parameters[0m
-  Top k:              5                   Num Kernels:        6                   
-  Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            128                 
-  n heads:            8                   e layers:           1                   
-  d layers:           1                   d FF:               64                  
-  Moving Avg:         25                  Factor:             4                   
-  Distil:             1                   Dropout:            0.1                 
-  Embed:              timeF               Activation:         gelu                
-
-[1mRun Parameters[0m
-  Num Workers:        10                  Itr:                1                   
-  Train Epochs:       100                 Batch Size:         4                   
-  Patience:           10                  Learning Rate:      0.001               
-  Des:                Exp                 Loss:               MSE                 
-  Lradj:              type1               Use Amp:            0                   
-
-[1mGPU[0m
-  Use GPU:            1                   GPU:                0                   
-  Use Multi GPU:      0                   Devices:            0,1,2,3             
-
-[1mDe-stationary Projector Params[0m
-  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
-
-50
-50
->>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el1_dm128_nh8_df64_fac4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-50
-loading model
-test shape: torch.Size([50, 5]) torch.Size([50, 1])
-accuracy:0.7
-model parameter : 24670877
-model size : 96.62MB
+accuracy:0.72
+model parameter : 17233637
+model size : 70.77MB
 Using GPU
 Args in experiment:
 [1mBasic Config[0m
@@ -104,8 +59,8 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            256                 
-  n heads:            8                   e layers:           4                   
-  d layers:           1                   d FF:               512                 
+  n heads:            4                   e layers:           1                   
+  d layers:           1                   d FF:               256                 
   Moving Avg:         25                  Factor:             3                   
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
@@ -126,13 +81,13 @@ Args in experiment:
 
 50
 50
->>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el4_dm256_nh8_df512_fac3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el1_dm256_nh4_df256_fac3_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 50
 loading model
 test shape: torch.Size([50, 5]) torch.Size([50, 1])
-accuracy:0.7
-model parameter : 27369281
-model size : 109.48MB
+accuracy:0.72
+model parameter : 51499293
+model size : 201.40MB
 Using GPU
 Args in experiment:
 [1mBasic Config[0m
@@ -149,9 +104,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            256                 
-  n heads:            8                   e layers:           3                   
+  n heads:            4                   e layers:           1                   
   d layers:           1                   d FF:               512                 
-  Moving Avg:         25                  Factor:             3                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -171,55 +126,10 @@ Args in experiment:
 
 50
 50
->>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el3_dm256_nh8_df512_fac3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el1_dm256_nh4_df512_fac10_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 50
 loading model
 test shape: torch.Size([50, 5]) torch.Size([50, 1])
-accuracy:0.7
-model parameter : 29365813
-model size : 117.05MB
-Using GPU
-Args in experiment:
-[1mBasic Config[0m
-  Task Name:          classification      Is Training:        0                   
-  Model ID:           CLS_DuckDuckGeese   Model:              Crossformer         
-
-[1mData Loader[0m
-  Data:               UEA                 Root Path:          /data/yoom618/TSLib/dataset/DuckDuckGeese
-  Data Path:          ETTh1.csv           Features:           M                   
-  Target:             OT                  Freq:               h                   
-  Checkpoints:        /data/yoom618/TSLib/checkpoints_best/Crossformer
-
-[1mModel Parameters[0m
-  Top k:              5                   Num Kernels:        6                   
-  Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            256                 
-  n heads:            8                   e layers:           1                   
-  d layers:           1                   d FF:               64                  
-  Moving Avg:         25                  Factor:             1                   
-  Distil:             1                   Dropout:            0.1                 
-  Embed:              timeF               Activation:         gelu                
-
-[1mRun Parameters[0m
-  Num Workers:        10                  Itr:                1                   
-  Train Epochs:       100                 Batch Size:         4                   
-  Patience:           10                  Learning Rate:      0.001               
-  Des:                Exp                 Loss:               MSE                 
-  Lradj:              type1               Use Amp:            0                   
-
-[1mGPU[0m
-  Use GPU:            1                   GPU:                0                   
-  Use Multi GPU:      0                   Devices:            0,1,2,3             
-
-[1mDe-stationary Projector Params[0m
-  P Hidden Dims:      128, 128            P Hidden Layers:    2                   
-
-50
-50
->>>>>>>testing : classification_CLS_DuckDuckGeese_Crossformer_UEA_ftM_sl270_ll0_pl0_el1_dm256_nh8_df64_fac1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-50
-loading model
-test shape: torch.Size([50, 5]) torch.Size([50, 1])
-accuracy:0.7
-model parameter : 50896541
-model size : 199.10MB
+accuracy:0.72
+model parameter : 52328477
+model size : 204.57MB

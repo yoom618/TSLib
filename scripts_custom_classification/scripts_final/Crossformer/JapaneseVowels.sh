@@ -19,7 +19,9 @@ python run.py \
   --e_layers 3 \
   --d_model 128 \
   --d_ff 256 \
-  --factor 4 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \

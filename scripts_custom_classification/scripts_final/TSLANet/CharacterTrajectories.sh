@@ -12,11 +12,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "13_02_38" \
+    --ckpt_time "01_31_55" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
-    --emb_dim 64 \
-    --mlp_ratio 1.0 \
+    --depth 2 \
+    --emb_dim 32 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \

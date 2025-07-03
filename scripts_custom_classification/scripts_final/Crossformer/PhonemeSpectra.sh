@@ -18,8 +18,10 @@ python run.py \
   --model_id "CLS_${dataset_name}" \
   --e_layers 3 \
   --d_model 128 \
-  --d_ff 64 \
-  --factor 2 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \

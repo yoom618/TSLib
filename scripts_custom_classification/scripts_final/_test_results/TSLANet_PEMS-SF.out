@@ -1,6 +1,6 @@
-========== PEMS-SF_dim256_depth3_mask0.4_patch4_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_17_54_24 ===========
-Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/PEMS-SF_dim256_depth3_mask0.4_patch4_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_17_54_24/PEMS-SF_dim256_depth3_mask0.4_patch4_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_17_54_24
-Train : 214, Val : 53, Test : 173
+========== PEMS-SF_dim128_depth3_mask0.4_patch36_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_11_21_23 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/PEMS-SF_dim128_depth3_mask0.4_patch36_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_11_21_23/PEMS-SF_dim128_depth3_mask0.4_patch36_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_11_21_23
+Train : 267, Val : 173, Test : 173
 Dataset loaded ...
 GPU available: True (cuda), used: True
 TPU available: False, using: 0 TPU cores
@@ -9,11 +9,11 @@ HPU available: False, using: 0 HPUs
 Seed set to 42
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
 /home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
-Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/11 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/11 [00:00<?, ?it/s]Testing DataLoader 0:   9%|▉         | 1/11 [00:01<00:14,  0.70it/s]Testing DataLoader 0:  18%|█▊        | 2/11 [00:02<00:09,  0.91it/s]Testing DataLoader 0:  27%|██▋       | 3/11 [00:03<00:08,  1.00it/s]Testing DataLoader 0:  36%|███▋      | 4/11 [00:03<00:06,  1.04it/s]Testing DataLoader 0:  45%|████▌     | 5/11 [00:04<00:05,  1.10it/s]Testing DataLoader 0:  55%|█████▍    | 6/11 [00:05<00:04,  1.15it/s]Testing DataLoader 0:  64%|██████▎   | 7/11 [00:05<00:03,  1.20it/s]Testing DataLoader 0:  73%|███████▎  | 8/11 [00:06<00:02,  1.25it/s]Testing DataLoader 0:  82%|████████▏ | 9/11 [00:06<00:01,  1.30it/s]Testing DataLoader 0:  91%|█████████ | 10/11 [00:07<00:00,  1.33it/s]Testing DataLoader 0: 100%|██████████| 11/11 [00:07<00:00,  1.39it/s]Testing DataLoader 0: 100%|██████████| 11/11 [00:07<00:00,  1.39it/s]
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/11 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/11 [00:00<?, ?it/s]Testing DataLoader 0:   9%|▉         | 1/11 [00:01<00:13,  0.75it/s]Testing DataLoader 0:  18%|█▊        | 2/11 [00:02<00:09,  0.98it/s]Testing DataLoader 0:  27%|██▋       | 3/11 [00:02<00:07,  1.11it/s]Testing DataLoader 0:  36%|███▋      | 4/11 [00:03<00:05,  1.23it/s]Testing DataLoader 0:  45%|████▌     | 5/11 [00:04<00:04,  1.22it/s]Testing DataLoader 0:  55%|█████▍    | 6/11 [00:04<00:03,  1.26it/s]Testing DataLoader 0:  64%|██████▎   | 7/11 [00:05<00:03,  1.32it/s]Testing DataLoader 0:  73%|███████▎  | 8/11 [00:05<00:02,  1.39it/s]Testing DataLoader 0:  82%|████████▏ | 9/11 [00:06<00:01,  1.39it/s]Testing DataLoader 0:  91%|█████████ | 10/11 [00:07<00:00,  1.39it/s]Testing DataLoader 0: 100%|██████████| 11/11 [00:07<00:00,  1.41it/s]Testing DataLoader 0: 100%|██████████| 11/11 [00:07<00:00,  1.40it/s]
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
        Test metric             DataLoader 0
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc            0.7976878881454468
-         test_f1            0.7394750714302063
-        test_loss           1.0753979682922363
+        test_acc            0.8901734352111816
+         test_f1            0.8666929602622986
+        test_loss           0.7664295434951782
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

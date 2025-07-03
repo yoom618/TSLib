@@ -13,10 +13,10 @@ Args in experiment:
 [1mModel Parameters[0m
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            128                 
-  n heads:            8                   e layers:           1                   
+  C Out:              7                   d model:            256                 
+  n heads:            4                   e layers:           2                   
   d layers:           1                   d FF:               256                 
-  Moving Avg:         25                  Factor:             4                   
+  Moving Avg:         25                  Factor:             3                   
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 267
 173
->>>>>>>testing : classification_CLS_PEMS-SF_Crossformer_UEA_ftM_sl144_ll0_pl0_el1_dm128_nh8_df256_fac4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_PEMS-SF_Crossformer_UEA_ftM_sl144_ll0_pl0_el2_dm256_nh4_df256_fac3_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 173
 loading model
 test shape: torch.Size([173, 7]) torch.Size([173, 1])
-accuracy:0.9075144508670521
-model parameter : 13036575
-model size : 52.24MB
+accuracy:0.8959537572254336
+model parameter : 19932459
+model size : 81.03MB

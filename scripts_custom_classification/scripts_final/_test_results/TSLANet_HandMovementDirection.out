@@ -1,6 +1,6 @@
-========== HandMovementDirection_dim256_depth2_mask0.4_patch80_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_10_23_41 ===========
-Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/HandMovementDirection_dim256_depth2_mask0.4_patch80_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_10_23_41/HandMovementDirection_dim256_depth2_mask0.4_patch80_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_10_23_41
-Train : 128, Val : 32, Test : 74
+========== HandMovementDirection_dim64_depth2_mask0.4_patch40_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_16_48_12 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/HandMovementDirection_dim64_depth2_mask0.4_patch40_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_16_48_12/HandMovementDirection_dim64_depth2_mask0.4_patch40_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_16_48_12
+Train : 160, Val : 74, Test : 74
 Dataset loaded ...
 GPU available: True (cuda), used: True
 TPU available: False, using: 0 TPU cores
@@ -9,11 +9,11 @@ HPU available: False, using: 0 HPUs
 Seed set to 42
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
 /home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
-Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/5 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/5 [00:00<?, ?it/s]Testing DataLoader 0:  20%|██        | 1/5 [00:01<00:04,  0.92it/s]Testing DataLoader 0:  40%|████      | 2/5 [00:01<00:01,  1.80it/s]Testing DataLoader 0:  60%|██████    | 3/5 [00:01<00:00,  2.65it/s]Testing DataLoader 0:  80%|████████  | 4/5 [00:01<00:00,  3.47it/s]Testing DataLoader 0: 100%|██████████| 5/5 [00:01<00:00,  3.99it/s]Testing DataLoader 0: 100%|██████████| 5/5 [00:01<00:00,  3.95it/s]
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/5 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/5 [00:00<?, ?it/s]Testing DataLoader 0:  20%|██        | 1/5 [00:01<00:04,  0.84it/s]Testing DataLoader 0:  40%|████      | 2/5 [00:01<00:01,  1.63it/s]Testing DataLoader 0:  60%|██████    | 3/5 [00:01<00:00,  2.38it/s]Testing DataLoader 0:  80%|████████  | 4/5 [00:01<00:00,  3.07it/s]Testing DataLoader 0: 100%|██████████| 5/5 [00:01<00:00,  3.56it/s]Testing DataLoader 0: 100%|██████████| 5/5 [00:01<00:00,  3.50it/s]
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
        Test metric             DataLoader 0
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc            0.45945945382118225
-         test_f1            0.2171080857515335
-        test_loss           1.3575471639633179
+        test_acc            0.4864864945411682
+         test_f1            0.21840500831604004
+        test_loss           1.8032350540161133
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

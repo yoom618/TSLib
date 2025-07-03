@@ -16,10 +16,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
-  --d_model 64 \
-  --d_ff 256 \
-  --factor 4 \
+  --e_layers 2 \
+  --d_model 128 \
+  --d_ff 512 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \

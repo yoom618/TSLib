@@ -14,9 +14,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            64                  
-  n heads:            8                   e layers:           3                   
+  n heads:            4                   e layers:           3                   
   d layers:           1                   d FF:               64                  
-  Moving Avg:         25                  Factor:             2                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 5890
 3524
->>>>>>>testing : classification_CLS_FaceDetection_Crossformer_UEA_ftM_sl62_ll0_pl0_el3_dm64_nh8_df64_fac2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_FaceDetection_Crossformer_UEA_ftM_sl62_ll0_pl0_el3_dm64_nh4_df64_fac10_seg24_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 3524
 loading model
 test shape: torch.Size([3524, 2]) torch.Size([3524, 1])
-accuracy:0.6980703745743473
-model parameter : 684978
-model size : 3.98MB
+accuracy:0.6963677639046538
+model parameter : 645218
+model size : 3.83MB

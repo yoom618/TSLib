@@ -1,6 +1,6 @@
-========== DuckDuckGeese_dim32_depth2_mask0.4_patch14_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_23_45_23 ===========
-Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/DuckDuckGeese_dim32_depth2_mask0.4_patch14_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_23_45_23/DuckDuckGeese_dim32_depth2_mask0.4_patch14_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_23_45_23
-Train : 40, Val : 10, Test : 50
+========== DuckDuckGeese_dim32_depth3_mask0.4_patch14_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_23_26_02 ===========
+Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/DuckDuckGeese_dim32_depth3_mask0.4_patch14_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_23_26_02/DuckDuckGeese_dim32_depth3_mask0.4_patch14_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_23_26_02
+Train : 50, Val : 50, Test : 50
 Dataset loaded ...
 GPU available: True (cuda), used: True
 TPU available: False, using: 0 TPU cores
@@ -9,49 +9,11 @@ HPU available: False, using: 0 HPUs
 Seed set to 42
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
 /home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
-Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:  25%|██▌       | 1/4 [00:01<00:03,  0.85it/s]Testing DataLoader 0:  50%|█████     | 2/4 [00:02<00:02,  0.98it/s]Testing DataLoader 0:  75%|███████▌  | 3/4 [00:02<00:00,  1.06it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.33it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.32it/s]
+Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:  25%|██▌       | 1/4 [00:01<00:04,  0.72it/s]Testing DataLoader 0:  50%|█████     | 2/4 [00:02<00:02,  0.85it/s]Testing DataLoader 0:  75%|███████▌  | 3/4 [00:03<00:01,  0.90it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.16it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.15it/s]
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
        Test metric             DataLoader 0
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc            0.6200000047683716
-         test_f1            0.39308440685272217
-        test_loss           1.9484262466430664
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-========== DuckDuckGeese_dim32_depth3_mask0.4_patch68_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_13_03_55 ===========
-Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/DuckDuckGeese_dim32_depth3_mask0.4_patch68_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_13_03_55/DuckDuckGeese_dim32_depth3_mask0.4_patch68_mlp1.0___ASB_True__AF_True__ICB_True__preTr_True_13_03_55
-Train : 40, Val : 10, Test : 50
-Dataset loaded ...
-GPU available: True (cuda), used: True
-TPU available: False, using: 0 TPU cores
-HPU available: False, using: 0 HPUs
-/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
-Seed set to 42
-LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
-/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
-Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:  25%|██▌       | 1/4 [00:01<00:04,  0.64it/s]Testing DataLoader 0:  50%|█████     | 2/4 [00:02<00:02,  0.78it/s]Testing DataLoader 0:  75%|███████▌  | 3/4 [00:03<00:01,  0.81it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:04<00:00,  0.98it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:04<00:00,  0.97it/s]
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-       Test metric             DataLoader 0
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc            0.6200000047683716
-         test_f1            0.4457821547985077
-        test_loss           1.7400926351547241
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-========== DuckDuckGeese_dim128_depth3_mask0.4_patch41_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_08_38_52 ===========
-Checkpoint path: /data/yoom618/TSLib/checkpoints_best/TSLANet/DuckDuckGeese_dim128_depth3_mask0.4_patch41_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_08_38_52/DuckDuckGeese_dim128_depth3_mask0.4_patch41_mlp2.0___ASB_True__AF_True__ICB_True__preTr_True_08_38_52
-Train : 40, Val : 10, Test : 50
-Dataset loaded ...
-GPU available: True (cuda), used: True
-TPU available: False, using: 0 TPU cores
-HPU available: False, using: 0 HPUs
-/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:76: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
-Seed set to 42
-LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
-/home/yoom618/.local/lib/python3.12/site-packages/lightning/pytorch/trainer/connectors/data_connector.py:425: The 'test_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=39` in the `DataLoader` to improve performance.
-Testing: |          | 0/? [00:00<?, ?it/s]Testing:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:   0%|          | 0/4 [00:00<?, ?it/s]Testing DataLoader 0:  25%|██▌       | 1/4 [00:01<00:03,  0.80it/s]Testing DataLoader 0:  50%|█████     | 2/4 [00:02<00:02,  0.94it/s]Testing DataLoader 0:  75%|███████▌  | 3/4 [00:03<00:01,  0.99it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]Testing DataLoader 0: 100%|██████████| 4/4 [00:03<00:00,  1.22it/s]
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-       Test metric             DataLoader 0
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-        test_acc            0.6200000047683716
-         test_f1            0.39327216148376465
-        test_loss            1.841812252998352
+        test_acc            0.7400000095367432
+         test_f1            0.45820415019989014
+        test_loss           1.3914687633514404
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────

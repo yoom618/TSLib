@@ -13,9 +13,9 @@ Args in experiment:
 [1mModel Parameters[0m
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            256                 
-  n heads:            8                   e layers:           3                   
-  d layers:           1                   d FF:               512                 
+  C Out:              7                   d model:            64                  
+  n heads:            4                   e layers:           2                   
+  d layers:           1                   d FF:               256                 
   Moving Avg:         25                  Factor:             3                   
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
@@ -36,10 +36,10 @@ Args in experiment:
 
 200
 180
->>>>>>>testing : classification_CLS_SelfRegulationSCP2_Crossformer_UEA_ftM_sl1152_ll0_pl0_el3_dm256_nh8_df512_fac3_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_SelfRegulationSCP2_Crossformer_UEA_ftM_sl1152_ll0_pl0_el2_dm64_nh4_df256_fac3_seg6_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 180
 loading model
 test shape: torch.Size([180, 2]) torch.Size([180, 1])
-accuracy:0.6
-model parameter : 11472434
-model size : 48.80MB
+accuracy:0.6166666666666667
+model parameter : 896212
+model size : 4.75MB

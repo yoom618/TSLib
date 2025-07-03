@@ -15,9 +15,9 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "06_41_37" \
+    --ckpt_time "23_28_51" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
+    --depth 1 \
     --emb_dim 64 \
     --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
@@ -25,7 +25,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 36
+    --patch_size 4
 
 # AtrialFibrillation
 dataset_name="AtrialFibrillation"
@@ -35,17 +35,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "06_32_01" \
+    --ckpt_time "15_30_49" \
     --model_id "CLS_${dataset_name}" \
     --depth 2 \
-    --emb_dim 256 \
-    --mlp_ratio 1.0 \
+    --emb_dim 32 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 128
+    --patch_size 64
 
 # BasicMotions
 dataset_name="BasicMotions"
@@ -55,17 +55,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "08_01_51" \
+    --ckpt_time "16_11_18" \
     --model_id "CLS_${dataset_name}" \
     --depth 1 \
     --emb_dim 32 \
-    --mlp_ratio 1.0 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 8
+    --patch_size 3
 
 # CharacterTrajectories
 dataset_name="CharacterTrajectories"
@@ -75,11 +75,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "13_02_38" \
+    --ckpt_time "01_31_55" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
-    --emb_dim 64 \
-    --mlp_ratio 1.0 \
+    --depth 2 \
+    --emb_dim 32 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -95,11 +95,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "09_55_19" \
+    --ckpt_time "15_18_47" \
     --model_id "CLS_${dataset_name}" \
-    --depth 1 \
-    --emb_dim 32 \
-    --mlp_ratio 2.0 \
+    --depth 2 \
+    --emb_dim 128 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -115,11 +115,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "23_45_23" \
+    --ckpt_time "23_26_02" \
     --model_id "CLS_${dataset_name}" \
-    --depth 2 \
+    --depth 3 \
     --emb_dim 32 \
-    --mlp_ratio 1.0 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -135,11 +135,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "12_59_31" \
+    --ckpt_time "01_47_36" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
-    --emb_dim 64 \
-    --mlp_ratio 2.0 \
+    --depth 2 \
+    --emb_dim 128 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -155,17 +155,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "05_43_08" \
+    --ckpt_time "14_23_11" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 128 \
-    --mlp_ratio 2.0 \
+    --emb_dim 64 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 11
+    --patch_size 6
 
 # ERing
 dataset_name="ERing"
@@ -175,17 +175,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "05_50_58" \
+    --ckpt_time "15_06_22" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
-    --emb_dim 32 \
-    --mlp_ratio 2.0 \
+    --depth 2 \
+    --emb_dim 256 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 13
+    --patch_size 17
 
 # EthanolConcentration
 dataset_name="EthanolConcentration"
@@ -195,11 +195,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "06_32_27" \
+    --ckpt_time "13_41_41" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 64 \
-    --mlp_ratio 2.0 \
+    --emb_dim 128 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -215,17 +215,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "01_35_56" \
+    --ckpt_time "02_41_02" \
     --model_id "CLS_${dataset_name}" \
     --depth 1 \
     --emb_dim 32 \
-    --mlp_ratio 2.0 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 16
+    --patch_size 2
 
 # FingerMovements
 dataset_name="FingerMovements"
@@ -235,17 +235,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "09_53_00" \
+    --ckpt_time "20_59_03" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
+    --depth 1 \
     --emb_dim 64 \
-    --mlp_ratio 2.0 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 10
+    --patch_size 5
 
 # HandMovementDirection
 dataset_name="HandMovementDirection"
@@ -255,17 +255,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "10_23_41" \
+    --ckpt_time "16_48_12" \
     --model_id "CLS_${dataset_name}" \
     --depth 2 \
-    --emb_dim 256 \
+    --emb_dim 64 \
     --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 80
+    --patch_size 40
 
 # Handwriting
 dataset_name="Handwriting"
@@ -275,11 +275,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "07_37_01" \
+    --ckpt_time "12_35_02" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
     --emb_dim 256 \
-    --mlp_ratio 1.0 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -295,7 +295,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "18_01_32" \
+    --ckpt_time "13_07_04" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
     --emb_dim 128 \
@@ -305,7 +305,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 11
+    --patch_size 21
 
 # InsectWingbeat
 dataset_name="InsectWingbeat"
@@ -315,9 +315,9 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "23_54_36" \
+    --ckpt_time "22_18_22" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
+    --depth 1 \
     --emb_dim 64 \
     --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
@@ -325,7 +325,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 3
+    --patch_size 5
 
 # JapaneseVowels
 dataset_name="JapaneseVowels"
@@ -335,17 +335,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "20_46_55" \
+    --ckpt_time "13_25_54" \
     --model_id "CLS_${dataset_name}" \
-    --depth 1 \
-    --emb_dim 64 \
-    --mlp_ratio 2.0 \
+    --depth 3 \
+    --emb_dim 128 \
+    --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 3
+    --patch_size 2
 
 # Libras
 dataset_name="Libras"
@@ -355,17 +355,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "16_36_09" \
+    --ckpt_time "14_08_30" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 64 \
-    --mlp_ratio 2.0 \
+    --emb_dim 128 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 5
+    --patch_size 4
 
 # LSST
 dataset_name="LSST"
@@ -375,7 +375,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "14_50_43" \
+    --ckpt_time "23_25_21" \
     --model_id "CLS_${dataset_name}" \
     --depth 2 \
     --emb_dim 32 \
@@ -385,7 +385,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 2
+    --patch_size 6
 
 # MotorImagery
 dataset_name="MotorImagery"
@@ -395,9 +395,9 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "03_59_06" \
+    --ckpt_time "01_27_14" \
     --model_id "CLS_${dataset_name}" \
-    --depth 2 \
+    --depth 3 \
     --emb_dim 64 \
     --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
@@ -405,7 +405,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 225
+    --patch_size 450
 
 # NATOPS
 dataset_name="NATOPS"
@@ -415,17 +415,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "20_29_41" \
+    --ckpt_time "19_36_20" \
     --model_id "CLS_${dataset_name}" \
     --depth 1 \
-    --emb_dim 32 \
-    --mlp_ratio 3.0 \
+    --emb_dim 256 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 2
+    --patch_size 3
 
 # PEMS-SF
 dataset_name="PEMS-SF"
@@ -435,17 +435,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "17_54_24" \
+    --ckpt_time "11_21_23" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 256 \
-    --mlp_ratio 1.0 \
+    --emb_dim 128 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 4
+    --patch_size 36
 
 # PenDigits
 dataset_name="PenDigits"
@@ -455,11 +455,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "20_29_43" \
+    --ckpt_time "17_05_55" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 32 \
-    --mlp_ratio 3.0 \
+    --emb_dim 64 \
+    --mlp_ratio 1.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -475,17 +475,18 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "14_50_16" \
+    --ckpt_time "03_13_50" \
     --model_id "CLS_${dataset_name}" \
-    --depth 1 \
-    --emb_dim 64 \
-    --mlp_ratio 1.0 \
+    --depth 2 \
+    --emb_dim 32 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 6
+    --patch_size 44
+
 
 # RacketSports
 dataset_name="RacketSports"
@@ -495,11 +496,11 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "16_26_54" \
+    --ckpt_time "15_35_51" \
     --model_id "CLS_${dataset_name}" \
-    --depth 3 \
-    --emb_dim 32 \
-    --mlp_ratio 1.0 \
+    --depth 2 \
+    --emb_dim 64 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
@@ -515,17 +516,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "21_42_48" \
+    --ckpt_time "21_35_52" \
     --model_id "CLS_${dataset_name}" \
     --depth 1 \
-    --emb_dim 128 \
-    --mlp_ratio 3.0 \
+    --emb_dim 32 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 224
+    --patch_size 180
 
 # SelfRegulationSCP2
 dataset_name="SelfRegulationSCP2"
@@ -535,17 +536,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "21_01_05" \
+    --ckpt_time "16_13_52" \
     --model_id "CLS_${dataset_name}" \
-    --depth 1 \
-    --emb_dim 128 \
-    --mlp_ratio 3.0 \
+    --depth 2 \
+    --emb_dim 256 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 116
+    --patch_size 173
 
 # SpokenArabicDigits
 dataset_name="SpokenArabicDigits"
@@ -555,17 +556,17 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "04_15_53" \
+    --ckpt_time "20_40_16" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
-    --emb_dim 128 \
+    --emb_dim 64 \
     --mlp_ratio 3.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 14
+    --patch_size 10
 
 # StandWalkJump
 dataset_name="StandWalkJump"
@@ -575,7 +576,7 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "23_55_27" \
+    --ckpt_time "13_46_38" \
     --model_id "CLS_${dataset_name}" \
     --depth 3 \
     --emb_dim 32 \
@@ -595,14 +596,14 @@ python -u _run_TSLANet/TSLANet_classification_test.py \
     --data_path "${data_dir}/${dataset_name}" \
     --data_name ${dataset_name} \
     --ckpt_path ${checkpoint_dir} \
-    --ckpt_time "20_18_28" \
+    --ckpt_time "19_40_30" \
     --model_id "CLS_${dataset_name}" \
     --depth 1 \
-    --emb_dim 64 \
-    --mlp_ratio 3.0 \
+    --emb_dim 128 \
+    --mlp_ratio 2.0 \
     --masking_ratio 0.4 \
     --ICB True \
     --ASB True \
     --adaptive_filter True \
     --load_from_pretrained True \
-    --patch_size 79
+    --patch_size 63

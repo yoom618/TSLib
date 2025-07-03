@@ -14,9 +14,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            32                  
-  n heads:            8                   e layers:           1                   
-  d layers:           1                   d FF:               512                 
-  Moving Avg:         25                  Factor:             1                   
+  n heads:            4                   e layers:           1                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 7494
 3498
->>>>>>>testing : classification_CLS_PenDigits_Crossformer_UEA_ftM_sl8_ll0_pl0_el1_dm32_nh8_df512_fac1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_PenDigits_Crossformer_UEA_ftM_sl8_ll0_pl0_el1_dm32_nh4_df256_fac10_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 3498
 loading model
 test shape: torch.Size([3498, 10]) torch.Size([3498, 1])
-accuracy:0.9828473413379074
-model parameter : 253570
-model size : 1.64MB
+accuracy:0.985134362492853
+model parameter : 154018
+model size : 1.26MB

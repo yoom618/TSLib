@@ -19,10 +19,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 32 \
-  --d_ff 128 \
-  --factor 2 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -44,10 +46,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 2 \
-  --d_model 64 \
-  --d_ff 512 \
-  --factor 1 \
+  --e_layers 1 \
+  --d_model 32 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -72,7 +76,9 @@ python run.py \
   --e_layers 2 \
   --d_model 32 \
   --d_ff 512 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -94,10 +100,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 2 \
   --d_model 32 \
   --d_ff 128 \
-  --factor 1 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -106,7 +114,6 @@ python run.py \
   --learning_rate 0.001 \
   --train_epochs 100 \
   --patience 10
-
 # Cricket
 dataset_name="Cricket"
 python run.py \
@@ -119,10 +126,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
+  --e_layers 2 \
   --d_model 32 \
   --d_ff 256 \
-  --factor 4 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -144,10 +153,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
-  --d_model 128 \
+  --e_layers 3 \
+  --d_model 256 \
   --d_ff 64 \
-  --factor 1 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 4 \
   --des Exp \
@@ -170,9 +181,11 @@ python run.py \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
   --e_layers 3 \
-  --d_model 32 \
+  --d_model 64 \
   --d_ff 256 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 4 \
   --des Exp \
@@ -194,10 +207,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 3 \
-  --d_model 32 \
-  --d_ff 256 \
-  --factor 2 \
+  --e_layers 1 \
+  --d_model 256 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -219,10 +234,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 2 \
-  --d_model 64 \
-  --d_ff 512 \
-  --factor 4 \
+  --e_layers 3 \
+  --d_model 256 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -244,10 +261,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
-  --d_model 64 \
-  --d_ff 256 \
-  --factor 4 \
+  --e_layers 2 \
+  --d_model 128 \
+  --d_ff 512 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -272,7 +291,9 @@ python run.py \
   --e_layers 3 \
   --d_model 64 \
   --d_ff 64 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -296,8 +317,10 @@ python run.py \
   --model_id "CLS_${dataset_name}" \
   --e_layers 1 \
   --d_model 64 \
-  --d_ff 128 \
-  --factor 3 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -319,10 +342,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
-  --d_model 256 \
-  --d_ff 128 \
-  --factor 4 \
+  --e_layers 2 \
+  --d_model 32 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -344,10 +369,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
-  --d_model 256 \
-  --d_ff 512 \
-  --factor 2 \
+  --e_layers 3 \
+  --d_model 32 \
+  --d_ff 128 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -370,9 +397,11 @@ python run.py \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
   --e_layers 3 \
-  --d_model 32 \
+  --d_model 128 \
   --d_ff 512 \
-  --factor 4 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -394,10 +423,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 2 \
   --d_model 32 \
   --d_ff 512 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -422,7 +453,9 @@ python run.py \
   --e_layers 3 \
   --d_model 128 \
   --d_ff 256 \
-  --factor 4 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -444,10 +477,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 2 \
+  --e_layers 1 \
   --d_model 32 \
-  --d_ff 512 \
-  --factor 1 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -469,10 +504,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
-  --d_model 128 \
+  --e_layers 3 \
+  --d_model 64 \
   --d_ff 64 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -495,9 +532,11 @@ python run.py \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
   --e_layers 2 \
-  --d_model 128 \
+  --d_model 32 \
   --d_ff 64 \
-  --factor 2 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 4 \
   --des Exp \
@@ -519,10 +558,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
-  --d_model 128 \
-  --d_ff 128 \
-  --factor 2 \
+  --e_layers 2 \
+  --d_model 64 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -544,10 +585,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 1 \
-  --d_model 128 \
+  --e_layers 2 \
+  --d_model 256 \
   --d_ff 256 \
-  --factor 4 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 8 \
   --des Exp \
@@ -571,8 +614,10 @@ python run.py \
   --model_id "CLS_${dataset_name}" \
   --e_layers 1 \
   --d_model 32 \
-  --d_ff 512 \
-  --factor 1 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -596,8 +641,10 @@ python run.py \
   --model_id "CLS_${dataset_name}" \
   --e_layers 3 \
   --d_model 128 \
-  --d_ff 64 \
-  --factor 2 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -619,10 +666,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
-  --d_model 64 \
-  --d_ff 128 \
-  --factor 4 \
+  --e_layers 1 \
+  --d_model 32 \
+  --d_ff 512 \
+  --n_heads 4 \
+  --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -644,10 +693,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 3 \
-  --d_model 256 \
-  --d_ff 512 \
-  --factor 1 \
+  --e_layers 2 \
+  --d_model 64 \
+  --d_ff 256 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -669,10 +720,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 3 \
-  --d_model 256 \
-  --d_ff 512 \
+  --e_layers 2 \
+  --d_model 64 \
+  --d_ff 256 \
+  --n_heads 4 \
   --factor 3 \
+  --seg_len_cf 6 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -694,10 +747,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 32 \
-  --d_ff 128 \
-  --factor 4 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 12 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -719,10 +774,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 3 \
-  --d_model 64 \
-  --d_ff 64 \
-  --factor 2 \
+  --e_layers 2 \
+  --d_model 128 \
+  --d_ff 128 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \
@@ -744,10 +801,12 @@ python run.py \
   --checkpoints ${checkpoint_dir} \
   --model ${model_name} \
   --model_id "CLS_${dataset_name}" \
-  --e_layers 4 \
+  --e_layers 3 \
   --d_model 32 \
-  --d_ff 256 \
-  --factor 1 \
+  --d_ff 64 \
+  --n_heads 4 \
+  --factor 10 \
+  --seg_len_cf 24 \
   --is_training 0 \
   --batch_size 16 \
   --des Exp \

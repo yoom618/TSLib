@@ -13,10 +13,10 @@ Args in experiment:
 [1mModel Parameters[0m
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            64                  
-  n heads:            8                   e layers:           2                   
-  d layers:           1                   d FF:               512                 
-  Moving Avg:         25                  Factor:             1                   
+  C Out:              7                   d model:            32                  
+  n heads:            4                   e layers:           1                   
+  d layers:           1                   d FF:               256                 
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 15
 15
->>>>>>>testing : classification_CLS_AtrialFibrillation_Crossformer_UEA_ftM_sl640_ll0_pl0_el2_dm64_nh8_df512_fac1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_AtrialFibrillation_Crossformer_UEA_ftM_sl640_ll0_pl0_el1_dm32_nh4_df256_fac10_seg24_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 15
 loading model
 test shape: torch.Size([15, 3]) torch.Size([15, 1])
 accuracy:0.7333333333333333
-model parameter : 1023143
-model size : 5.23MB
+model parameter : 169715
+model size : 1.32MB

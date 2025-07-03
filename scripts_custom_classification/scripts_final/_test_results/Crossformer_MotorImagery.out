@@ -13,10 +13,10 @@ Args in experiment:
 [1mModel Parameters[0m
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
-  C Out:              7                   d model:            128                 
-  n heads:            8                   e layers:           2                   
+  C Out:              7                   d model:            32                  
+  n heads:            4                   e layers:           2                   
   d layers:           1                   d FF:               64                  
-  Moving Avg:         25                  Factor:             2                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 278
 100
->>>>>>>testing : classification_CLS_MotorImagery_Crossformer_UEA_ftM_sl3000_ll0_pl0_el2_dm128_nh8_df64_fac2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_MotorImagery_Crossformer_UEA_ftM_sl3000_ll0_pl0_el2_dm32_nh4_df64_fac10_seg6_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 100
 loading model
 test shape: torch.Size([100, 2]) torch.Size([100, 1])
-accuracy:0.67
-model parameter : 5692198
-model size : 24.26MB
+accuracy:0.68
+model parameter : 2417012
+model size : 9.94MB

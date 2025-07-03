@@ -14,9 +14,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            32                  
-  n heads:            8                   e layers:           4                   
-  d layers:           1                   d FF:               256                 
-  Moving Avg:         25                  Factor:             1                   
+  n heads:            4                   e layers:           3                   
+  d layers:           1                   d FF:               64                  
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 120
 320
->>>>>>>testing : classification_CLS_UWaveGestureLibrary_Crossformer_UEA_ftM_sl315_ll0_pl0_el4_dm32_nh8_df256_fac1_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_UWaveGestureLibrary_Crossformer_UEA_ftM_sl315_ll0_pl0_el3_dm32_nh4_df64_fac10_seg24_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 320
 loading model
 test shape: torch.Size([320, 8]) torch.Size([320, 1])
-accuracy:0.88125
-model parameter : 465156
-model size : 2.58MB
+accuracy:0.884375
+model parameter : 195880
+model size : 1.51MB

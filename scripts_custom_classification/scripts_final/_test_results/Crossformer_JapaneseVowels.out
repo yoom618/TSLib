@@ -14,9 +14,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            128                 
-  n heads:            8                   e layers:           3                   
+  n heads:            4                   e layers:           3                   
   d layers:           1                   d FF:               256                 
-  Moving Avg:         25                  Factor:             4                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 270
 370
->>>>>>>testing : classification_CLS_JapaneseVowels_Crossformer_UEA_ftM_sl29_ll0_pl0_el3_dm128_nh8_df256_fac4_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_JapaneseVowels_Crossformer_UEA_ftM_sl29_ll0_pl0_el3_dm128_nh4_df256_fac10_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 370
 loading model
 test shape: torch.Size([370, 9]) torch.Size([370, 1])
 accuracy:0.9837837837837838
-model parameter : 2811705
-model size : 13.32MB
+model parameter : 2816313
+model size : 13.33MB

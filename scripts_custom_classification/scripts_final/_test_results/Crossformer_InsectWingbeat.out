@@ -14,9 +14,9 @@ Args in experiment:
   Top k:              5                   Num Kernels:        6                   
   Enc In:             7                   Dec In:             7                   
   C Out:              7                   d model:            32                  
-  n heads:            8                   e layers:           4                   
+  n heads:            4                   e layers:           2                   
   d layers:           1                   d FF:               512                 
-  Moving Avg:         25                  Factor:             2                   
+  Moving Avg:         25                  Factor:             10                  
   Distil:             1                   Dropout:            0.1                 
   Embed:              timeF               Activation:         gelu                
 
@@ -36,10 +36,10 @@ Args in experiment:
 
 25000
 25000
->>>>>>>testing : classification_CLS_InsectWingbeat_Crossformer_UEA_ftM_sl22_ll0_pl0_el4_dm32_nh8_df512_fac2_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>testing : classification_CLS_InsectWingbeat_Crossformer_UEA_ftM_sl22_ll0_pl0_el2_dm32_nh4_df512_fac10_seg12_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 25000
 loading model
 test shape: torch.Size([25000, 10]) torch.Size([25000, 1])
-accuracy:0.74076
-model parameter : 834470
-model size : 3.98MB
+accuracy:0.73712
+model parameter : 498766
+model size : 2.62MB
