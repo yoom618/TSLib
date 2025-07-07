@@ -42,6 +42,92 @@ def collate_fn(data, max_len=None):
     return X, targets, padding_masks
 
 
+
+def collate_fn_TSCMamba(data, max_len=None,no_rocket=0,half_rocket=0):
+    """Build mini-batch tensors from a list of (X, mask) tuples. Mask input. Create
+    Args:
+        data: len(batch_size) list of tuples (X, y).
+            - X: torch tensor of shape (seq_length, feat_dim); variable seq_length.
+            - y: torch tensor of shape (num_labels,) : class indices or numerical targets
+                (for classification or regression, respectively). num_labels > 1 for multi-task models
+        max_len: global fixed sequence length. Used for architectures requiring fixed length input,
+            where the batch length cannot vary dynamically. Longer sequences are clipped, shorter are padded with 0s
+    Returns:
+        X: (batch_size, padded_length, feat_dim) torch tensor of masked features (input)
+        targets: (batch_size, padded_length, feat_dim) torch tensor of unmasked features (output)
+        target_masks: (batch_size, padded_length, feat_dim) boolean torch tensor
+            0 indicates masked values to be predicted, 1 indicates unaffected/"active" feature values
+        padding_masks: (batch_size, padded_length) boolean tensor, 1 means keep vector at this position, 0 means padding
+    """
+
+    if no_rocket==0:
+        # If there are rocket features
+        if half_rocket==0:
+            # Full rocket features
+            batch_size = len(data)
+            x_cwt,x_rocket, labels = zip(*data)
+
+        
+            # Stack and pad features and masks (convert 2D to 3D tensors, i.e. add batch dimension)
+
+            XCWT = torch.zeros(batch_size, x_cwt[0].shape[0], x_cwt[0].shape[1], x_cwt[0].shape[1])  # (batch_size,feat_dim,resize_scale,resize_scale)
+            XROCKET = torch.zeros(batch_size, x_rocket[0].shape[0],x_rocket[0].shape[1])  # (batch_size,feat_dim,projected_dim)
+            
+            for i in range(batch_size):
+                XCWT[i,:,:,:]=x_cwt[i]
+            for i in range(batch_size):
+                XROCKET[i,:,:]=x_rocket[i]
+
+            targets = torch.stack(labels, dim=0)  # (batch_size, num_labels)
+
+            return (XCWT, XROCKET), targets, None
+        else:
+            # Half-rocket Half-MLP
+            batch_size = len(data)
+            x_cwt,x_rocket,features, labels = zip(*data)
+
+        
+            # Stack and pad features and masks (convert 2D to 3D tensors, i.e. add batch dimension)
+
+            XCWT = torch.zeros(batch_size, x_cwt[0].shape[0], x_cwt[0].shape[1], x_cwt[0].shape[1])  # (batch_size,feat_dim,resize_scale,resize_scale)
+            XROCKET = torch.zeros(batch_size, x_rocket[0].shape[0],x_rocket[0].shape[1])  # (batch_size,feat_dim,projected_dim)
+            
+            for i in range(batch_size):
+                XCWT[i,:,:,:]=x_cwt[i]
+            for i in range(batch_size):
+                XROCKET[i,:,:]=x_rocket[i]
+            lengths = [X.shape[0] for X in features]  # original sequence length for each time series
+            if max_len is None:
+                    max_len = max(lengths)
+            X = torch.zeros(batch_size, max_len, features[0].shape[-1])  # (batch_size, padded_length, feat_dim)
+            for i in range(batch_size):
+                end = min(lengths[i], max_len)
+                X[i, :end, :] = features[i][:end, :]
+            X= torch.permute(X,(0,2,1)) #B,D,L
+            # print("Raw features in collate fn: ",X.shape)
+            targets = torch.stack(labels, dim=0)  # (batch_size, num_labels)
+            Rocket_and_RAW=torch.zeros(batch_size, x_rocket[0].shape[0],x_rocket[0].shape[1]+X.shape[2])#B,D,Projected_space+L
+            Rocket_and_RAW=torch.cat([XROCKET,X],dim=2)
+
+            return (XCWT, Rocket_and_RAW), targets, None
+    elif no_rocket==1:
+        batch_size = len(data)
+        x_cwt,features, labels = zip(*data)
+        XCWT = torch.zeros(batch_size, x_cwt[0].shape[0], x_cwt[0].shape[1], x_cwt[0].shape[1])  # (batch_size,feat_dim,resize_scale,resize_scale)
+        for i in range(batch_size):
+            XCWT[i,:,:,:]=x_cwt[i]
+        targets = torch.stack(labels, dim=0)  # (batch_size, num_labels)
+        lengths = [X.shape[0] for X in features]  # original sequence length for each time series
+        if max_len is None:
+                max_len = max(lengths)
+        X = torch.zeros(batch_size, max_len, features[0].shape[-1])  # (batch_size, padded_length, feat_dim)
+        for i in range(batch_size):
+            end = min(lengths[i], max_len)
+            X[i, :end, :] = features[i][:end, :]
+        X= torch.permute(X,(0,2,1)) #B,D,L
+        return (XCWT, X), targets, None
+
+
 def padding_mask(lengths, max_len=None):
     """
     Used to mask padded positions: creates a (batch_size, max_len) boolean mask from a tensor of sequence lengths,

@@ -52,8 +52,13 @@ class Exp_Classification(Exp_Basic):
         self.model.eval()
         with torch.no_grad():
             for i, (batch_x, label, padding_mask) in enumerate(vali_loader):
-                batch_x = batch_x.float().to(self.device)
-                padding_mask = padding_mask.float().to(self.device)
+                if isinstance(batch_x, tuple):
+                    # for TSCMamba, batch_x is a list of [XCWT, XROCKET]
+                    batch_x = [x.float().to(self.device) for x in batch_x]
+                    padding_mask = None
+                else:
+                    batch_x = batch_x.float().to(self.device)
+                    padding_mask = padding_mask.float().to(self.device)
                 label = label.to(self.device)
 
                 outputs = self.model(batch_x, padding_mask, None, None)
@@ -107,8 +112,13 @@ class Exp_Classification(Exp_Basic):
                 iter_count += 1
                 model_optim.zero_grad()
 
-                batch_x = batch_x.float().to(self.device)
-                padding_mask = padding_mask.float().to(self.device)
+                if isinstance(batch_x, tuple):
+                    # for TSCMamba, batch_x is a list of [XCWT, XROCKET]
+                    batch_x = [x.float().to(self.device) for x in batch_x]
+                    padding_mask = None
+                else:
+                    batch_x = batch_x.float().to(self.device)
+                    padding_mask = padding_mask.float().to(self.device)
                 label = label.to(self.device)
 
                 outputs = self.model(batch_x, padding_mask, None, None)
@@ -166,8 +176,13 @@ class Exp_Classification(Exp_Basic):
         self.model.eval()
         with torch.no_grad():
             for i, (batch_x, label, padding_mask) in enumerate(test_loader):
-                batch_x = batch_x.float().to(self.device)
-                padding_mask = padding_mask.float().to(self.device)
+                if isinstance(batch_x, tuple):
+                    # for TSCMamba, batch_x is a tuple of [XCWT, XROCKET]
+                    batch_x = [x.float().to(self.device) for x in batch_x]
+                    padding_mask = None
+                else:
+                    batch_x = batch_x.float().to(self.device)
+                    padding_mask = padding_mask.float().to(self.device)
                 label = label.to(self.device)
 
                 outputs = self.model(batch_x, padding_mask, None, None)

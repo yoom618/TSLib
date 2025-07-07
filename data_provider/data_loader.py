@@ -13,6 +13,12 @@ from sktime.datasets import load_from_tsfile_to_dataframe
 import warnings
 from utils.augmentation import run_augmentation_single
 
+# Libraries for UEAloader4TSCMamba
+import pywt
+from skimage.transform import resize
+from sktime.transformations.panel.rocket import Rocket
+import joblib
+
 warnings.filterwarnings('ignore')
 
 
@@ -758,6 +764,224 @@ class UEAloader(Dataset):
 
         return self.instance_norm(torch.from_numpy(batch_x)), \
                torch.from_numpy(labels)
+
+    def __len__(self):
+        return len(self.all_IDs)
+
+
+class UEAloader4TSCMamba(UEAloader):
+    """
+    ** TSCMamba needs additional class since it use preprocessed ROCKET feature in itsjoblib model **
+    ** the code is revised to save the preprocessed data into pkl files to reduce the time of loading data in typescript format **
+    ** augmentation flag not used **
+    Dataset class for datasets included in:
+        Time Series Classification Archive (www.timeseriesclassification.com)
+    Argument:
+        limit_size: float in (0, 1) for debug
+    Attributes:
+        all_df: (num_samples * seq_len, num_columns) dataframe indexed by integer indices, with multiple rows corresponding to the same index (sample).
+            Each row is a time step; Each column contains either metadata (e.g. timestamp) or a feature.
+        feature_df: (num_samples * seq_len, feat_dim) dataframe; contains the subset of columns of `all_df` which correspond to selected features
+        feature_names: names of columns contained in `feature_df` (same as feature_df.columns)
+        all_IDs: (num_samples,) series of IDs contained in `all_df`/`feature_df` (same as all_df.index.unique() )
+        labels_df: (num_samples, num_labels) pd.DataFrame of label(s) for each sample
+        max_seq_len: maximum sequence (time series) length. If None, script argument `max_seq_len` will be used.
+            (Moreover, script argument overrides this attribute)
+    """
+
+    def __init__(self, args, root_path, file_list=None, limit_size=None, flag=None):
+        self.args = args
+        self.root_path = root_path
+        self.flag = flag
+
+        self.variation = args.variation
+        self.rescale_size = args.rescale_size
+        self.wt_name = args.wavelet_name
+        self.projected_space = args.d_model
+        self.channel_token_mixing = args.channel_token_mixing
+        self.no_rocket = args.no_rocket
+        self.half_rocket = args.half_rocket
+        
+        self.all_df, self.labels_df = self.load_all(root_path, file_list=file_list, flag=flag)
+        self.all_IDs = self.all_df.index.unique()  # all sample IDs (integer indices 0 ... num_samples-1)
+
+        if limit_size is not None:
+            if limit_size > 1:
+                limit_size = int(limit_size)
+            else:  # interpret as proportion if in (0, 1]
+                limit_size = int(limit_size * len(self.all_IDs))
+            self.all_IDs = self.all_IDs[:limit_size]
+            self.all_df = self.all_df.loc[self.all_IDs]
+
+        # use all features
+        self.feature_names = self.all_df.columns
+        self.feature_df = self.all_df
+
+        # Rescale
+        if os.path.exists(f"{self.root_path}/{flag}__rescaled_{self.variation}_{self.rescale_size}_{self.wt_name}.npy") == False:
+            self.X_cwt = np.ndarray(shape=(len(self.all_IDs), self.feature_df.shape[1], self.rescale_size, self.rescale_size), dtype = 'float32')
+            for sample in range(len(self.all_IDs)):
+                series=np.array(self.feature_df.loc[self.all_IDs[sample]].values)#L,D
+                for signal in range(self.feature_df.shape[1]):
+                    coeffs, freqs = pywt.cwt(series[:, signal], self.variation, self.wt_name)
+                    rescale_coeffs = resize(coeffs, (self.rescale_size, self.rescale_size), mode = 'constant')
+                    self.X_cwt[sample,signal,:,:] = rescale_coeffs
+            np.save(f"{self.root_path}/{flag}__rescaled_{self.variation}_{self.rescale_size}_{self.wt_name}.npy",self.X_cwt)
+            # print(self.X_cwt.shape)
+        else:
+            self.X_cwt=np.load(f"{self.root_path}/{flag}__rescaled_{self.variation}_{self.rescale_size}_{self.wt_name}.npy")
+            # print(self.X_cwt.shape)
+
+
+        # Normalize both feature_df and X_cwt
+        normalizer = Normalizer()
+        self.feature_df = normalizer.normalize(self.feature_df)
+        self.X_cwt = (self.X_cwt - np.min(self.X_cwt)) / (np.max(self.X_cwt) - np.min(self.X_cwt))
+        print(len(self.all_IDs))
+
+
+        # Make ROCKET features
+        if self.no_rocket:
+            return
+
+        if os.path.exists(f"{self.root_path}/{flag}__df_all.npy")==False:
+            X_all_np = np.zeros(shape=(len(self.all_IDs), self.feature_df.shape[1], self.max_seq_len), dtype='float32')
+            for sample in range(len(self.all_IDs)):
+                series=np.array(self.feature_df.loc[self.all_IDs[sample]].values)#L,D
+                series=np.transpose(series,(1,0))
+                X_all_np[sample,:,:series.shape[1]] = series
+            np.save(f"{self.root_path}/{flag}__df_all.npy", X_all_np)
+        else:
+            X_all_np=np.load(f"{self.root_path}/{flag}__df_all.npy")
+
+        self.rocket_features=np.zeros(shape=(len(self.all_IDs), self.feature_df.shape[1], self.projected_space), dtype = 'float32')
+        rocket_dirname = f"rocket_{self.variation}_{self.rescale_size}_{self.wt_name}_{self.projected_space}_mix{self.channel_token_mixing}"
+        os.makedirs(f"{self.root_path}/{rocket_dirname}", exist_ok=True)
+        if self.channel_token_mixing == 0:
+            if flag=='TRAIN':
+                existing_models = glob.glob(f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_*.pkl")
+                if existing_models:
+                    for i,cur_model in enumerate(sorted(existing_models)):
+                        trf=joblib.load(cur_model) 
+                        self.rocket_features[:,i,:]=trf.transform(X_all_np)
+
+                else:
+                    random_seeds = np.random.choice(range(10000), X_all_np.shape[1], replace=False)
+                    print("Total rocket features: ",random_seeds.shape)
+                    for i, curr_random in enumerate(random_seeds):
+                        trf = Rocket(num_kernels=self.projected_space//2, normalise=True,random_state=curr_random)
+                        trf.fit(X_all_np)
+                        self.rocket_features[:,i,:]=trf.transform(X_all_np)
+                        joblib.dump(trf, f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_{i:04d}_{curr_random}.pkl")
+                np.save(f"{self.root_path}/{rocket_dirname}/{flag}_max_of_rocket.npy", np.max(self.rocket_features))
+                np.save(f"{self.root_path}/{rocket_dirname}/{flag}_min_of_rocket.npy", np.min(self.rocket_features))
+            
+            if flag=='TEST':
+                existing_models = glob.glob(f"{self.root_path}/{rocket_dirname}/TRAIN_rocket_transformer_*.pkl")
+                if existing_models:
+                    print("Found trained rocket transformer for Test")
+                    for i, cur_model in enumerate(sorted(existing_models)):
+                        # print("Loading from disk")
+                        trf = joblib.load(cur_model) 
+                        self.rocket_features[:,i,:]=trf.transform(X_all_np)
+            self.rocket_features = np.nan_to_num(self.rocket_features, 
+                                                nan   =np.load(f"{self.root_path}/{rocket_dirname}/TRAIN_min_of_rocket.npy"), 
+                                                posinf=np.load(f"{self.root_path}/{rocket_dirname}/TRAIN_max_of_rocket.npy"))
+
+        else:
+            print("--Channel token mixing rocket features--")
+            if flag=='TRAIN':
+                existing_models_D = glob.glob(f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_D_*.pkl")
+                existing_models_X = glob.glob(f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_X_*.pkl")
+
+                half_X = self.projected_space // 2
+                # Prepare empty arrays for half features
+                rocket_features_D = np.empty((X_all_np.shape[0], X_all_np.shape[1], half_X))
+                rocket_features_X = np.empty((X_all_np.shape[0], X_all_np.shape[1], half_X))
+
+
+                if existing_models_X:
+                    for i, cur_model in enumerate(sorted(existing_models_X)):
+                        trf = joblib.load(cur_model)
+                        rocket_features_X[:, i,:] = trf.transform(X_all_np)
+                else:
+                    random_seeds = np.random.choice(range(10000),  X_all_np.shape[1], replace=False)
+                    for i, curr_random in enumerate(random_seeds):
+                        trf = Rocket(num_kernels=self.projected_space//4, normalise=True, random_state=curr_random)
+                        trf.fit(X_all_np)
+                        rocket_features_X[:, i,:] = trf.transform(X_all_np)
+                        joblib.dump(trf, f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_X_{i:04d}_{curr_random}.pkl")
+
+                # Process for Transposed Dimension X
+                X_all_np_transposed = np.transpose(X_all_np, (0, 2, 1))  # Transpose to (B, X, D)
+                if existing_models_D:
+                    for i, cur_model in enumerate(sorted(existing_models_D)):
+                        trf = joblib.load(cur_model)
+                        rocket_features_D[:, i,:] = trf.transform(X_all_np_transposed)
+                else:
+                    for i, curr_random in enumerate(random_seeds):
+                        trf = Rocket(num_kernels=self.projected_space//4, normalise=True, random_state=curr_random)
+                        trf.fit(X_all_np_transposed)
+                        rocket_features_D[:, i,:] = trf.transform(X_all_np_transposed)
+                        joblib.dump(trf, f"{self.root_path}/{rocket_dirname}/{flag}_rocket_transformer_D_{i:04d}_{curr_random}.pkl")
+
+                # Concatenate along the third dimension
+                self.rocket_features = np.concatenate((rocket_features_D, rocket_features_X), axis=-1)
+
+                # Save max and min for normalization
+                np.save(f"{self.root_path}/{rocket_dirname}/TRAIN_max_of_rocket_mix.npy", np.max(self.rocket_features))
+                np.save(f"{self.root_path}/{rocket_dirname}/TRAIN_min_of_rocket_mix.npy", np.min(self.rocket_features))           
+            if flag=='TEST':
+                half_X = self.projected_space // 2
+                existing_models_D = glob.glob(f"{self.root_path}/{rocket_dirname}/TRAIN_rocket_transformer_D_*.pkl")
+                existing_models_X = glob.glob(f"{self.root_path}/{rocket_dirname}/TRAIN_rocket_transformer_X_*.pkl")
+                
+                rocket_features_D = np.empty((X_all_np.shape[0], X_all_np.shape[1], half_X))
+                rocket_features_X = np.empty((X_all_np.shape[0], X_all_np.shape[1], half_X))
+
+
+                for i, cur_model in enumerate(sorted(existing_models_X)):
+                    trf = joblib.load(cur_model)
+                    rocket_features_D[:, i,:] = trf.transform(X_all_np)
+
+            
+                X_all_np_transposed = np.transpose(X_all_np, (0, 2, 1))
+                for i, cur_model in enumerate(sorted(existing_models_D)):
+                    trf = joblib.load(cur_model)
+                    rocket_features_X[:, i,:] = trf.transform(X_all_np_transposed)
+
+                # Concatenate along the third dimension
+                self.rocket_features = np.concatenate((rocket_features_D, rocket_features_X), axis=2)
+                
+                # Apply normalization using saved max and min
+                self.rocket_features = np.nan_to_num(self.rocket_features,
+                                                    nan   =np.load(f"{self.root_path}/{rocket_dirname}/TRAIN_min_of_rocket_mix.npy"),
+                                                    posinf=np.load(f"{self.root_path}/{rocket_dirname}/TRAIN_max_of_rocket_mix.npy"))          
+        # print("Min Rocket before normalization:",np.min(self.rocket_features))
+        # print("Max Rocket before normalization: ",np.max(self.rocket_features))
+        # self.rocket_features=(self.rocket_features-np.min(self.rocket_features))/(np.max(self.rocket_features)-np.min(self.rocket_features))
+        # print("Min Rocket:",np.min(self.rocket_features))
+        # print("Max Rocket: ",np.max(self.rocket_features))
+
+    def __getitem__(self, ind):
+        batch_x_cwt = self.X_cwt[ind]
+        batch_x = self.feature_df.loc[self.all_IDs[ind]].values
+        labels = self.labels_df.loc[self.all_IDs[ind]].values
+        
+        if self.no_rocket==0:
+            if self.half_rocket==0:  # only ROCKET features
+                return torch.from_numpy(batch_x_cwt),\
+                       torch.from_numpy(self.rocket_features[ind]),\
+                       torch.from_numpy(labels)
+            else:  # ROCKET + original features
+                return  torch.from_numpy(batch_x_cwt),\
+                        torch.from_numpy(self.rocket_features[ind]), \
+                        self.instance_norm(torch.from_numpy(batch_x)),\
+                        torch.from_numpy(labels)
+        elif self.no_rocket==1:  # only original features
+            return  torch.from_numpy(batch_x_cwt),\
+                    self.instance_norm(torch.from_numpy(batch_x)), \
+                    torch.from_numpy(labels)
 
     def __len__(self):
         return len(self.all_IDs)

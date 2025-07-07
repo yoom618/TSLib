@@ -1,6 +1,6 @@
 from data_provider.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_M4, PSMSegLoader, \
-    MSLSegLoader, SMAPSegLoader, SMDSegLoader, SWATSegLoader, UEAloader
-from data_provider.uea import collate_fn
+    MSLSegLoader, SMAPSegLoader, SMDSegLoader, SWATSegLoader, UEAloader, UEAloader4TSCMamba
+from data_provider.uea import collate_fn, collate_fn_TSCMamba
 from torch.utils.data import DataLoader
 
 data_dict = {
@@ -15,7 +15,8 @@ data_dict = {
     'SMAP': SMAPSegLoader,
     'SMD': SMDSegLoader,
     'SWAT': SWATSegLoader,
-    'UEA': UEAloader
+    'UEA': UEAloader,
+    'UEA4TSCMamba': UEAloader4TSCMamba,
 }
 
 
@@ -58,7 +59,8 @@ def data_provider(args, flag):
             shuffle=shuffle_flag,
             num_workers=args.num_workers,
             drop_last=drop_last,
-            collate_fn=lambda x: collate_fn(x, max_len=args.seq_len)
+            collate_fn=lambda x: collate_fn(x, max_len=args.seq_len) if args.data != 'UEA4TSCMamba' \
+                        else collate_fn_TSCMamba(x, max_len=args.seq_len, no_rocket=args.no_rocket, half_rocket=args.half_rocket)
         )
         return data_set, data_loader
     else:

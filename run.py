@@ -139,10 +139,13 @@ if __name__ == '__main__':
     parser.add_argument("--gating_value", type=float, default=None)
 
     # TSCMamba
-    # +) d_model(=projected_space), patch_size, e_layers(=num_mambas), d_ff(=d_state), dconv, expand(=e_fact), 
+    # +) d_model(=projected_space), patch_size, e_layers(=num_mambas), d_conv, expand(=e_fact), d_ff(=d_state), 
+    parser.add_argument('--variation',type=int,default=64,help='variation in CWT')
+    parser.add_argument('--wavelet_name',type=str,default='morl',help='Wavelet Name')
     parser.add_argument('--rescale_size',type=int,default=64,help='Rescale size after WT')
     parser.add_argument('--no_rocket',type=int,default=0,help='Switch between rocket/FFN features')
     parser.add_argument('--half_rocket',type=int,default=0,help='half_rocket and half mlp features')
+    parser.add_argument('--channel_token_mixing',type=int,default=0,help='Mixed features from channel and token for rocket. unmentioned in paper')
     parser.add_argument('--initial_focus',type=float,default=1.0,help='Initial focus parameter')
     parser.add_argument('--additive_fusion',type=int,default=1,help='Either to use additive fusion or multiplicative fusion')
     parser.add_argument('--only_forward_scan',type=int,default=0,help='Only forward scan without reverse scan')
@@ -338,7 +341,7 @@ if __name__ == '__main__':
             elif args.model == 'TSCMamba':
                 setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
-                        + f'_dm{args.d_model}_rescale{args.rescale_size}_ps{args.patch_size}' \
+                        + f'_dm{args.d_model}_cwt{args.variation}_rescale{args.rescale_size}_ps{args.patch_size}' \
                         + f'_el{args.e_layers}_df{args.d_ff}_dconv{args.d_conv}_expand{args.expand}' \
                         + f'_nrocket{args.no_rocket}_hrocket{args.half_rocket}_focus{args.initial_focus}_additive{args.additive_fusion}' \
                         + f'_onlyfs{args.only_forward_scan}_flipdir{args.flip_dir}_reverseflip{args.reverse_flip}' \
@@ -452,7 +455,7 @@ if __name__ == '__main__':
         elif args.model == 'TSCMamba':
             setting = f'{args.task_name}_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}' \
-                    + f'_dm{args.d_model}_rescale{args.rescale_size}_ps{args.patch_size}' \
+                    + f'_dm{args.d_model}_cwt{args.variation}_rescale{args.rescale_size}_ps{args.patch_size}' \
                     + f'_el{args.e_layers}_df{args.d_ff}_dconv{args.d_conv}_expand{args.expand}' \
                     + f'_nrocket{args.no_rocket}_hrocket{args.half_rocket}_focus{args.initial_focus}_additive{args.additive_fusion}' \
                     + f'_onlyfs{args.only_forward_scan}_flipdir{args.flip_dir}_reverseflip{args.reverse_flip}' \

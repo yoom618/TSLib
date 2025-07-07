@@ -20,37 +20,37 @@ class Model(torch.nn.Module):
             self.patcher=ConversionLayer(
                 d_in=self.configs.enc_in,
                 l_in=self.configs.seq_len,
-                l_out=self.configs.projected_space,
+                l_out=self.configs.d_model,
                 d_out=self.configs.enc_in,
                 im_size=self.configs.rescale_size,
                 patch_size=self.configs.patch_size)
             if self.configs.no_rocket==1:
-                self.projector=torch.nn.Linear(self.configs.seq_len,self.configs.projected_space)
+                self.projector=torch.nn.Linear(self.configs.seq_len,self.configs.d_model)
             elif self.configs.half_rocket==1:
-                self.projector=torch.nn.Linear(self.configs.seq_len,self.configs.projected_space//2)
+                self.projector=torch.nn.Linear(self.configs.seq_len,self.configs.d_model//2)
 
-            self.ln=torch.nn.LayerNorm(self.configs.projected_space*3)
+            self.ln=torch.nn.LayerNorm(self.configs.d_model*3)
             self.dropout=torch.nn.Dropout(self.configs.dropout)
             self.learnable_focus=torch.nn.Parameter(torch.tensor([self.configs.initial_focus]))
             self.gelu=torch.nn.GELU()
             self.mamba1 = torch.nn.ModuleList([
-                Mamba(d_model=self.configs.projected_space*3,
+                Mamba(d_model=self.configs.d_model*3,
                       d_state=self.configs.d_ff,
-                      d_conv=self.configs.dconv,
+                      d_conv=self.configs.d_conv,
                       expand=self.configs.expand) for _ in range(self.configs.e_layers)
                 ])
             self.mamba2 = torch.nn.ModuleList([
                 Mamba(d_model=self.configs.enc_in,
                       d_state=self.configs.d_ff,
-                      d_conv=self.configs.dconv,
+                      d_conv=self.configs.d_conv,
                       expand=self.configs.expand) for _ in range(self.configs.e_layers)
                 ])
 
             self.flatten=torch.nn.Flatten(start_dim=1)
             self.classifier=torch.nn.Sequential(
-                torch.nn.Linear(self.configs.projected_space*3,(self.configs.projected_space*3)//2),
+                torch.nn.Linear(self.configs.d_model*3,(self.configs.d_model*3)//2),
                 torch.nn.Dropout(self.configs.dropout),
-                torch.nn.Linear((self.configs.projected_space*3)//2,self.configs.num_class)        
+                torch.nn.Linear((self.configs.d_model*3)//2,self.configs.num_class)        
             )
             
 
@@ -62,8 +62,8 @@ class Model(torch.nn.Module):
             if self.configs.half_rocket==0:
                 x_projected=batch_x_features
             else:
-                x_projected=torch.cat([batch_x_features[:,:,:self.configs.projected_space//2],
-                                       self.projector(batch_x_features[:,:,self.configs.projected_space:])
+                x_projected=torch.cat([batch_x_features[:,:,:self.configs.d_model//2],
+                                       self.projector(batch_x_features[:,:,self.configs.d_model:])
                                     ],dim=2)
         if self.configs.additive_fusion==1:
             x_fused=(self.learnable_focus*x_projected)+(2.0-self.learnable_focus)*x_patched
@@ -119,8 +119,10 @@ class Model(torch.nn.Module):
         x_logits=self.classifier(x3)
         return x_logits
 
-    def forward(self,x_cwt,x_features):
-         if self.configs.task_name=='classification':
+    def forward(self,x_enc, dummy1=None, dummy2=None, dummy3=None, dummy4=None):
+        x_cwt,x_features = x_enc
+        # since default forward method is set to get 4 arguments, we add two dummy arguments which are not used
+        if self.configs.task_name=='classification':
              return self.classification(x_cwt,x_features)
        
 
