@@ -1,10 +1,16 @@
 import argparse
 import os
+import torch
+import torch.backends
 from utils.print_args import print_args
 import random
 import numpy as np
 
 if __name__ == '__main__':
+    fix_seed = 2021
+    random.seed(fix_seed)
+    torch.manual_seed(fix_seed)
+    np.random.seed(fix_seed)
 
     parser = argparse.ArgumentParser(description='TimesNet')
 
@@ -87,7 +93,8 @@ if __name__ == '__main__':
     parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
 
     # GPU
-    parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
+    parser.add_argument('--use_gpu', action='store_true', default=True, help='use gpu (default: on)')
+    parser.add_argument('--no_use_gpu', action='store_false', dest='use_gpu', help='disable gpu (force cpu)')
     parser.add_argument('--gpu', type=int, default=0, help='gpu')
     parser.add_argument('--gpu_type', type=str, default='cuda', help='gpu type')  # cuda or mps
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
@@ -99,8 +106,8 @@ if __name__ == '__main__':
     parser.add_argument('--p_hidden_layers', type=int, default=2, help='number of hidden layers in projector')
 
     # metrics (dtw)
-    parser.add_argument('--use_dtw', type=bool, default=False,
-                        help='the controller of using dtw metric (dtw is time consuming, not suggested unless necessary)')
+    parser.add_argument('--use_dtw', action='store_true', default=False,
+                        help='enable dtw metric (time consuming; default: off)')
 
     # Augmentation
     parser.add_argument('--augmentation_ratio', type=int, default=0, help="How many times to augment")
@@ -129,57 +136,63 @@ if __name__ == '__main__':
     # TimeXer
     parser.add_argument('--patch_len', type=int, default=16, help='patch length')
 
+    # GCN
+    parser.add_argument('--node_dim', type=int, default=10, help='each node embbed to dim dimentions')
+    parser.add_argument('--gcn_depth', type=int, default=2, help='')
+    parser.add_argument('--gcn_dropout', type=float, default=0.3, help='')
+    parser.add_argument('--propalpha', type=float, default=0.3, help='')
+    parser.add_argument('--conv_channel', type=int, default=32, help='')
+    parser.add_argument('--skip_channel', type=int, default=32, help='')
+
+    parser.add_argument('--individual', action='store_true', default=False,
+                        help='DLinear: a linear layer for each variate(channel) individually')
+
+    # TimeFilter
+    parser.add_argument('--alpha', type=float, default=0.1, help='KNN for Graph Construction')
+    parser.add_argument('--top_p', type=float, default=0.5, help='Dynamic Routing in MoE')
+    parser.add_argument('--pos', type=int, choices=[0, 1], default=1, help='Positional Embedding. Set pos to 0 or 1')
+
     args = parser.parse_args()
-    # declare CUDA_VISIBLE_DEVICES before using torch.cuda
-    if args.use_gpu and args.gpu_type == 'cuda':
-        os.environ["CUDA_VISIBLE_DEVICES"] = str(
-            args.gpu) if not args.use_multi_gpu else args.devices
-    
-    import torch
-    import torch.backends
-    from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
-    from exp.exp_imputation import Exp_Imputation
-    from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
-    from exp.exp_anomaly_detection import Exp_Anomaly_Detection
-    from exp.exp_classification import Exp_Classification
-
-    fix_seed = 2021
-    random.seed(fix_seed)
-    torch.manual_seed(fix_seed)
-    np.random.seed(fix_seed)
-
-    if torch.cuda.is_available() and args.use_gpu and args.gpu_type == 'cuda':
-        if args.use_multi_gpu:  # multi-gpu
-            args.devices = args.devices.replace(' ', '')
-            device_ids = args.devices.split(',')
-            args.device_indices = [int(id_) for id_ in device_ids]  # e.g. '1,2' -> [1, 2]
-            args.device_ids = list(range(len(args.device_indices))) # e.g. [1, 2] -> [0, 1] because of visible devices
-            args.gpu = args.device_indices[0]
-            args.device = torch.device(f'cuda:0')
-        else:  # one gpu
-            args.device = torch.device('cuda')
+    if torch.cuda.is_available() and args.use_gpu:
+        args.device = torch.device('cuda:{}'.format(args.gpu))
         print('Using GPU')
-    elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available() \
-        and args.use_gpu and args.gpu_type == 'mps':
-        args.device = torch.device("mps")
     else:
-        args.device = torch.device("cpu")
+        if hasattr(torch.backends, "mps"):
+            args.device = torch.device("mps") if torch.backends.mps.is_available() else torch.device("cpu")
+        else:
+            args.device = torch.device("cpu")
         print('Using cpu or mps')
+
+    if args.use_gpu and args.use_multi_gpu:
+        args.devices = args.devices.replace(' ', '')
+        device_ids = args.devices.split(',')
+        args.device_ids = [int(id_) for id_ in device_ids]
+        args.gpu = args.device_ids[0]
 
     print('Args in experiment:')
     print_args(args)
 
+
     if args.task_name == 'long_term_forecast':
+        from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
         Exp = Exp_Long_Term_Forecast
     elif args.task_name == 'short_term_forecast':
+        from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
         Exp = Exp_Short_Term_Forecast
     elif args.task_name == 'imputation':
+        from exp.exp_imputation import Exp_Imputation
         Exp = Exp_Imputation
     elif args.task_name == 'anomaly_detection':
+        from exp.exp_anomaly_detection import Exp_Anomaly_Detection
         Exp = Exp_Anomaly_Detection
     elif args.task_name == 'classification':
+        from exp.exp_classification import Exp_Classification
         Exp = Exp_Classification
+    elif args.task_name == 'zero_shot_forecast':
+        from exp.exp_zero_shot_forecasting import Exp_Zero_Shot_Forecast
+        Exp = Exp_Zero_Shot_Forecast
     else:
+        from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
         Exp = Exp_Long_Term_Forecast
 
     if args.is_training:
@@ -212,10 +225,11 @@ if __name__ == '__main__':
 
             print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
             exp.test(setting)
-            if args.gpu_type == 'mps':
-                torch.backends.mps.empty_cache()
-            elif args.gpu_type == 'cuda':
-                torch.cuda.empty_cache()
+            if args.use_gpu:
+                if args.gpu_type == 'mps':
+                    torch.backends.mps.empty_cache()
+                elif args.gpu_type == 'cuda':
+                    torch.cuda.empty_cache()
     else:
         exp = Exp(args)  # set experiments
         ii = 0
@@ -242,7 +256,8 @@ if __name__ == '__main__':
 
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
         exp.test(setting, test=1)
-        if args.gpu_type == 'mps':
-            torch.backends.mps.empty_cache()
-        elif args.gpu_type == 'cuda':
-            torch.cuda.empty_cache()
+        if args.use_gpu:
+            if args.gpu_type == 'mps':
+                torch.backends.mps.empty_cache()
+            elif args.gpu_type == 'cuda':
+                torch.cuda.empty_cache()

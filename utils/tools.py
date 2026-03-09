@@ -85,9 +85,9 @@ def visual(true, preds=None, name='./pic/test.pdf'):
     Results visualization
     """
     plt.figure()
-    plt.plot(true, label='GroundTruth', linewidth=2)
     if preds is not None:
         plt.plot(preds, label='Prediction', linewidth=2)
+    plt.plot(true, label='GroundTruth', linewidth=2)
     plt.legend()
     plt.savefig(name, bbox_inches='tight')
 
@@ -97,7 +97,7 @@ def adjustment(gt, pred):
     for i in range(len(gt)):
         if gt[i] == 1 and pred[i] == 1 and not anomaly_state:
             anomaly_state = True
-            for j in range(i, 0, -1):
+            for j in range(i, -1, -1):
                 if gt[j] == 0:
                     break
                 else:
