@@ -6,6 +6,16 @@ from utils.print_args import print_args
 import random
 import numpy as np
 
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
 if __name__ == '__main__':
     fix_seed = 2021
     random.seed(fix_seed)
@@ -38,13 +48,15 @@ if __name__ == '__main__':
     parser.add_argument('--label_len', type=int, default=48, help='start token length')
     parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
     parser.add_argument('--seasonal_patterns', type=str, default='Monthly', help='subset for M4')
-    parser.add_argument('--inverse', action='store_true', help='inverse output data', default=False)
+    parser.add_argument('--inverse', type=str2bool, help='inverse output data', default=False)
 
     # inputation task
     parser.add_argument('--mask_rate', type=float, default=0.25, help='mask ratio')
 
     # anomaly detection task
     parser.add_argument('--anomaly_ratio', type=float, default=0.25, help='prior anomaly ratio (%%)')
+    parser.add_argument('--num_mem', type=int, default=10, help='number of memory bank slots')
+    parser.add_argument('--shrink_thres', type=float, default=2.0, help='shrinkage threshold for memory bank. actual threshold = shrink_thres / num_mem')
 
     # model define
     parser.add_argument('--expand', type=int, default=2, help='expansion factor for Mamba')
@@ -76,7 +88,7 @@ if __name__ == '__main__':
                         help='0: channel dependence 1: channel independence for FreTS model')
     parser.add_argument('--decomp_method', type=str, default='moving_avg',
                         help='method of series decompsition, only support moving_avg or dft_decomp')
-    parser.add_argument('--use_norm', type=int, default=1, help='whether to use normalize; True 1 False 0')
+    parser.add_argument('--use_norm', type=str2bool, default=True, help='whether to use normalize; True 1 False 0')
     parser.add_argument('--down_sampling_layers', type=int, default=0, help='num of down sampling layers')
     parser.add_argument('--down_sampling_window', type=int, default=1, help='down sampling window size')
     parser.add_argument('--down_sampling_method', type=str, default=None,
@@ -94,14 +106,14 @@ if __name__ == '__main__':
     parser.add_argument('--des', type=str, default='test', help='exp description')
     parser.add_argument('--loss', type=str, default='MSE', help='loss function')
     parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
-    parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
+    parser.add_argument('--use_amp', type=str2bool, help='use automatic mixed precision training', default=False)
 
     # GPU
-    parser.add_argument('--use_gpu', action='store_true', default=True, help='use gpu (default: on)')
+    parser.add_argument('--use_gpu', type=str2bool, default=True, help='use gpu (default: on)')
     parser.add_argument('--no_use_gpu', action='store_false', dest='use_gpu', help='disable gpu (force cpu)')
     parser.add_argument('--gpu', type=int, default=0, help='gpu')
     parser.add_argument('--gpu_type', type=str, default='cuda', help='gpu type')  # cuda or mps
-    parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
+    parser.add_argument('--use_multi_gpu', type=str2bool, help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
 
     # de-stationary projector params
@@ -110,7 +122,7 @@ if __name__ == '__main__':
     parser.add_argument('--p_hidden_layers', type=int, default=2, help='number of hidden layers in projector')
 
     # metrics (dtw)
-    parser.add_argument('--use_dtw', action='store_true', default=False,
+    parser.add_argument('--use_dtw', type=str2bool, default=False,
                         help='enable dtw metric (time consuming; default: off)')
 
     # Augmentation
@@ -148,7 +160,7 @@ if __name__ == '__main__':
     parser.add_argument('--conv_channel', type=int, default=32, help='')
     parser.add_argument('--skip_channel', type=int, default=32, help='')
 
-    parser.add_argument('--individual', action='store_true', default=False,
+    parser.add_argument('--individual', type=str2bool, default=False,
                         help='DLinear: a linear layer for each variate(channel) individually')
 
     # TimeFilter
@@ -189,6 +201,9 @@ if __name__ == '__main__':
     elif args.task_name == 'anomaly_detection':
         from exp.exp_anomaly_detection import Exp_Anomaly_Detection
         Exp = Exp_Anomaly_Detection
+        # if args.model == 'MambaSingleLayer':
+        #     from exp.exp_anomaly_detection_memory import Exp_Anomaly_Detection_Memory
+        #     Exp = Exp_Anomaly_Detection_Memory
     elif args.task_name == 'classification':
         from exp.exp_classification import Exp_Classification
         Exp = Exp_Classification
@@ -230,6 +245,11 @@ if __name__ == '__main__':
                         + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
                         + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}' \
                         + f'_tvdt{int(args.tv_dt)}_tvB{int(args.tv_B)}_tvC{int(args.tv_C)}_useD{int(args.use_D)}_{args.des}_{ii}'
+            elif args.model == 'MambaSingleLayer' and args.task_name == 'anomaly_detection':
+                setting = f'{args.task_name}_CLS_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                        + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
+                        + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}_norm{int(args.use_norm)}_mem{args.num_mem}_thres{args.shrink_thres}' \
+                        + f'_tvdt{int(args.tv_dt)}_tvB{int(args.tv_B)}_tvC{int(args.tv_C)}_useD{int(args.use_D)}_{args.des}_{ii}'
 
             print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
             exp.train(setting)
@@ -270,6 +290,11 @@ if __name__ == '__main__':
             setting = f'{args.task_name}_CLS_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
                     + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
                     + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}' \
+                    + f'_tvdt{args.tv_dt}_tvB{args.tv_B}_tvC{args.tv_C}_useD{int(args.use_D)}_{args.des}_{ii}'
+        elif args.model == 'MambaSingleLayer' and args.task_name == 'anomaly_detection':
+            setting = f'{args.task_name}_CLS_{args.model_id}_{args.model}_{args.data}_ft{args.features}' \
+                    + f'_sl{args.seq_len}_ll{args.label_len}_pl{args.pred_len}_dm{args.d_model}_ds{args.d_ff}' \
+                    + f'_expand{args.expand}_dc{args.d_conv}_nk{args.num_kernels}_norm{int(args.use_norm)}_mem{args.num_mem}_thres{args.shrink_thres}' \
                     + f'_tvdt{args.tv_dt}_tvB{args.tv_B}_tvC{args.tv_C}_useD{int(args.use_D)}_{args.des}_{ii}'
 
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))

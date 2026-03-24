@@ -110,10 +110,10 @@ class Exp_Anomaly_Detection(Exp_Basic):
             print("Epoch: {} cost time: {}".format(epoch + 1, time.time() - epoch_time))
             train_loss = np.average(train_loss)
             vali_loss = self.vali(vali_data, vali_loader, criterion)
-            test_loss = self.vali(test_data, test_loader, criterion)
+            # test_loss = self.vali(test_data, test_loader, criterion)
 
-            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f} Test Loss: {4:.7f}".format(
-                epoch + 1, train_steps, train_loss, vali_loss, test_loss))
+            print("Epoch: {0}, Steps: {1} | Train Loss: {2:.7f} Vali Loss: {3:.7f}".format(
+                epoch + 1, train_steps, train_loss, vali_loss))
             early_stopping(vali_loss, self.model, path)
             if early_stopping.early_stop:
                 print("Early stopping")
@@ -126,11 +126,12 @@ class Exp_Anomaly_Detection(Exp_Basic):
         return self.model
 
     def test(self, setting, test=0):
-        test_data, test_loader = self._get_data(flag='test')
         train_data, train_loader = self._get_data(flag='train')
+        vali_data, vali_loader = self._get_data(flag='val')
+        test_data, test_loader = self._get_data(flag='test')
         if test:
             print('loading model')
-            self.model.load_state_dict(torch.load(os.path.join('./checkpoints/' + setting, 'checkpoint.pth')))
+            self.model.load_state_dict(torch.load(os.path.join(self.args.checkpoints, setting, 'checkpoint.pth')))
 
         attens_energy = []
         folder_path = './test_results/' + setting + '/'
@@ -143,6 +144,15 @@ class Exp_Anomaly_Detection(Exp_Basic):
         # (1) stastic on the train set
         with torch.no_grad():
             for i, (batch_x, batch_y) in enumerate(train_loader):
+                batch_x = batch_x.float().to(self.device)
+                # reconstruction
+                outputs = self.model(batch_x, None, None, None)
+                # criterion
+                score = torch.mean(self.anomaly_criterion(batch_x, outputs), dim=-1)
+                score = score.detach().cpu().numpy()
+                attens_energy.append(score)
+
+            for i, (batch_x, batch_y) in enumerate(vali_loader):
                 batch_x = batch_x.float().to(self.device)
                 # reconstruction
                 outputs = self.model(batch_x, None, None, None)

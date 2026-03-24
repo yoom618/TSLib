@@ -146,10 +146,10 @@ class FourierLayer(nn.Module):
 
         if t % 2 == 0:
             x_freq = x_freq[:, self.low_freq:-1]
-            f = fft.rfftfreq(t)[self.low_freq:-1]
+            f = fft.rfftfreq(t, device=x_freq.device)[self.low_freq:-1]
         else:
             x_freq = x_freq[:, self.low_freq:]
-            f = fft.rfftfreq(t)[self.low_freq:]
+            f = fft.rfftfreq(t, device=x_freq.device)[self.low_freq:]
 
         x_freq, index_tuple = self.topk_freq(x_freq)
         f = repeat(f, 'f -> b f d', b=x_freq.size(0), d=x_freq.size(2))

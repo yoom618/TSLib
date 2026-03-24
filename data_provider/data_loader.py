@@ -439,12 +439,14 @@ class PSMSegLoader(Dataset):
         test_data = np.nan_to_num(test_data)
         self.test = self.scaler.transform(test_data)
         
-        self.train = data
-        data_len = len(self.train)
-        self.val = self.train[(int)(data_len * 0.8):]
+        data_len = len(data)
+        self.train = data[:int(data_len * 0.8)]
+        self.val = data[int(data_len * 0.8):]
         self.test_labels = test_label_df.values[:, 1:]
-        print("test:", self.test.shape)
-        print("train:", self.train.shape)
+
+        print("train:", self.train.shape) if self.flag == "train" else None
+        print("val:", self.val.shape) if self.flag == "val" else None
+        print("test:", self.test.shape) if self.flag == "test" else None
 
     def __len__(self):
         if self.flag == "train":
@@ -499,15 +501,16 @@ class MSLSegLoader(Dataset):
         train_data = self.scaler.transform(train_data)
         test_data  = self.scaler.transform(test_data)
 
-        self.train = train_data
         self.test  = test_data
         self.test_labels = test_label
 
-        data_len = len(self.train)
-        self.val = self.train[int(data_len * 0.8):]
+        data_len = len(train_data)
+        self.train = train_data[:int(data_len * 0.8)]
+        self.val = train_data[int(data_len * 0.8):]
 
-        print("test:", self.test.shape)
-        print("train:", self.train.shape)
+        print("train:", self.train.shape) if self.flag == "train" else None
+        print("val:", self.val.shape) if self.flag == "val" else None
+        print("test:", self.test.shape) if self.flag == "test" else None
 
     def __len__(self):
         if self.flag == "train":
@@ -563,15 +566,16 @@ class SMAPSegLoader(Dataset):
         train_data = self.scaler.transform(train_data)
         test_data  = self.scaler.transform(test_data)
 
-        self.train = train_data
         self.test  = test_data
         self.test_labels = test_label
 
-        data_len = len(self.train)
-        self.val = self.train[int(data_len * 0.8):]
+        data_len = len(train_data)
+        self.train = train_data[:int(data_len * 0.8)]
+        self.val = train_data[int(data_len * 0.8):]
 
-        print("test:", self.test.shape)
-        print("train:", self.train.shape)
+        print("train:", self.train.shape) if self.flag == "train" else None
+        print("val:", self.val.shape) if self.flag == "val" else None
+        print("test:", self.test.shape) if self.flag == "test" else None
 
     def __len__(self):
 
@@ -626,13 +630,15 @@ class SMDSegLoader(Dataset):
         self.scaler.fit(train_data)
         train_data = self.scaler.transform(train_data)
         test_data = self.scaler.transform(test_data)
-        self.train = train_data
         self.test = test_data
-        data_len = len(self.train)
-        self.val = self.train[(int)(data_len * 0.8):]
+        
+        data_len = len(train_data)
+        self.train = train_data[:int(data_len * 0.8)]
+        self.val = train_data[int(data_len * 0.8):]
         self.test_labels = test_label
-        print("test:", self.test.shape)
-        print("train:", self.train.shape)
+        print("test:", self.test.shape) if self.flag == "test" else None
+        print("train:", self.train.shape) if self.flag == "train" else None
+        print("val:", self.val.shape) if self.flag == "val" else None
 
     def __len__(self):
         if self.flag == "train":
@@ -682,13 +688,15 @@ class SWATSegLoader(Dataset):
         self.scaler.fit(train_data)
         train_data = self.scaler.transform(train_data)
         test_data = self.scaler.transform(test_data)
-        self.train = train_data
         self.test = test_data
-        data_len = len(self.train)
-        self.val = self.train[(int)(data_len * 0.8):]
+
+        data_len = len(train_data)
+        self.train = train_data[:int(data_len * 0.8)]
+        self.val = train_data[int(data_len * 0.8):]
         self.test_labels = labels
-        print("test:", self.test.shape)
-        print("train:", self.train.shape)
+        print("train:", self.train.shape) if self.flag == "train" else None
+        print("val:", self.val.shape) if self.flag == "val" else None
+        print("test:", self.test.shape) if self.flag == "test" else None
 
     def __len__(self):
         """

@@ -34,6 +34,8 @@ def data_provider(args, flag):
             args = args,
             root_path=args.root_path,
             win_size=args.seq_len,
+            # step=1 if flag in ['test', 'TEST'] else args.seq_len // 100,
+            step=min(10, max(1, args.seq_len // 100)),
             flag=flag,
         )
         print(flag, len(data_set))
